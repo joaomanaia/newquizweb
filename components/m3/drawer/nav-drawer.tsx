@@ -13,15 +13,6 @@ import {
 } from "@mui/material"
 import { FC } from "react"
 import { useRouter } from "next/router"
-import {
-  HomeRounded,
-  NewspaperRounded,
-  CalendarMonthRounded,
-  MessageRounded,
-  GroupRounded,
-  CameraAltRounded
-} from "@mui/icons-material"
-import { auth } from "../../../firebase"
 
 export interface NavDrawerProps extends DrawerProps {}
 
@@ -38,51 +29,7 @@ interface NavDrawerItemGroup {
   children: NavDrawerItem[]
 }
 
-const categories: NavDrawerItemGroup[] = [
-  {
-    id: "Home",
-    hideTitle: true,
-    children: [
-      {
-        title: "Home",
-        icon: <HomeRounded />,
-        pathName: "/",
-      },
-      {
-        title: "News",
-        icon: <NewspaperRounded />,
-        pathName: "/news",
-      },
-      {
-        title: "Events",
-        icon: <CalendarMonthRounded />,
-        pathName: "/events",
-      },
-      {
-        title: "Cameras",
-        icon: <CameraAltRounded />,
-        pathName: "/cameras",
-      },
-    ],
-  },
-  {
-    id: "Messages",
-    children: [
-      {
-        title: "Private Messages",
-        icon: <GroupRounded />,
-        pathName: "/messages",
-        requireAuth: true
-      },
-      {
-        title: "Groups",
-        icon: <MessageRounded />,
-        pathName: "/groups",
-        requireAuth: true
-      },
-    ],
-  },
-]
+const categories: NavDrawerItemGroup[] = []
 
 const NavDrawer: FC<NavDrawerProps> = (props) => {
   const { ...others } = props
@@ -93,12 +40,8 @@ const NavDrawer: FC<NavDrawerProps> = (props) => {
   const routerPathSubString = routerAsPath.substring(0, routerAsPath.lastIndexOf("?"))
   const routerPath = routerPathSubString == "" ? routerAsPath : routerPathSubString
 
-  const isLoggedIn = auth.currentUser !== null
-
-  const handleListItemClick = (navDrawerItem: NavDrawerItem) => {
-    const goToAuth = navDrawerItem.requireAuth && !isLoggedIn
-    
-    router.push(goToAuth ? "/auth" : navDrawerItem.pathName)
+  const handleListItemClick = (navDrawerItem: NavDrawerItem) => {    
+    router.push(navDrawerItem.pathName)
   }
   
   return (

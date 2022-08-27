@@ -1,13 +1,8 @@
-import { FC, useContext, useState } from "react"
+import { FC, useContext } from "react"
 import {
   AppBar,
-  Avatar,
   Grid,
   IconButton,
-  ListItemIcon,
-  ListItemText,
-  Menu,
-  MenuItem,
   Toolbar,
   Tooltip,
   Typography,
