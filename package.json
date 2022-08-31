@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "find './node_modules/@material/material-color-utilities/' -type f -name '*.js' -exec sed -Ei '/(import|export)/s/(\\x22|\\x27)(\\.{1,2}\\/(([[:alnum:]_-]+|\\.{2})\\/)*[[:alnum:]_-]+)(\\.js)?\\1/\\1\\2.js\\1/g' {} +"
+    "postinstall": "find './node_modules/@material/material-color-utilities/' -type f -name '*.js' -exec sed -Ei '/(import|export)/s/(\\x22|\\x27)(\\.{1,2}\\/(([[:alnum:]_-]+|\\.{2})\\/)*[[:alnum:]_-]+)(\\.js)?\\1/\\1\\2.js\\1/g' {} +",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@emotion/react": "^11.10.0",
@@ -16,6 +17,8 @@
     "@mui/icons-material": "^5.10.2",
     "@mui/material": "^5.10.2",
     "next": "12.2.5",
+    "next-seo": "^5.5.0",
+    "next-sitemap": "^3.1.21",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },

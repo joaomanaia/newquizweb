@@ -1,9 +1,20 @@
 import { Container } from "@mui/material"
+import { NextSeo } from "next-seo"
+import Head from "next/head"
 import Header from "../components/m3/header/header"
 
 const AndroidTermsPage: React.FC = () => {
   return (
     <div>
+      <Head>
+        <title>Privacy</title>
+        <meta name="description" content="NewQuiz privacy" />
+
+        <NextSeo
+            title="Privacy"
+            description="NewQuiz privacy"/>
+      </Head>
+
       <Header />
 
       <Container>
