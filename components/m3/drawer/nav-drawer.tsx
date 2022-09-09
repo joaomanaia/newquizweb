@@ -13,6 +13,7 @@ import {
 } from "@mui/material"
 import { FC } from "react"
 import { useRouter } from "next/router"
+import { HomeRounded, PasswordRounded, FormatListBulletedRounded } from "@mui/icons-material"
 
 export interface NavDrawerProps extends DrawerProps {}
 
@@ -29,7 +30,35 @@ interface NavDrawerItemGroup {
   children: NavDrawerItem[]
 }
 
-const categories: NavDrawerItemGroup[] = []
+const categories: NavDrawerItemGroup[] = [
+  {
+    id: "Home",
+    hideTitle: true,
+    children: [
+      {
+        title: "Home",
+        icon: <HomeRounded />,
+        pathName: "/",
+      },
+    ],
+  },
+  {
+    id: "Quiz",
+    hideTitle: false,
+    children: [
+      {
+        title: "Multi choice quiz",
+        icon: <FormatListBulletedRounded />,
+        pathName: "/multichoicequiz",
+      },
+      {
+        title: "Wordle",
+        icon: <PasswordRounded />,
+        pathName: "/wordle",
+      }
+    ]
+  }
+]
 
 const NavDrawer: FC<NavDrawerProps> = (props) => {
   const { ...others } = props

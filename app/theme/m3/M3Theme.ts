@@ -232,6 +232,7 @@ declare module "@mui/material/Button" {
 declare module "@mui/material/Paper" {
   interface PaperPropsVariantOverrides {
     filled: true
+    primary: true
   }
 }
 
@@ -687,6 +688,23 @@ export const getThemedComponents = (theme: Theme): { components: Theme["componen
               "&:hover": {
                 boxShadow: theme.shadows[1],
                 background: alpha(theme.palette.onSurface.main, 0.05),
+              },
+            },
+          },
+          {
+            props: { variant: "primary" },
+            style: {
+              backgroundColor: theme.palette.primary.main,
+              color: theme.palette.onPrimary.main,
+              transition: theme.transitions.create(
+                ["background-color", "box-shadow", "border-color", "color"],
+                {
+                  duration: theme.transitions.duration.short,
+                }
+              ),
+              "&:hover": {
+                boxShadow: theme.shadows[1],
+                background: alpha(theme.palette.primary.main, 0.8),
               },
             },
           },
