@@ -9,7 +9,7 @@ export default class RemainingTime {
 
   static fromValue = (value: number): RemainingTime => new RemainingTime(value)
 
-  static MULTI_CHOICE_QUIZ_COUNTDOWN_IN_MILLIS = 10000
+  static MULTI_CHOICE_QUIZ_COUNTDOWN_IN_MILLIS = 30000
 
   static MAX_VALUE = RemainingTime.fromValue(this.MULTI_CHOICE_QUIZ_COUNTDOWN_IN_MILLIS)
 

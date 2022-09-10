@@ -1,4 +1,4 @@
-import MultiChoiceQuestion from "../../model/multichoicequiz/MultiChoiceQuestion"
+import MultiChoiceQuestion from "./MultiChoiceQuestion"
 import { v4 as uuidv4 } from "uuid"
 
 export default interface OpenTDBQuestionResponse {

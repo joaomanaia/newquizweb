@@ -7,7 +7,7 @@ export default class SelectedAnswer {
     this.index = index
   }
 
-  static NONE = new this(2)
+  static NONE = new this(-1)
 
   static fromIndex = (index: number): SelectedAnswer => new SelectedAnswer(index)
 
