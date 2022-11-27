@@ -51,11 +51,13 @@ const categories: NavDrawerItemGroup[] = [
         icon: <FormatListBulletedRounded />,
         pathName: "/multichoicequiz",
       },
+      /*
       {
         title: "Wordle",
         icon: <PasswordRounded />,
         pathName: "/wordle",
       }
+      */
     ]
   }
 ]

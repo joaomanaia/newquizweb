@@ -8,7 +8,9 @@ import { delay } from "../app/util/DelayUtil"
 import RootLayout from "../components/m3/root-layout"
 import AnswerCard from "../components/multichoicequiz/AnswerCard"
 import QuizStepView from "../components/multichoicequiz/QuizStepView"
-import MultiChoiceQuestion, { decodeBase64Question } from "../model/multichoicequiz/MultiChoiceQuestion"
+import MultiChoiceQuestion, {
+  decodeBase64Question,
+} from "../model/multichoicequiz/MultiChoiceQuestion"
 import MultiChoiceQuestionStep, {
   Completed,
   Current,
@@ -29,8 +31,6 @@ const MultiChoiceQuiz: NextPage = () => {
   const [questionSteps, setQuestionSteps] = useState<MultiChoiceQuestionStep[]>([])
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(-1)
-  const currentQuestionStep = questionSteps.at(currentQuestionIndex)
-  const currentQuestion = currentQuestionStep?.question
 
   const [selectedAnswer, setSelectedAnswer] = useState(SelectedAnswer.NONE)
   const [remainingTime, setRemainingTime] = useState(RemainingTime.MAX_VALUE)
@@ -47,7 +47,7 @@ const MultiChoiceQuiz: NextPage = () => {
 
       return () => clearInterval(timer)
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [remainingTime])
 
   useEffect(() => {
@@ -59,9 +59,7 @@ const MultiChoiceQuiz: NextPage = () => {
     }
 
     const generateQuestionSteps = (questions: MultiChoiceQuestion[]): MultiChoiceQuestionStep[] => {
-      return questions
-        .map(decodeBase64Question)
-        .map((question) => new NotCurrent(question))
+      return questions.map(decodeBase64Question).map((question) => new NotCurrent(question))
     }
 
     getQuestions()
@@ -80,7 +78,7 @@ const MultiChoiceQuiz: NextPage = () => {
 
       router.back()
       return
-    } 
+    }
 
     setCurrentQuestionIndex((prevIndex) => prevIndex + 1)
     setRemainingTime(RemainingTime.MAX_VALUE)
@@ -118,44 +116,76 @@ const MultiChoiceQuiz: NextPage = () => {
 
       <RootLayout>
         <Container className="flex flex-col h-full items-center justify-center space-y-16">
-          <ProgressWithText remainingTime={remainingTime} />
-
-          <div className="flex space-x-2">
-            {questionSteps.map((step, index) => (
-              <QuizStepView
-                key={step.question.id}
-                position={index + 1}
-                current={currentQuestionIndex === index}
-                correct={step instanceof Completed && step.correct}
-                completed={step instanceof Completed}
-              />
-            ))}
-          </div>
-
-          <Typography variant="h4">{currentQuestion?.description}</Typography>
-
-          <div className="w-96 space-y-4">
-            {currentQuestion?.answers?.map((answer, index) => (
-              <AnswerCard
-                key={answer}
-                text={answer}
-                selected={selectedAnswer.index === index}
-                onClick={() => setSelectedAnswer(SelectedAnswer.fromIndex(index))}
-              />
-            ))}
-          </div>
-
-          <Button
-            variant="contained"
-            disabled={selectedAnswer.isNone()}
-            onClick={verifyQuestion}
-            className="w-96"
-          >
-            Verify
-          </Button>
+          <QuizContent 
+            remainingTime={remainingTime}
+            questionSteps={questionSteps}
+            currentQuestionIndex={currentQuestionIndex}
+            selectedAnswer={selectedAnswer}
+            setSelectedAnswer={setSelectedAnswer}
+            verifyQuestion={verifyQuestion}/>
         </Container>
       </RootLayout>
     </div>
+  )
+}
+
+interface QuizContentProps {
+  remainingTime: RemainingTime
+  questionSteps: MultiChoiceQuestionStep[]
+  currentQuestionIndex: number
+  selectedAnswer: SelectedAnswer
+  setSelectedAnswer: (answer: SelectedAnswer) => void
+  verifyQuestion: () => void
+}
+
+const QuizContent: React.FC<QuizContentProps> = ({
+  remainingTime,
+  questionSteps,
+  currentQuestionIndex,
+  selectedAnswer,
+  setSelectedAnswer,
+  verifyQuestion
+}) => {
+  const currentQuestion = questionSteps.at(currentQuestionIndex)?.question
+
+  return (
+    <>
+      <ProgressWithText remainingTime={remainingTime} />
+
+      <div className="flex space-x-2">
+        {questionSteps.map((step, index) => (
+          <QuizStepView
+            key={step.question.id}
+            position={index + 1}
+            current={currentQuestionIndex === index}
+            correct={step instanceof Completed && step.correct}
+            completed={step instanceof Completed}
+          />
+        ))}
+      </div>
+
+      <Typography variant="h4">{currentQuestion?.description}</Typography>
+
+      <div className="w-96 space-y-4">
+        {currentQuestion?.answers?.map((answer, index) => (
+          <AnswerCard
+            key={answer}
+            text={answer}
+            selected={selectedAnswer.index === index}
+            onClick={() => setSelectedAnswer(SelectedAnswer.fromIndex(index))}
+          />
+        ))}
+      </div>
+
+      <Button
+        variant="contained"
+        disabled={selectedAnswer.isNone()}
+        onClick={verifyQuestion}
+        className="w-96"
+      >
+        Verify
+      </Button>
+    </>
   )
 }
 

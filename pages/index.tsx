@@ -12,7 +12,7 @@ const Home: NextPage = () => {
 
   const router = useRouter()
 
-  const navigateToAndroidAppStore = () => router.push("https://www.amazon.com/newquiz")
+  const navigateToAndroidAppStore = () => router.push("https://www.amazon.com/gp/product/B08T8JN4P9")
   const navigateToQuickMultiChoiceQuiz = () => router.push("/multichoicequiz")
 
   const homeCardItems: HomeCardItem[] = [
@@ -30,6 +30,7 @@ const Home: NextPage = () => {
       ShuffleRounded,
       navigateToQuickMultiChoiceQuiz
     ),
+    /*
     new HomeGroupTitleItem("wordle_title", "Wordle"),
     new HomeLargeCardItem(
       "wordle_infinite", 
@@ -37,6 +38,7 @@ const Home: NextPage = () => {
       ShuffleRounded,
       () => {}
     ),
+    */
   ]
 
   return (
