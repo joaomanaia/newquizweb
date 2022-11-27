@@ -1,23 +1,20 @@
-import { Box, Button, CircularProgress, Container, Typography } from "@mui/material"
-import { NextPage } from "next"
-import { NextSeo } from "next-seo"
-import Head from "next/head"
-import { useRouter } from "next/router"
+"use client"
+
+import { Box, Button, CircularProgress, Typography } from "@mui/material"
+import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
-import { delay } from "../app/util/DelayUtil"
-import RootLayout from "../components/m3/root-layout"
-import AnswerCard from "../components/multichoicequiz/AnswerCard"
-import QuizStepView from "../components/multichoicequiz/QuizStepView"
+import { delay } from "../../core/util/DelayUtil"
+import AnswerCard from "../../components/multichoicequiz/AnswerCard"
+import QuizStepView from "../../components/multichoicequiz/QuizStepView"
 import MultiChoiceQuestion, {
   decodeBase64Question,
-} from "../model/multichoicequiz/MultiChoiceQuestion"
+} from "../../model/multichoicequiz/MultiChoiceQuestion"
 import MultiChoiceQuestionStep, {
   Completed,
-  Current,
   NotCurrent,
-} from "../model/multichoicequiz/MultiChoiceQuestionStep"
-import RemainingTime from "../model/multichoicequiz/RemainingTime"
-import SelectedAnswer from "../model/multichoicequiz/SelectedAnswer"
+} from "../../model/multichoicequiz/MultiChoiceQuestionStep"
+import RemainingTime from "../../model/multichoicequiz/RemainingTime"
+import SelectedAnswer from "../../model/multichoicequiz/SelectedAnswer"
 
 const MIN_QUIZ_TIME = 0
 const MAX_QUIZ_TIME = RemainingTime.MULTI_CHOICE_QUIZ_COUNTDOWN_IN_MILLIS
@@ -25,7 +22,7 @@ const MAX_QUIZ_TIME = RemainingTime.MULTI_CHOICE_QUIZ_COUNTDOWN_IN_MILLIS
 const normaliseProgressValue = (value: number) =>
   ((value - MIN_QUIZ_TIME) * 100) / (MAX_QUIZ_TIME - MIN_QUIZ_TIME)
 
-const MultiChoiceQuiz: NextPage = () => {
+export default function Page() {
   const router = useRouter()
 
   const [questionSteps, setQuestionSteps] = useState<MultiChoiceQuestionStep[]>([])
@@ -105,26 +102,15 @@ const MultiChoiceQuiz: NextPage = () => {
   }
 
   return (
-    <div className="w-screen h-screen">
-      <Head>
-        <title>Multi choice quiz</title>
-        <meta name="description" content="Quick quiz - multi choice quiz" />
-        <link rel="icon" href="/favicon.ico" />
-
-        <NextSeo noindex={true} />
-      </Head>
-
-      <RootLayout>
-        <Container className="flex flex-col h-full items-center justify-center space-y-16">
-          <QuizContent 
-            remainingTime={remainingTime}
-            questionSteps={questionSteps}
-            currentQuestionIndex={currentQuestionIndex}
-            selectedAnswer={selectedAnswer}
-            setSelectedAnswer={setSelectedAnswer}
-            verifyQuestion={verifyQuestion}/>
-        </Container>
-      </RootLayout>
+    <div className="w-full h-full flex flex-col items-center justify-center space-y-16">
+      <QuizContent
+        remainingTime={remainingTime}
+        questionSteps={questionSteps}
+        currentQuestionIndex={currentQuestionIndex}
+        selectedAnswer={selectedAnswer}
+        setSelectedAnswer={setSelectedAnswer}
+        verifyQuestion={verifyQuestion}
+      />
     </div>
   )
 }
@@ -144,7 +130,7 @@ const QuizContent: React.FC<QuizContentProps> = ({
   currentQuestionIndex,
   selectedAnswer,
   setSelectedAnswer,
-  verifyQuestion
+  verifyQuestion,
 }) => {
   const currentQuestion = questionSteps.at(currentQuestionIndex)?.question
 
@@ -219,5 +205,3 @@ const ProgressWithText: React.FC<ProgressWithTextProps> = ({ remainingTime }) =>
     </Box>
   )
 }
-
-export default MultiChoiceQuiz

@@ -1,6 +1,6 @@
 import React, { FC, useContext, useMemo } from "react"
 
-import { ThemeProvider, createTheme, useTheme } from "@mui/material/styles"
+import { ThemeProvider, createTheme } from "@mui/material/styles"
 import { getDesignTokens, getThemedComponents } from "./M3Theme"
 import { deepmerge } from "@mui/utils"
 import { ThemeModeContext } from "../context/ThemeModeContext"

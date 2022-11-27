@@ -1,15 +1,17 @@
+"use client"
+
 import { Box, Container, useMediaQuery, useTheme } from "@mui/material"
 import { useState } from "react"
-import NavDrawer from "../m3/drawer/nav-drawer"
-import Header from "../m3/header/header"
+import NavDrawer from "./drawer/nav-drawer"
+import Header from "./header/header"
 
-interface RootLayoutProps {
+interface MainLayoutProps {
   children: React.ReactNode
 }
 
 const drawerWidth = 256
 
-const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
+const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   const theme = useTheme()
   const isSmUp = useMediaQuery(theme.breakpoints.up("md"))
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -44,4 +46,4 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   )
 }
 
-export default RootLayout
+export default MainLayout

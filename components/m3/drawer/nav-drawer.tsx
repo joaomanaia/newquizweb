@@ -12,8 +12,8 @@ import {
   Typography,
 } from "@mui/material"
 import { FC } from "react"
-import { useRouter } from "next/router"
-import { HomeRounded, PasswordRounded, FormatListBulletedRounded } from "@mui/icons-material"
+import { usePathname, useRouter } from "next/navigation"
+import { HomeRounded, FormatListBulletedRounded } from "@mui/icons-material"
 
 export interface NavDrawerProps extends DrawerProps {}
 
@@ -66,10 +66,7 @@ const NavDrawer: FC<NavDrawerProps> = (props) => {
   const { ...others } = props
 
   const router = useRouter()
-
-  const routerAsPath = router.asPath
-  const routerPathSubString = routerAsPath.substring(0, routerAsPath.lastIndexOf("?"))
-  const routerPath = routerPathSubString == "" ? routerAsPath : routerPathSubString
+  const routerPath = usePathname()
 
   const handleListItemClick = (navDrawerItem: NavDrawerItem) => {    
     router.push(navDrawerItem.pathName)
