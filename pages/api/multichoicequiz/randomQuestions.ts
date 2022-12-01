@@ -3,6 +3,7 @@ import OpenTDBQuestionResponse, {
   convertOpenTDBResultToQuestion,
 } from "../../../model/multichoicequiz/OpenTDBQuestionResponse"
 import MultiChoiceQuestion from "../../../model/multichoicequiz/MultiChoiceQuestion"
+import { isLocalHost } from "../../../core/util/Network"
 
 const API_URL = "https://opentdb.com/api.php"
 
@@ -66,7 +67,9 @@ type Data = {
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
-  getOpenTDBQuestionsTest()
+  const questions = isLocalHost() ? getOpenTDBQuestionsTest() : getOpenTDBQuestions()
+
+  questions
     .then((openTDBResponse) => openTDBResponse.results)
     .then((results) => results.map(convertOpenTDBResultToQuestion))
     .then((questions) => res.status(200).json({ questions: questions }))

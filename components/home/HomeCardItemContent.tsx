@@ -14,7 +14,7 @@ const HomeCardItemContent: React.FC<HomeCardItemContentProps> = ({ item }) => {
     } else if (item instanceof HomeLargeCardItem) {
         return <HomeLargeCard {...item} />
     } else {
-        return <div></div>
+        return <></>
     }
 }
 

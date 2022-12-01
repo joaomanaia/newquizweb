@@ -1,4 +1,4 @@
-import { Card, Typography, useTheme } from "@mui/material"
+import { Card, Typography } from "@mui/material"
 import { HomeLargeCardItem } from "../../model/HomeCardItem"
 
 const HomeLargeCard: React.FC<HomeLargeCardItem> = ({ title, Icon, variant, onClick }) => {  
