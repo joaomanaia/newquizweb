@@ -12,7 +12,8 @@ import {
   Typography,
 } from "@mui/material"
 import { FC } from "react"
-import { useRouter } from "next/router"
+import { usePathname, useRouter } from "next/navigation"
+import { HomeRounded, FormatListBulletedRounded } from "@mui/icons-material"
 
 export interface NavDrawerProps extends DrawerProps {}
 
@@ -29,16 +30,43 @@ interface NavDrawerItemGroup {
   children: NavDrawerItem[]
 }
 
-const categories: NavDrawerItemGroup[] = []
+const categories: NavDrawerItemGroup[] = [
+  {
+    id: "Home",
+    hideTitle: true,
+    children: [
+      {
+        title: "Home",
+        icon: <HomeRounded />,
+        pathName: "/",
+      },
+    ],
+  },
+  {
+    id: "Quiz",
+    hideTitle: false,
+    children: [
+      {
+        title: "Multi choice quiz",
+        icon: <FormatListBulletedRounded />,
+        pathName: "/multichoicequiz",
+      },
+      /*
+      {
+        title: "Wordle",
+        icon: <PasswordRounded />,
+        pathName: "/wordle",
+      }
+      */
+    ]
+  }
+]
 
 const NavDrawer: FC<NavDrawerProps> = (props) => {
   const { ...others } = props
 
   const router = useRouter()
-
-  const routerAsPath = router.asPath
-  const routerPathSubString = routerAsPath.substring(0, routerAsPath.lastIndexOf("?"))
-  const routerPath = routerPathSubString == "" ? routerAsPath : routerPathSubString
+  const routerPath = usePathname()
 
   const handleListItemClick = (navDrawerItem: NavDrawerItem) => {    
     router.push(navDrawerItem.pathName)
