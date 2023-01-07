@@ -8,7 +8,10 @@ async function getQuestions(): Promise<MultiChoiceQuestion[]> {
   return res
     .json()
     .then((questionsText) => questionsText.questions)
-    .catch(() => [])
+    .catch((e) => {
+      console.error(e)
+      return []
+    })
 }
 
 export default async function Page() {

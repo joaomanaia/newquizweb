@@ -10,8 +10,9 @@ const API_URL = "https://opentdb.com/api.php"
 const getOpenTDBQuestions = async (amount: number = 5): Promise<OpenTDBQuestionResponse> => {
   const requestUrl = `${API_URL}?encode=base64&amount=${amount}`
 
-  const textRes = await fetch(requestUrl).then((res) => res.text())
-  return JSON.parse(textRes)
+  const res = await fetch(requestUrl)
+  const textRes = await res.text()
+  return JSON.parse(textRes) 
 }
 
 const getOpenTDBQuestionsTest = async (amount: number = 5): Promise<OpenTDBQuestionResponse> => {
@@ -73,5 +74,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     .then((openTDBResponse) => openTDBResponse.results)
     .then((results) => results.map(convertOpenTDBResultToQuestion))
     .then((questions) => res.status(200).json({ questions: questions }))
-    .catch((e) => res.status(404).send(e))
+    .catch((e) => res.status(404).end())
 }
