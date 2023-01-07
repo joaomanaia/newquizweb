@@ -1,10 +1,14 @@
 import QuizContent from "../../components/multichoicequiz/QuizContent"
 import { getHost } from "../../core/util/Network"
+import MultiChoiceQuestion from "../../model/multichoicequiz/MultiChoiceQuestion"
 
-async function getQuestions() {
-  const res = await fetch(getHost() + "/api/multichoicequiz/randomQuestions")
+async function getQuestions(): Promise<MultiChoiceQuestion[]> {
+  const res = await fetch(`${getHost()}/api/multichoicequiz/randomQuestions`)
 
-  return res.text().then((questionsText) => JSON.parse(questionsText).questions)
+  return res
+    .json()
+    .then((questionsText) => questionsText.questions)
+    .catch(() => [])
 }
 
 export default async function Page() {
