@@ -3,6 +3,7 @@
 import { Button, Typography } from "@mui/material"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
+import { logGameStart } from "../../core/logging_analytics/multichoice_analytics"
 import { delay } from "../../core/util/DelayUtil"
 import MultiChoiceQuestion, {
   decodeBase64Question,
@@ -55,9 +56,12 @@ const QuizContent: React.FC<QuizContentProps> = ({ questions }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [remainingTime])
 
+  // Start
   useEffect(() => {
     setQuestionSteps(generateQuestionSteps(questions))
     setCurrentQuestionIndex(0)
+
+    logGameStart(questions.length)
   }, [])
 
   const nextQuestion = async () => {
