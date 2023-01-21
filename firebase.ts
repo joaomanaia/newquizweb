@@ -1,5 +1,6 @@
 import { FirebaseApp, getApps, initializeApp } from "firebase/app"
-import { getAnalytics } from "firebase/analytics"
+import { Analytics, getAnalytics } from "firebase/analytics"
+import { type } from "os"
 
 const firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
@@ -21,6 +22,10 @@ if (!appArray.length) {
     app = appArray[0]
 }
 
-const analytics = getAnalytics(app)
+let analytics: Analytics
+
+if (app.name && typeof window !== "undefined") {
+  analytics = getAnalytics(app)
+}
 
 export { analytics }

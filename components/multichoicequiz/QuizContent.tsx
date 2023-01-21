@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 import { logGameStart } from "../../core/logging_analytics/multichoice_analytics"
 import { delay } from "../../core/util/DelayUtil"
+import { analytics } from "../../firebase"
 import MultiChoiceQuestion, {
   decodeBase64Question,
 } from "../../model/multichoicequiz/MultiChoiceQuestion"
@@ -61,7 +62,7 @@ const QuizContent: React.FC<QuizContentProps> = ({ questions }) => {
     setQuestionSteps(generateQuestionSteps(questions))
     setCurrentQuestionIndex(0)
 
-    logGameStart(questions.length)
+    logGameStart(analytics, questions.length)
   }, [])
 
   const nextQuestion = async () => {

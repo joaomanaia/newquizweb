@@ -1,7 +1,7 @@
-import { logEvent } from "firebase/analytics"
-import { analytics } from "../../firebase"
+import { Analytics, logEvent } from "firebase/analytics"
 
 export const logGameStart = (
+    analytics: Analytics,
     questionsSize: number
 ) => {
     logEvent(analytics, "multi_choice_game_start",  {
