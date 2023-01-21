@@ -1,6 +1,5 @@
 import { FirebaseApp, getApps, initializeApp } from "firebase/app"
 import { Analytics, getAnalytics } from "firebase/analytics"
-import { type } from "os"
 
 const firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
