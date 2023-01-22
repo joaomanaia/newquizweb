@@ -1,21 +1,32 @@
-import QuizContent from "../../components/multichoicequiz/QuizContent"
-import { getHost } from "../../core/util/Network"
-import MultiChoiceQuestion from "../../model/multichoicequiz/MultiChoiceQuestion"
+"use client"
 
-async function getQuestions(): Promise<MultiChoiceQuestion[]> {
-  const res = await fetch(`${getHost()}/api/multichoicequiz/randomQuestions`)
+import { Container } from "@mui/material"
+import { useRouter } from "next/navigation"
+import HomeCardItemContent from "../../components/home/HomeCardItemContent"
+import HomeCardItem, { HomeGroupTitleItem, HomeLargeCardItem } from "../../model/HomeCardItem"
+import { ShuffleRounded } from "@mui/icons-material"
 
-  return res
-    .json()
-    .then((questionsText) => questionsText.questions)
-    .catch((e) => {
-      console.error(e)
-      return []
-    })
-}
+export default function Page() {
+  const router = useRouter()
 
-export default async function Page() {
-  const questions = await getQuestions()
+  const navigateToQuickMultiChoiceQuiz = () => router.push("/multichoicequiz/game")
 
-  return <QuizContent questions={questions} />
+  const homeCardItems: HomeCardItem[] = [
+    new HomeGroupTitleItem("quickquiz_title", "Quick quiz"),
+    new HomeLargeCardItem(
+      "multichoicequiz_quickquiz",
+      "Quick quiz",
+      ShuffleRounded,
+      navigateToQuickMultiChoiceQuiz,
+      "primary"
+    ),
+  ]
+
+  return (
+    <Container className="flex flex-col h-full items-center justify-center space-y-4">
+      {homeCardItems.map((item) => (
+        <HomeCardItemContent key={item.id} item={item} />
+      ))}
+    </Container>
+  )
 }

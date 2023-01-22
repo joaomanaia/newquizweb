@@ -18,6 +18,7 @@ import SelectedAnswer from "../../model/multichoicequiz/SelectedAnswer"
 import AnswerCard from "./AnswerCard"
 import ProgressWithText from "./ProgressWithText"
 import QuizStepView from "./QuizStepView"
+import QuizResultsContent from "./results/QuizResultsContent"
 
 const MIN_QUIZ_TIME = 0
 const MAX_QUIZ_TIME = RemainingTime.MULTI_CHOICE_QUIZ_COUNTDOWN_IN_MILLIS
@@ -34,6 +35,7 @@ const QuizContent: React.FC<QuizContentProps> = ({ questions }) => {
   const [questionSteps, setQuestionSteps] = useState<MultiChoiceQuestionStep[]>([])
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(-1)
+  const [isQuizEnded, setQuizEnded] = useState(false)
 
   const [selectedAnswer, setSelectedAnswer] = useState(SelectedAnswer.NONE)
   const [remainingTime, setRemainingTime] = useState(RemainingTime.MAX_VALUE)
@@ -42,7 +44,10 @@ const QuizContent: React.FC<QuizContentProps> = ({ questions }) => {
 
   const router = useRouter()
 
+  // Count down timer
   useEffect(() => {
+    if (isQuizEnded) return
+
     if (remainingTime.isEnded()) {
       verifyQuestion()
     } else {
@@ -55,7 +60,7 @@ const QuizContent: React.FC<QuizContentProps> = ({ questions }) => {
       return () => clearInterval(timer)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [remainingTime])
+  }, [remainingTime, isQuizEnded])
 
   // Start
   useEffect(() => {
@@ -68,12 +73,11 @@ const QuizContent: React.FC<QuizContentProps> = ({ questions }) => {
   const nextQuestion = async () => {
     setSelectedAnswer(SelectedAnswer.NONE)
 
+    // Check if quiz is ended
     if (currentQuestionIndex + 1 >= questionSteps.length) {
       setCurrentQuestionIndex(-1)
-
       await delay(1500)
-
-      router.back()
+      setQuizEnded(true)
       return
     }
 
@@ -99,6 +103,12 @@ const QuizContent: React.FC<QuizContentProps> = ({ questions }) => {
     }
 
     return prevSteps
+  }
+
+  if (isQuizEnded) {
+    return (
+      <QuizResultsContent completedSteps={questionSteps as Completed[]} />
+    )
   }
 
   return (

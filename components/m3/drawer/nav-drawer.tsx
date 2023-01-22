@@ -49,7 +49,7 @@ const categories: NavDrawerItemGroup[] = [
       {
         title: "Multi choice quiz",
         icon: <FormatListBulletedRounded />,
-        pathName: "/multichoicequiz/list",
+        pathName: "/multichoicequiz",
       },
       /*
       {

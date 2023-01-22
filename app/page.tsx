@@ -12,7 +12,7 @@ export default function Page() {
   const router = useRouter()
 
   const navigateToAndroidAppStore = () => router.push(AMAZON_APP_LINK)
-  const navigateToQuickMultiChoiceQuiz = () => router.push("/multichoicequiz")
+  const navigateToQuickMultiChoiceQuiz = () => router.push("/multichoicequiz/game")
 
   const homeCardItems: HomeCardItem[] = [
     new HomeLargeCardItem(
