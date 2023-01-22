@@ -1,3 +1,5 @@
+import { decodeBase64String } from "../../core/util/StringUtil"
+
 export default interface MultiChoiceQuestion {
   id: string
   description: string
@@ -11,11 +13,11 @@ export default interface MultiChoiceQuestion {
 export const decodeBase64Question = (question: MultiChoiceQuestion): MultiChoiceQuestion => {
   return {
     id: question.id,
-    description: atob(question.description),
-    answers: question.answers.map(atob),
-    category: atob(question.category),
+    description: decodeBase64String(question.description),
+    answers: question.answers.map(decodeBase64String),
+    category: decodeBase64String(question.category),
     correctAns: question.correctAns,
-    type: atob(question.type),
-    difficulty: atob(question.difficulty),
+    type: decodeBase64String(question.type),
+    difficulty: decodeBase64String(question.difficulty)
   }
 }
