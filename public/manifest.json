@@ -1,0 +1,21 @@
+{
+  "name": "NewQuiz",
+  "short_name": "NewQuiz",
+  "icons": [
+    {
+      "src": "/icons/logo-114.png",
+      "sizes": "114x114",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#800080",
+  "background_color": "#FFFFFF",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait"
+}
