@@ -14,8 +14,7 @@ const QuizResultsContent: React.FC<QuizResultsContentProps> = ({ completedSteps 
     const correctQuestions = countCorrectQuestions(completedSteps)
 
     const router = useRouter()
-    const navigateToHome = () => router.push("/")
-    const playAgain = () => router.refresh()
+    const navigateToHome = () => router.back()
 
     return (
         <div className="w-full h-full flex flex-col items-center justify-center space-y-4">
@@ -34,11 +33,8 @@ const QuizResultsContent: React.FC<QuizResultsContentProps> = ({ completedSteps 
             </div>
 
             <div className="flex space-x-2">
-                <Button onClick={navigateToHome} variant="outlined">
+                <Button onClick={navigateToHome} variant="contained">
                     Back
-                </Button>
-                <Button onClick={playAgain} variant="contained">
-                    Play Again
                 </Button>
             </div>
         </div>

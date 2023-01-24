@@ -1,4 +1,4 @@
-export default function Head() {
+export default function MultiChoiceQuizHead() {
   return (
     <>
       <title>Multi choice quiz</title>

@@ -38,3 +38,6 @@ next-env.d.ts
 .vscode
 
 public/workbox-*.js
+public/workbox-*.js.map
+public/sw.js
+public/sw.js.map
