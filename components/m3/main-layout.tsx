@@ -2,7 +2,7 @@
 
 import { Box, Container, useMediaQuery, useTheme } from "@mui/material"
 import { useState } from "react"
-import NavDrawer from "./drawer/nav-drawer"
+import NavDrawer from "../../app/(m3)/NavDrawer"
 import Header from "./header/header"
 
 interface MainLayoutProps {

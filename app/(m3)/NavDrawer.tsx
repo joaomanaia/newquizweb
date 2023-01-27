@@ -11,8 +11,8 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material"
-import { FC } from "react"
-import { usePathname, useRouter } from "next/navigation"
+import { usePathname } from "next/navigation"
+import NextLink from "next/link"
 import { HomeRounded, FormatListBulletedRounded } from "@mui/icons-material"
 
 export interface NavDrawerProps extends DrawerProps {}
@@ -52,26 +52,21 @@ const categories: NavDrawerItemGroup[] = [
         pathName: "/multichoicequiz",
       },
       /*
-      {
-        title: "Wordle",
-        icon: <PasswordRounded />,
-        pathName: "/wordle",
-      }
-      */
-    ]
-  }
+        {
+          title: "Wordle",
+          icon: <PasswordRounded />,
+          pathName: "/wordle",
+        }
+        */
+    ],
+  },
 ]
 
-const NavDrawer: FC<NavDrawerProps> = (props) => {
+const NavDrawer: React.FC<NavDrawerProps> = (props) => {
   const { ...others } = props
 
-  const router = useRouter()
   const routerPath = usePathname()
 
-  const handleListItemClick = (navDrawerItem: NavDrawerItem) => {    
-    router.push(navDrawerItem.pathName)
-  }
-  
   return (
     <Drawer variant="permanent" {...others}>
       <AppBar color="default" elevation={0} position="sticky">
@@ -90,15 +85,18 @@ const NavDrawer: FC<NavDrawerProps> = (props) => {
               </ListItem>
             )}
             {children.map((navDrawerItem) => (
-              <ListItem key={navDrawerItem.title}>
-                <ListItemButton
-                  selected={routerPath == navDrawerItem.pathName}
-                  onClick={() => handleListItemClick(navDrawerItem)}
-                >
-                  <ListItemIcon>{navDrawerItem.icon}</ListItemIcon>
-                  <ListItemText>{navDrawerItem.title}</ListItemText>
-                </ListItemButton>
-              </ListItem>
+              <NextLink 
+                className="text-inherit bg-inherit decoration-transparent"
+                href={navDrawerItem.pathName}
+                key={navDrawerItem.title}
+                passHref>
+                <ListItem>
+                  <ListItemButton selected={routerPath == navDrawerItem.pathName}>
+                    <ListItemIcon>{navDrawerItem.icon}</ListItemIcon>
+                    <ListItemText>{navDrawerItem.title}</ListItemText>
+                  </ListItemButton>
+                </ListItem>
+              </NextLink>
             ))}
           </Box>
         ))}
