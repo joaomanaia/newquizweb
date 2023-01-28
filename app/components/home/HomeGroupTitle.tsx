@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material"
-import { HomeGroupTitleItem } from "../../model/HomeCardItem"
+import { HomeGroupTitleItem } from "../../../model/HomeCardItem"
 
 const HomeGroupTitle: React.FC<HomeGroupTitleItem> = ({ title }) => {
   return (

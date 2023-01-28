@@ -1,4 +1,4 @@
-import HomeCardItem, { HomeCustomItem, HomeGroupTitleItem, HomeLargeCardItem } from "../../model/HomeCardItem"
+import HomeCardItem, { HomeCustomItem, HomeGroupTitleItem, HomeLargeCardItem } from "../../../model/HomeCardItem"
 import HomeGroupTitle from "./HomeGroupTitle"
 import HomeLargeCard from "./HomeLargeCard"
 

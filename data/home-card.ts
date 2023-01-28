@@ -18,7 +18,7 @@ export const homeCardItems: HomeCardItem[] = [
     "multichoicequiz_quickquiz",
     "Quick quiz",
     ShuffleRounded,
-    "/multichoicequiz/game"
+    "/multichoicequiz"
   ),
   /*
     new HomeGroupTitleItem("wordle_title", "Wordle"),
@@ -37,7 +37,7 @@ export const multichoiceItems: HomeCardItem[] = [
     "multichoicequiz_quickquiz",
     "Quick quiz",
     ShuffleRounded,
-    "/multichoicequiz/game",
+    "/multichoicequiz",
     "primary"
   ),
 ]

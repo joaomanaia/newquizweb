@@ -1,5 +1,5 @@
 import { Card, Typography } from "@mui/material"
-import { HomeLargeCardItem } from "../../model/HomeCardItem"
+import { HomeLargeCardItem } from "../../../model/HomeCardItem"
 import NextLink from "next/link"
 
 const HomeLargeCard: React.FC<HomeLargeCardItem> = ({ title, Icon, variant, href }) => {  

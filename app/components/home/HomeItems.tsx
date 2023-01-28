@@ -2,7 +2,7 @@
 
 import { Container } from "@mui/material"
 import React from "react"
-import HomeCardItem from "../../model/HomeCardItem"
+import HomeCardItem from "../../../model/HomeCardItem"
 import HomeCardItemContent from "./HomeCardItemContent"
 
 type HomeItemsProps = {
