@@ -2,8 +2,8 @@
 
 import { Box, Container, useMediaQuery, useTheme } from "@mui/material"
 import { useState } from "react"
-import NavDrawer from "./drawer/nav-drawer"
-import Header from "./header/header"
+import NavDrawer from "./NavDrawer"
+import Header from "./Header"
 
 interface MainLayoutProps {
   children: React.ReactNode

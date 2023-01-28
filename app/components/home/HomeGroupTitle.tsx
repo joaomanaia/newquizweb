@@ -1,5 +1,5 @@
-import { Typography, Unstable_Grid2 as Grid2 } from "@mui/material"
-import { HomeGroupTitleItem } from "../../model/HomeCardItem"
+import { Typography } from "@mui/material"
+import { HomeGroupTitleItem } from "../../../model/HomeCardItem"
 
 const HomeGroupTitle: React.FC<HomeGroupTitleItem> = ({ title }) => {
   return (
