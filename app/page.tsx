@@ -1,25 +1,17 @@
-"use client"
-
 import { InstallMobileRounded, ShuffleRounded } from "@mui/icons-material"
 import { Container } from "@mui/material"
-import { useRouter } from "next/navigation"
-import HomeCardItemContent from "../components/home/HomeCardItemContent"
+import HomeCardItemContent from "./(home)/HomeCardItemContent"
 import HomeCardItem, { HomeGroupTitleItem, HomeLargeCardItem } from "../model/HomeCardItem"
 
 const AMAZON_APP_LINK = "https://www.amazon.com/gp/product/B08T8JN4P9"
 
 export default function Page() {
-  const router = useRouter()
-
-  const navigateToAndroidAppStore = () => router.push(AMAZON_APP_LINK)
-  const navigateToQuickMultiChoiceQuiz = () => router.push("/multichoicequiz/game")
-
   const homeCardItems: HomeCardItem[] = [
     new HomeLargeCardItem(
       "install_android_app",
       "Install android game",
       InstallMobileRounded,
-      navigateToAndroidAppStore,
+      AMAZON_APP_LINK,
       "outlined"
     ),
     new HomeGroupTitleItem("multichoicequiz_title", "Multi choice quiz"),
@@ -27,7 +19,7 @@ export default function Page() {
       "multichoicequiz_quickquiz",
       "Quick quiz",
       ShuffleRounded,
-      navigateToQuickMultiChoiceQuiz
+      "/multichoicequiz/game"
     ),
     /*
     new HomeGroupTitleItem("wordle_title", "Wordle"),

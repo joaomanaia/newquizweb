@@ -5,7 +5,7 @@ import ThemeSchemeProvider from "../core/theme/context/ThemeSchemeContext"
 import M3ThemeProvider from "../core/theme/m3/M3ThemeProvider"
 import { CssBaseline } from "@mui/material"
 import "../styles/globals.css"
-import MainLayout from "../components/m3/main-layout"
+import MainLayout from "./(m3)/MainLayout"
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

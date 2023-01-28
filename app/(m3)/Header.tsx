@@ -14,20 +14,12 @@ import ColorIcon from "@mui/icons-material/ColorLensOutlined"
 import DarkIcon from "@mui/icons-material/DarkModeOutlined"
 import LightIcon from "@mui/icons-material/LightModeOutlined"
 import RestartIcon from "@mui/icons-material/RefreshOutlined"
-import { useRouter } from "next/router"
-import { ThemeModeContext } from "../../../core/theme/context/ThemeModeContext"
-import { ThemeSchemeContext } from "../../../core/theme/context/ThemeSchemeContext"
-import { ExitToAppRounded, PersonRounded } from "@mui/icons-material"
+import { ThemeModeContext } from "../../core/theme/context/ThemeModeContext"
+import { ThemeSchemeContext } from "../../core/theme/context/ThemeSchemeContext"
 
 interface HeaderProps {
   onDrawerToggle?: () => void
   window?: () => Window
-}
-
-interface HeaderAuthUserProps {
-  avatar?: string
-  name?: string
-  loggedIn: boolean
 }
 
 const Header: FC<HeaderProps> = ({ onDrawerToggle, window }) => {

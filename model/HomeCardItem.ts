@@ -26,13 +26,13 @@ export class HomeLargeCardItem extends HomeCardItem {
   Icon: OverridableComponent<SvgIconTypeMap<{}, "svg">>
   enabled: boolean
   variant: OverridableStringUnion<'elevation' | 'outlined', PaperPropsVariantOverrides>
-  onClick: () => void
+  href: string
 
   constructor(
     id: string,
     title: string,
     Icon: OverridableComponent<SvgIconTypeMap<{}, "svg">>,
-    onClick: () => void,
+    href: string,
     variant: OverridableStringUnion<'elevation' | 'outlined', PaperPropsVariantOverrides> = "filled",
     enabled: boolean = true
   ) {
@@ -42,7 +42,7 @@ export class HomeLargeCardItem extends HomeCardItem {
     this.Icon = Icon
     this.enabled = enabled
     this.variant = variant
-    this.onClick = onClick
+    this.href = href
   }
 }
 
