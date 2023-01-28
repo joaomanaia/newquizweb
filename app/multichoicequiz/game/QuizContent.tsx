@@ -3,22 +3,22 @@
 import { Button, Typography } from "@mui/material"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
-import { logGameStart } from "../../core/logging_analytics/multichoice_analytics"
-import { delay } from "../../core/util/DelayUtil"
-import { analytics } from "../../firebase"
+import { logGameStart } from "../../../core/logging_analytics/multichoice_analytics"
+import { delay } from "../../../core/util/DelayUtil"
+import { analytics } from "../../../firebase"
 import MultiChoiceQuestion, {
   decodeBase64Question,
-} from "../../model/multichoicequiz/MultiChoiceQuestion"
+} from "../../../model/multichoicequiz/MultiChoiceQuestion"
 import MultiChoiceQuestionStep, {
   Completed,
   NotCurrent,
-} from "../../model/multichoicequiz/MultiChoiceQuestionStep"
-import RemainingTime from "../../model/multichoicequiz/RemainingTime"
-import SelectedAnswer from "../../model/multichoicequiz/SelectedAnswer"
+} from "../../../model/multichoicequiz/MultiChoiceQuestionStep"
+import RemainingTime from "../../../model/multichoicequiz/RemainingTime"
+import SelectedAnswer from "../../../model/multichoicequiz/SelectedAnswer"
 import AnswerCard from "./AnswerCard"
 import ProgressWithText from "./ProgressWithText"
 import QuizStepView from "./QuizStepView"
-import QuizResultsContent from "./results/QuizResultsContent"
+import QuizResultsContent from "./QuizResultsContent"
 
 const MIN_QUIZ_TIME = 0
 const MAX_QUIZ_TIME = RemainingTime.MULTI_CHOICE_QUIZ_COUNTDOWN_IN_MILLIS
@@ -41,8 +41,6 @@ const QuizContent: React.FC<QuizContentProps> = ({ questions }) => {
   const [remainingTime, setRemainingTime] = useState(RemainingTime.MAX_VALUE)
 
   const currentQuestion = questionSteps.at(currentQuestionIndex)?.question
-
-  const router = useRouter()
 
   // Count down timer
   useEffect(() => {

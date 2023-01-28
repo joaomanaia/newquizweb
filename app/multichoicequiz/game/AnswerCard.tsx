@@ -1,3 +1,5 @@
+"use client"
+
 import { Card, Typography } from "@mui/material"
 
 interface AnswerCardProps {
@@ -19,11 +21,3 @@ const AnswerCard: React.FC<AnswerCardProps> = ({ text, selected, onClick }) => {
 }
 
 export default AnswerCard
-
-/*
-<ListItem disablePadding>
-      <ListItemButton color={palette.error.main} selected={selected} onClick={onClick}>
-        <ListItemText primary={text} />
-      </ListItemButton>
-    </ListItem>
-    */

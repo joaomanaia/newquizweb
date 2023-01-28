@@ -1,4 +1,4 @@
-import QuizContent from "../../../components/multichoicequiz/QuizContent"
+import QuizContent from "./QuizContent"
 import { getHost } from "../../../core/util/Network"
 import MultiChoiceQuestion from "../../../model/multichoicequiz/MultiChoiceQuestion"
 

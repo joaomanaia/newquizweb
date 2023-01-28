@@ -2,7 +2,7 @@
 
 import { Button } from "@mui/material"
 import { Completed, countCorrectQuestions } from "../../../model/multichoicequiz/MultiChoiceQuestionStep"
-import QuizStepView from "../QuizStepView"
+import QuizStepView from "./QuizStepView"
 import { useRouter } from "next/navigation"
 
 interface QuizResultsContentProps {

@@ -1,5 +1,5 @@
 import { Box, CircularProgress, Typography } from "@mui/material"
-import RemainingTime from "../../model/multichoicequiz/RemainingTime"
+import RemainingTime from "../../../model/multichoicequiz/RemainingTime"
 
 interface ProgressWithTextProps {
   remainingTime: RemainingTime
