@@ -9,7 +9,8 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   experimental: {
-    appDir: true
+    appDir: true,
+    typedRoutes: true
   },
   env: {
     FIREBASE_API_KEY: process.env.FIREBASE_API_KEY,

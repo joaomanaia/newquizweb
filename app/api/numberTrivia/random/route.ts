@@ -1,30 +1,17 @@
-import { NextApiRequest, NextApiResponse } from "next"
-
-type Data = {
-  questions: Question[]
-  message: string | undefined
-}
-
 const BASE_URL = "http://numbersapi.com/random/"
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
-  const min = reqQueryToNumber(req.query.min, 0)
-  const max = reqQueryToNumber(req.query.max, 100000)
-  const size = reqQueryToNumber(req.query.size, 1)
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url)
 
-  if (req.method !== "GET") {
-    res.status(400).end()
-    return
-  }
+  const min = reqQueryToNumber(searchParams.get("min"), 0)
+  const max = reqQueryToNumber(searchParams.get("max"), 100000)
+  const size = reqQueryToNumber(searchParams.get("size"), 1)
 
   if (size > 10) {
-    res.status(400)
-    res.json({ questions: [], message: "Max question size is 10, you requested: " + size })
-
-    return res.end()
+    return new Response("Max question size is 10, you requested: " + size, {
+      status: 400,
+    })
   }
-
-  res.setHeader("Content-Type", "application/json")
 
   const promises: Promise<Question>[] = []
 
@@ -33,17 +20,17 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
   }
 
   const numbers = await Promise.all(promises)
-
-  res.status(200).json({ questions: numbers, message: undefined })
-  res.end()
+  
+  // @ts-ignore
+  return Response.json({ questions: numbers, message: undefined })
 }
 
-const reqQueryToString = (data: string | string[] | undefined) => {
+const reqQueryToString = (data: string | string[] | null) => {
   const dataString = Array.isArray(data) ? data[0] : data
   return dataString ?? null
 }
 
-const reqQueryToNumber = (data: string | string[] | undefined, defaultNumber: number) => {
+const reqQueryToNumber = (data: string | string[] | null, defaultNumber: number) => {
   const dataString = reqQueryToString(data)
 
   return parseInt(dataString ?? defaultNumber.toString())
@@ -58,7 +45,7 @@ const getRandomNumber = (min: number | null, max: number | null): Promise<Questi
   const url =
     min && max ? `${BASE_URL}?min=${min || ""}&max=${max || ""}&json=true` : `${BASE_URL}?json=true`
 
-  return fetch(url)
+  return fetch(url, { cache: 'no-store' })
     .then((response) => response.json())
     .then((data) => {
       const dataText: string = data.text
