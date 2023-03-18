@@ -1,4 +1,4 @@
-export async function GET({ params }: { params: { category: string } }) {
+export async function GET(request: Request, { params }: { params: { category: string } }) {
   const category = params.category
 
   switch (category) {
