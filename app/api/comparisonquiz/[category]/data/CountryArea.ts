@@ -5,12 +5,12 @@ const mapRestCountriesResponseToCompQuizItem = (
 ): ComparisonQuizItem => {
   return {
     title: data.name.common,
-    value: data.population,
+    value: Math.round(data.area),
     imgUrl: data.flags.svg,
   }
 }
 
-export const getCompQuizCountryPopQuestions = async () => {
+export const getCompQuizCountryAreaQuestions = async () => {
   const res = await fetch(`${RESTCOUNTRIES_API_URL}/all`)
 
   const countries: RestCountriesResponse[] = await res.json()

@@ -9,6 +9,13 @@ export async function GET(request: Request, { params }: { params: { category: st
       // @ts-ignore
       return Response.json(questions)
     }
+    case "country-area": {
+      const { getCompQuizCountryAreaQuestions } = await import("./data/CountryArea")
+      const questions = await getCompQuizCountryAreaQuestions()
+
+      // @ts-ignore
+      return Response.json(questions)
+    }
     default: {
       return new Response("Not found", { status: 404 })
     }
