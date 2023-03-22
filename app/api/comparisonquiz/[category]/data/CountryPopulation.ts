@@ -1,4 +1,5 @@
 import { RESTCOUNTRIES_API_URL } from "@/core/common/BaseUrls"
+import { shuffleArray } from "@/core/util/Array"
 
 const mapRestCountriesResponseToCompQuizItem = (
   data: RestCountriesResponse
@@ -15,5 +16,6 @@ export const getCompQuizCountryPopQuestions = async () => {
 
   const countries: RestCountriesResponse[] = await res.json()
 
-  return countries.map(mapRestCountriesResponseToCompQuizItem)
+  const questions = countries.map(mapRestCountriesResponseToCompQuizItem)
+  return shuffleArray(questions)
 }
