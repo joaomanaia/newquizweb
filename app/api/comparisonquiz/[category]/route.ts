@@ -18,7 +18,7 @@ export async function GET(request: Request, { params }: { params: { category: st
     }
     case "movie-popularity": {
       const { getCompQuizMoviePopularityQuestions } = await import("./data/MoviePopularity")
-      const questions = await getCompQuizMoviePopularityQuestions()
+      const questions = await getCompQuizMoviePopularityQuestions("day")
 
       // @ts-ignore
       return Response.json(questions)
