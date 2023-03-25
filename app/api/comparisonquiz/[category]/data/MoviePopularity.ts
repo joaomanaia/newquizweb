@@ -30,7 +30,7 @@ export const getCompQuizMoviePopularityQuestions = async (timeWindow: TimeWindow
   const responseData: OpenTDBResponse = await response.json()
 
   const questions: ComparisonQuizItem[] = responseData.results.map((result) => {
-    const imgUrl = "https://image.tmdb.org/t/p/w500" + result.backdrop_path
+    const imgUrl = "https://image.tmdb.org/t/p/w1280" + result.backdrop_path
 
     return {
       title: result.title,
