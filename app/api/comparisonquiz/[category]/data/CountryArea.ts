@@ -6,7 +6,7 @@ const mapRestCountriesResponseToCompQuizItem = (
 ): ComparisonQuizItem => {
   return {
     title: data.name.common,
-    value: Math.round(data.area),
+    value: data.area,
     imgUrl: data.flags.svg,
   }
 }

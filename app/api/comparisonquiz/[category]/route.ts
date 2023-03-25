@@ -16,6 +16,13 @@ export async function GET(request: Request, { params }: { params: { category: st
       // @ts-ignore
       return Response.json(questions)
     }
+    case "movie-popularity": {
+      const { getCompQuizMoviePopularityQuestions } = await import("./data/MoviePopularity")
+      const questions = await getCompQuizMoviePopularityQuestions()
+
+      // @ts-ignore
+      return Response.json(questions)
+    }
     default: {
       return new Response("Not found", { status: 404 })
     }
