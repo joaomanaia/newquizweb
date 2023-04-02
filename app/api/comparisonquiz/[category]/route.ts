@@ -3,22 +3,29 @@ export async function GET(request: Request, { params }: { params: { category: st
 
   switch (category) {
     case "country-population": {
-      const { getCompQuizCountryPopQuestions } = await import("./data/CountryPopulation")
-      const questions = await getCompQuizCountryPopQuestions()
+      const { getCompQuizCountryAreaQuestions } = await import("./data/RestCountries")
+      const questions = await getCompQuizCountryAreaQuestions("country-population")
 
       // @ts-ignore
       return Response.json(questions)
     }
     case "country-area": {
-      const { getCompQuizCountryAreaQuestions } = await import("./data/CountryArea")
-      const questions = await getCompQuizCountryAreaQuestions()
+      const { getCompQuizCountryAreaQuestions } = await import("./data/RestCountries")
+      const questions = await getCompQuizCountryAreaQuestions("country-area")
 
       // @ts-ignore
       return Response.json(questions)
     }
     case "movie-popularity": {
-      const { getCompQuizMoviePopularityQuestions } = await import("./data/MoviePopularity")
-      const questions = await getCompQuizMoviePopularityQuestions("day")
+      const { getCompQuizMovieQuestions } = await import("./data/Movie")
+      const questions = await getCompQuizMovieQuestions("day", "popularity")
+
+      // @ts-ignore
+      return Response.json(questions)
+    }
+    case "movie-release-date": {
+      const { getCompQuizMovieQuestions } = await import("./data/Movie")
+      const questions = await getCompQuizMovieQuestions("day", "release-date")
 
       // @ts-ignore
       return Response.json(questions)
