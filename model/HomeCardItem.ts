@@ -2,6 +2,7 @@ import { PaperPropsVariantOverrides, SvgIconTypeMap } from "@mui/material"
 import { OverridableStringUnion } from "@mui/types"
 import { OverridableComponent } from "@mui/material/OverridableComponent"
 import React from "react"
+import { UrlObject } from "url"
 
 export default class HomeCardItem {
   id: string
@@ -26,13 +27,13 @@ export class HomeLargeCardItem extends HomeCardItem {
   Icon: OverridableComponent<SvgIconTypeMap<{}, "svg">>
   enabled: boolean
   variant: OverridableStringUnion<'elevation' | 'outlined', PaperPropsVariantOverrides>
-  href: string
+  href: __next_route_internal_types__.RouteImpl<String> | UrlObject
 
   constructor(
     id: string,
     title: string,
     Icon: OverridableComponent<SvgIconTypeMap<{}, "svg">>,
-    href: string,
+    href: __next_route_internal_types__.RouteImpl<String> | UrlObject,
     variant: OverridableStringUnion<'elevation' | 'outlined', PaperPropsVariantOverrides> = "filled",
     enabled: boolean = true
   ) {

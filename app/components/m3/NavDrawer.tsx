@@ -14,13 +14,14 @@ import {
 import { usePathname } from "next/navigation"
 import NextLink from "next/link"
 import { HomeRounded, FormatListBulletedRounded } from "@mui/icons-material"
+import { UrlObject } from "url"
 
 export interface NavDrawerProps extends DrawerProps {}
 
 interface NavDrawerItem {
   title: string
   icon: any
-  pathName: string
+  pathName: __next_route_internal_types__.RouteImpl<String> | UrlObject
   requireAuth?: boolean
 }
 
