@@ -1,46 +1,66 @@
 "use client"
 
-import { Box, Container, useMediaQuery, useTheme } from "@mui/material"
+import { Box, SxProps, useMediaQuery, useTheme } from "@mui/material"
 import { useState } from "react"
-import NavDrawer from "./NavDrawer"
-import Header from "./Header"
+import MainAppBar from "./MainAppBar"
+import MainDrawer from "./MainDrawer"
+
+const drawerWidth = 260
 
 interface MainLayoutProps {
   children: React.ReactNode
 }
 
-const drawerWidth = 256
-
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   const theme = useTheme()
   const isSmUp = useMediaQuery(theme.breakpoints.up("md"))
+
   const [mobileOpen, setMobileOpen] = useState(false)
+
+  const rootStyles: SxProps = {
+    display: "flex",
+    minHeight: "100vh",
+  }
+  const navStyles: SxProps = {
+    width: { md: drawerWidth },
+    flexShrink: { md: 0 },
+  }
+
+  const mainStyles: SxProps = {
+    flex: 1,
+    display: "flex",
+    flexDirection: "column",
+    //bgcolor: '#f3f3f3'
+  }
+  const containerStyles: SxProps = {
+    p: 0,
+    flex: 1,
+  }
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen)
   }
 
   return (
-    <Box sx={{ display: 'flex', minHeight: 'cal(100vh-3px)' }}>
-      <Box component="nav" sx={{ width: { md: drawerWidth }, flexShrink: { md: 0 } }}>
+    <Box sx={rootStyles}>
+      <Box component="nav" sx={navStyles}>
         {isSmUp ? null : (
-          <NavDrawer
+          <MainDrawer
             PaperProps={{ style: { width: drawerWidth } }}
             variant="temporary"
             open={mobileOpen}
             onClose={handleDrawerToggle}
           />
         )}
-        <NavDrawer
+        <MainDrawer
+          variant="permanent"
           PaperProps={{ style: { width: drawerWidth } }}
           sx={{ display: { md: "block", sm: "none", xs: "none" } }}
         />
       </Box>
-      <Box sx={{ flex: 1, display: "flex", flexDirection: "column" }}>
-        <Header onDrawerToggle={handleDrawerToggle} />
-        <Container maxWidth="xl" sx={{ py: 4, flex: 1 }}>
-          {children}
-        </Container>
+      <Box sx={mainStyles}>
+        <MainAppBar onDrawerToggle={handleDrawerToggle} />
+        <Box sx={containerStyles}>{children}</Box>
       </Box>
     </Box>
   )

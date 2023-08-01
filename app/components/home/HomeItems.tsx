@@ -1,9 +1,7 @@
-"use client"
-
-import { Container } from "@mui/material"
 import React from "react"
 import HomeCardItem from "../../../model/HomeCardItem"
 import HomeCardItemContent from "./HomeCardItemContent"
+import MainContainer from "../m3/MainContainer"
 
 type HomeItemsProps = {
   items: HomeCardItem[]
@@ -11,11 +9,11 @@ type HomeItemsProps = {
 
 const HomeItems: React.FC<HomeItemsProps> = ({ items }) => {
   return (
-    <Container className="flex flex-col h-full items-center justify-center space-y-4">
+    <MainContainer className="flex flex-col h-full items-center justify-center space-y-4">
       {items.map((item) => (
         <HomeCardItemContent key={item.id} item={item} />
       ))}
-    </Container>
+    </MainContainer>
   )
 }
 

@@ -1,7 +1,7 @@
-import { FirebaseApp, getApps, initializeApp } from "firebase/app"
+import { FirebaseApp, FirebaseOptions, getApps, initializeApp } from "firebase/app"
 import { Analytics, getAnalytics } from "firebase/analytics"
 
-const firebaseConfig = {
+const firebaseConfig: FirebaseOptions = {
   apiKey: process.env.FIREBASE_API_KEY,
   authDomain: process.env.FIREBASE_AUTH_DOMAIN,
   databaseURL: process.env.FIREBASE_DATABASE_URL,

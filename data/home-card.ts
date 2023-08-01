@@ -1,5 +1,3 @@
-"use client"
-
 import { InstallMobileRounded, ShuffleRounded } from "@mui/icons-material"
 import HomeCardItem, { HomeGroupTitleItem, HomeLargeCardItem } from "../model/HomeCardItem"
 

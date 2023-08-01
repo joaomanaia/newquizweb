@@ -1,3 +1,27 @@
-/* @tailwind base; Problem with m3 */
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .next-link {
+        @apply text-inherit bg-inherit decoration-transparent;
+    }
+}
+
+#colorPicker {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+}
+
+#colorPicker::-webkit-color-swatch {
+    border-radius: 9999px;
+    border: none;
+}
+
+#colorPicker::-moz-color-swatch {
+    border-radius: 9999px;
+    border: none;
+}
