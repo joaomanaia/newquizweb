@@ -8,7 +8,9 @@ const API_URL = "https://opentdb.com/api.php"
 const getOpenTDBQuestions = async (amount: number = 5): Promise<OpenTDBQuestionResponse> => {
   const requestUrl = `${API_URL}?encode=base64&amount=${amount}`
 
-  const res = await fetch(requestUrl)
+  const res = await fetch(requestUrl, {
+    cache: "no-store"
+  })
   const textRes = await res.text()
   return JSON.parse(textRes)
 }
