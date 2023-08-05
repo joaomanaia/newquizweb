@@ -5,6 +5,8 @@ import OpenTDBQuestionResponse, {
 
 const API_URL = "https://opentdb.com/api.php"
 
+export const revalidate = 0
+
 const getOpenTDBQuestions = async (amount: number = 5): Promise<OpenTDBQuestionResponse> => {
   const requestUrl = `${API_URL}?encode=base64&amount=${amount}`
 
