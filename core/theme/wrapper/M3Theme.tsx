@@ -1,5 +1,5 @@
 import { useContext, useMemo } from "react"
-import { CssBaseline, createTheme, ThemeProvider } from "@mui/material"
+import { CssBaseline, createTheme, ThemeProvider, responsiveFontSizes } from "@mui/material"
 import { deepmerge } from "@mui/utils"
 import { ThemeModeContext } from "../providers/ThemeModeProvider"
 import { ThemeSchemeContext } from "../providers/ThemeSchemeProvider"
@@ -19,6 +19,7 @@ const M3Theme = ({ children }: M3Props) => {
 
     let theme = createTheme(muiPalette)
     theme = deepmerge(theme, getMUIComponents(theme))
+    theme = responsiveFontSizes(theme)
 
     return theme
   }, [themeMode, themeScheme])

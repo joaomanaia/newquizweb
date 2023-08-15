@@ -17,10 +17,6 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 
   const [mobileOpen, setMobileOpen] = useState(false)
 
-  const rootStyles: SxProps = {
-    display: "flex",
-    minHeight: "100vh",
-  }
   const navStyles: SxProps = {
     width: { md: drawerWidth },
     flexShrink: { md: 0 },
@@ -42,7 +38,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   }
 
   return (
-    <Box sx={rootStyles}>
+    <Box className="flex h-screen min-h-screen overflow-hidden pb-[2vh]">
       <Box component="nav" sx={navStyles}>
         {isSmUp ? null : (
           <MainDrawer

@@ -109,7 +109,7 @@ const QuizContent: React.FC<QuizContentProps> = ({ questions }) => {
   }
 
   return (
-    <div className="w-screen h-screen flex flex-col items-center justify-center space-y-16">
+    <div className="w-screen h-screen flex flex-col items-center justify-evenly">
       <ProgressWithText
         remainingTime={remainingTime}
         minQuizTime={MIN_QUIZ_TIME}
@@ -128,7 +128,7 @@ const QuizContent: React.FC<QuizContentProps> = ({ questions }) => {
         ))}
       </div>
 
-      <Typography variant="h4">{currentQuestion?.description}</Typography>
+      <Typography align="center" variant="h4" className="mx-8">{currentQuestion?.description}</Typography>
 
       <div className="w-96 space-y-4">
         {currentQuestion?.answers?.map((answer, index) => (

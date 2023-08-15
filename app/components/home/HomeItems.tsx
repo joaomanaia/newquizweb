@@ -9,7 +9,7 @@ type HomeItemsProps = {
 
 const HomeItems: React.FC<HomeItemsProps> = ({ items }) => {
   return (
-    <MainContainer className="flex flex-col h-full items-center justify-center space-y-4">
+    <MainContainer className="flex flex-col h-full items-center justify-center space-y-4 overflow-y-auto">
       {items.map((item) => (
         <HomeCardItemContent key={item.id} item={item} />
       ))}

@@ -1,5 +1,4 @@
 import MultiChoiceQuestion from "./MultiChoiceQuestion"
-import { v4 as uuidv4 } from "uuid"
 
 export default interface OpenTDBQuestionResponse {
   responde_code: number
@@ -22,7 +21,7 @@ export const convertOpenTDBResultToQuestion = (result: OpenTDBResult): MultiChoi
   const shuffledAnswers = shuffled(answers)
 
   return {
-    id: uuidv4(),
+    id: crypto.randomUUID(),
     description: result.question,
     category: result.category,
     difficulty: result.difficulty,
