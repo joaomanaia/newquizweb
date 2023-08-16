@@ -18,7 +18,7 @@ export async function GET(request: Request, { params }: { params: { category: st
     case "movie-release-date":
     case "movie-actor-popularity": {
       const { getCompQuizMovieQuestions } = await import("./data/Movie")
-      const questions = await getCompQuizMovieQuestions("day", category)
+      const questions = await getCompQuizMovieQuestions("week", category)
 
       // @ts-ignore
       return Response.json(questions)
