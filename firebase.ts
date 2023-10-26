@@ -1,5 +1,6 @@
-import { FirebaseApp, FirebaseOptions, getApps, initializeApp } from "firebase/app"
+import { FirebaseOptions, getApps, initializeApp } from "firebase/app"
 import { Analytics, getAnalytics } from "firebase/analytics"
+import { RemoteConfig, fetchAndActivate, getRemoteConfig } from "firebase/remote-config"
 
 const firebaseConfig: FirebaseOptions = {
   apiKey: process.env.FIREBASE_API_KEY,
@@ -9,22 +10,23 @@ const firebaseConfig: FirebaseOptions = {
   storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
   messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
   appId: process.env.FIREBASE_APP_ID,
-  measurementId: process.env.FIREBASE_MEASUREMENT_ID
+  measurementId: process.env.FIREBASE_MEASUREMENT_ID,
 }
 
 // Initialize Firebase
-let app: FirebaseApp
-let appArray = getApps()
-if (!appArray.length) {
-    app = initializeApp(firebaseConfig)
-} else {
-    app = appArray[0]
-}
+export const firebaseApp = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0]
 
 let analytics: Analytics
+let remoteConfig: RemoteConfig
 
-if (app.name && typeof window !== "undefined") {
-  analytics = getAnalytics(app)
+if (firebaseApp.name && typeof window !== "undefined") {
+  analytics = getAnalytics(firebaseApp)
+
+  // Get the Remote Config service for the default app
+  remoteConfig = getRemoteConfig(firebaseApp)
+  const remoteConfigDefaults = require("./remote_config_defaults.json")
+  remoteConfig.defaultConfig = remoteConfigDefaults
+  fetchAndActivate(remoteConfig)
 }
 
-export { analytics }
+export { analytics, remoteConfig }

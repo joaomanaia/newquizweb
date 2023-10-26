@@ -16,6 +16,8 @@ async function getQuestions(): Promise<MultiChoiceQuestion[]> {
     })
 }
 
+export const dynamic = "force-dynamic"
+
 export default async function MultiChoiceQuizPage() {
   const questions = await getQuestions()
 
