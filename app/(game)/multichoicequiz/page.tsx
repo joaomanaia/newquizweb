@@ -2,7 +2,6 @@ import QuizContent from "./components/QuizContent"
 import { getHost } from "../../../core/util/Network"
 import MultiChoiceQuestion from "../../../model/multichoicequiz/MultiChoiceQuestion"
 import QuestionDifficulty from "@/types/QuestionDifficulty"
-import axios from "axios"
 import queryString from "query-string"
 
 export const revalidate = 0

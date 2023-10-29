@@ -1,5 +1,14 @@
 import { InstallMobileRounded, ShuffleRounded } from "@mui/icons-material"
-import HomeCardItem, { HomeGroupTitleItem, HomeLargeCardItem } from "../model/HomeCardItem"
+import HomeCardItem, {
+  HomeGroupTitleItem,
+  HomeHorizontalItemsItem,
+  HomeLargeCardItem,
+} from "../model/HomeCardItem"
+import {
+  DifficultySelectorItem,
+  DifficultyWithRandom,
+} from "@/app/components/home/category/difficulty-selector-item"
+import QuestionDifficulty from "@/types/QuestionDifficulty"
 
 const AMAZON_APP_LINK = "https://www.amazon.com/gp/product/B08T8JN4P9"
 
@@ -29,13 +38,20 @@ export const homeCardItems: HomeCardItem[] = [
     */
 ]
 
-export const multichoiceItems: HomeCardItem[] = [
+export const getMultichoiceItems = (selectedDifficulty?: QuestionDifficulty): HomeCardItem[] => [
   new HomeGroupTitleItem("quickquiz_title", "Quick quiz"),
   new HomeLargeCardItem(
     "multichoicequiz_quickquiz",
     "Quick quiz",
     ShuffleRounded,
-    "/multichoicequiz",
+    selectedDifficulty ? `/multichoicequiz?difficulty=${selectedDifficulty}` : "/multichoicequiz",
     "primary"
+  ),
+  new HomeGroupTitleItem("difficulty_selector_title", "Difficulty"),
+  new HomeHorizontalItemsItem<DifficultyWithRandom>(
+    "multichoicequiz_difficulty_selector",
+    ["random", "easy", "medium", "hard"],
+    (item) => <DifficultySelectorItem difficulty={item} />,
+    "flex space-x-4"
   ),
 ]

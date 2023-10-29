@@ -26,7 +26,7 @@ export class HomeLargeCardItem extends HomeCardItem {
   title: string
   Icon: OverridableComponent<SvgIconTypeMap<{}, "svg">>
   enabled: boolean
-  variant: OverridableStringUnion<'elevation' | 'outlined', PaperPropsVariantOverrides>
+  variant: OverridableStringUnion<"elevation" | "outlined", PaperPropsVariantOverrides>
   href: __next_route_internal_types__.RouteImpl<String> | UrlObject
 
   constructor(
@@ -34,7 +34,10 @@ export class HomeLargeCardItem extends HomeCardItem {
     title: string,
     Icon: OverridableComponent<SvgIconTypeMap<{}, "svg">>,
     href: __next_route_internal_types__.RouteImpl<String> | UrlObject,
-    variant: OverridableStringUnion<'elevation' | 'outlined', PaperPropsVariantOverrides> = "filled",
+    variant: OverridableStringUnion<
+      "elevation" | "outlined",
+      PaperPropsVariantOverrides
+    > = "filled",
     enabled: boolean = true
   ) {
     super(id)
@@ -51,13 +54,24 @@ export class HomeMediumCardItem extends HomeLargeCardItem {}
 
 export class HomeHorizontalItemsItem<T> extends HomeCardItem {
   items: T[]
-  itemContent: () => React.ReactNode
+  itemContent: (item: T) => React.ReactNode
 
-  constructor(id: string, items: T[], itemContent: () => React.ReactNode) {
+  /**
+   * A className to be applied to the root element of the row component
+   */
+  className?: string
+
+  constructor(
+    id: string,
+    items: T[],
+    itemContent: (item: T) => React.ReactNode,
+    className?: string
+  ) {
     super(id)
 
     this.items = items
     this.itemContent = itemContent
+    this.className = className
   }
 }
 
