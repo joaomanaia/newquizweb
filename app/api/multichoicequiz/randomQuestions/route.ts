@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server"
+import { NextRequest, NextResponse } from "next/server"
 import OpenTDBQuestionResponse, {
   convertOpenTDBResultToQuestion,
 } from "@/model/multichoicequiz/OpenTDBQuestionResponse"
@@ -9,9 +9,12 @@ const API_URL = "https://opentdb.com/api.php"
 
 export const revalidate = 0
 
-export async function GET() {
+export async function GET(req: NextRequest) {
   try {
-    const questions = await getOpenTDBQuestions()
+    const { searchParams } = new URL(req.url)
+    const difficulty = searchParams.get("difficulty") as QuestionDifficulty
+
+    const questions = await getOpenTDBQuestions(5, difficulty)
 
     const openTDBResponse = questions.results
     const results = openTDBResponse.map(convertOpenTDBResultToQuestion)
