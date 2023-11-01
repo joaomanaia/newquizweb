@@ -1,0 +1,262 @@
+[
+  {
+    "club": "Arsenal",
+    "icon": "https://www.arsenal.com/themes/custom/arsenal_main/logo.svg",
+    "trophies": 49,
+    "founded": -2621892195000,
+    "country": "England",
+    "stadium": {
+      "name": "Emirates Stadium",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/29/London_Emirates_Stadium_arsenal.jpg",
+      "capacity": 60704,
+      "opened": 1153522800000
+    }
+  },
+  {
+    "club": "Aston Villa",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/9/9f/Aston_Villa_logo.svg",
+    "trophies": 21,
+    "founded": -3001447395000,
+    "country": "England",
+    "stadium": {
+      "name": "Villa Park",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Birmingham_aston_villa_park_stadium.jpg",
+      "capacity": 42640,
+      "opened": -2294436195000
+    }
+  },
+  {
+    "club": "Bournemouth",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/e/e5/AFC_Bournemouth_%282013%29.svg",
+    "trophies": 5,
+    "founded": -2216935395000,
+    "country": "England",
+    "stadium": {
+      "name": "Dean Court",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Deancourt_14092013_vblackpool.jpg",
+      "capacity": 11307,
+      "opened": -1866237795000
+    }
+  },
+  {
+    "club": "Brentford",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/2/2a/Brentford_FC_crest.svg",
+    "trophies": 4,
+    "founded": -2531690595000,
+    "country": "England",
+    "stadium": {
+      "name": "Brentford Community Stadium",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Brentford_Community_Stadium_2020.jpg",
+      "capacity": 17250,
+      "opened": 1598914800000
+    }
+  },
+  {
+    "club": "Brighton & Hove Albion",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/f/fd/Brighton_%26_Hove_Albion_logo.svg",
+    "trophies": 4,
+    "founded": -2162416995000,
+    "country": "England",
+    "stadium": {
+      "name": "Falmer Stadium",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Falmer_Stadium_-_night.jpg",
+      "capacity": 31876,
+      "opened": 1310770800000
+    }
+  },
+  {
+    "club": "Chelsea",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg",
+    "trophies": 34,
+    "founded": -2045344995000,
+    "country": "England",
+    "stadium": {
+      "name": "Stamford Bridge",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/30/London_stanford_bridge.JPG",
+      "capacity": 40343,
+      "opened": -2924637795000
+    }
+  },
+  {
+    "club": "Crystal Palace",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/a/a2/Crystal_Palace_FC_logo_%282022%29.svg",
+    "trophies": 3,
+    "founded": -2029447395000,
+    "country": "England",
+    "stadium": {
+      "name": "Selhurst Park",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/47/London_Selhurst_Park_crystal_palace_stadium_aerialview.JPG",
+      "capacity": 25485,
+      "opened": -1115254800000
+    }
+  },
+  {
+    "club": "Everton",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/7/7c/Everton_FC_logo.svg",
+    "trophies": 25,
+    "founded": -2900272995000,
+    "country": "England",
+    "stadium": {
+      "name": "Goodison Park",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/8/88/Goodison_Park%2C_October_2021.jpg",
+      "capacity": 39572,
+      "opened": -2441056995000
+    }
+  },
+  {
+    "club": "Fulham",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/e/eb/Fulham_FC_%28shield%29.svg",
+    "trophies": 5,
+    "founded": -2865280995000,
+    "country": "England",
+    "stadium": {
+      "name": "Craven Cottage",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/75/Craven_Cottage_Football_Ground_-_geograph.org.uk_-_778731.jpg",
+      "capacity": 22384,
+      "opened": -2310765795000
+    }
+  },
+  {
+    "club": "Leeds United",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/5/54/Leeds_United_F.C._logo.svg",
+    "trophies": 13,
+    "founded": -1584489600000,
+    "country": "England",
+    "stadium": {
+      "name": "Elland Road",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Leeds_elland_road_stadium.jpg/480px-Leeds_elland_road_stadium.jpg",
+      "capacity": 37916,
+      "opened": -2281130595000
+    }
+  },
+  {
+    "club": "Leicester City",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/2/2d/Leicester_City_crest.svg",
+    "trophies": 15,
+    "founded": -2688333795000,
+    "country": "England",
+    "stadium": {
+      "name": "King Power Stadium",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Leicester_city_king_power_stadium.jpg/480px-Leicester_city_king_power_stadium.jpg",
+      "capacity": 32262,
+      "opened": 1027378800000
+    }
+  },
+  {
+    "club": "Liverpool",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg",
+    "trophies": 70,
+    "founded": -2448141795000,
+    "country": "England",
+    "stadium": {
+      "name": "Anfield",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Panorama_of_Anfield_with_new_main_stand_%2829676137824%29.jpg/480px-Panorama_of_Anfield_with_new_main_stand_%2829676137824%29.jpg",
+      "capacity": 54074,
+      "opened": -2690493795000
+    }
+  },
+  {
+    "club": "Manchester City",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg",
+    "trophies": 40,
+    "founded": -2812490595000,
+    "country": "England",
+    "stadium": {
+      "name": "Etihad Stadium",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Manchester_city_etihad_stadium_%28cropped%29.jpg/480px-Manchester_city_etihad_stadium_%28cropped%29.jpg",
+      "capacity": 53400,
+      "opened": 1060470000000
+    }
+  },
+  {
+    "club": "Manchester United",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg",
+    "trophies": 69,
+    "founded": -2136151395000,
+    "country": "England",
+    "stadium": {
+      "name": "Old Trafford",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Manchester_United_Old_Trafford_%28cropped%29.jpg/480px-Manchester_United_Old_Trafford_%28cropped%29.jpg",
+      "capacity": 76310,
+      "opened": -1889220195000
+    }
+  },
+  {
+    "club": "Newcastle United",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/5/56/Newcastle_United_Logo.svg",
+    "trophies": 16,
+    "founded": -2431812195000,
+    "country": "England",
+    "stadium": {
+      "name": "St James' Park",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Newcastle_st-james-park_stadium.jpg/480px-Newcastle_st-james-park_stadium.jpg",
+      "capacity": 52305,
+      "opened": -2818711395000
+    }
+  },
+  {
+    "club": "Nottingham Forest",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/e/e5/Nottingham_Forest_F.C._logo.svg",
+    "trophies": 15,
+    "founded": -3306439395000,
+    "country": "England",
+    "stadium": {
+      "name": "City Ground",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Nottingham_the_city_ground_stadium_forest.jpg/480px-Nottingham_the_city_ground_stadium_forest.jpg",
+      "capacity": 30404,
+      "opened": -2250890595000
+    }
+  },
+  {
+    "club": "Southampton",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/c/c9/FC_Southampton.svg",
+    "trophies": 3,
+    "founded": -2654292195000,
+    "country": "England",
+    "stadium": {
+      "name": "St Mary's Stadium",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/St_Mary%27s_Stadium_%282%29.jpg/480px-St_Mary%27s_Stadium_%282%29.jpg",
+      "capacity": 32384,
+      "opened": 996620400000
+    }
+  },
+  {
+    "club": "Tottenham Hotspur",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/b/b4/Tottenham_Hotspur.svg",
+    "trophies": 26,
+    "founded": -2755639395000,
+    "country": "England",
+    "stadium": {
+      "name": "Tottenham Hotspur Stadium",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/London_Tottenham_Hotspur_Stadium.jpg/480px-London_Tottenham_Hotspur_Stadium.jpg",
+      "capacity": 62850,
+      "opened": 1554246000000
+    }
+  },
+  {
+    "club": "West Ham United",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/c/c2/West_Ham_United_FC_logo.svg",
+    "trophies": 8,
+    "founded": -2351287395000,
+    "country": "England",
+    "stadium": {
+      "name": "London Stadium",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/London_Olympic_Stadium_West_Ham.jpg/480px-London_Olympic_Stadium_West_Ham.jpg",
+      "capacity": 66000,
+      "opened": 1336172400000
+    }
+  },
+  {
+    "club": "Wolverhampton Wanderers",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/f/fc/Wolverhampton_Wanderers.svg",
+    "trophies": 20,
+    "founded": -2907184995000,
+    "country": "England",
+    "stadium": {
+      "name": "Molineux Stadium",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/MolineuxStadium2022.jpg/480px-MolineuxStadium2022.jpg",
+      "capacity": 31750,
+      "opened": -2534973795000
+    }
+  }
+]

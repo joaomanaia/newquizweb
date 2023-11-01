@@ -1,9 +1,9 @@
 import { RESTCOUNTRIES_API_URL } from "@/core/common/BaseUrls"
 import { shuffleArray } from "@/core/util/Array"
-import { ComparisonQuizRestCountryCategory } from "@/types/ComparisonQuizTypes"
+import { RestCountryCategory } from "@/types/ComparisonQuizTypes"
 
 export const getCompQuizCountryAreaQuestions = async (
-  category: ComparisonQuizRestCountryCategory
+  category: RestCountryCategory
 ): Promise<ComparisonQuizItem[]> => {
   const res = await fetch(`${RESTCOUNTRIES_API_URL}/all`)
 
@@ -17,7 +17,7 @@ export const getCompQuizCountryAreaQuestions = async (
 
 const mapRestCountriesResponseToCompQuizItem = (
   data: RestCountriesResponse,
-  category: ComparisonQuizRestCountryCategory
+  category: RestCountryCategory
 ): ComparisonQuizItem => {
   const value = getValueFromRestCountriesResponse(data, category)
 
@@ -30,7 +30,7 @@ const mapRestCountriesResponseToCompQuizItem = (
 
 const getValueFromRestCountriesResponse = (
   data: RestCountriesResponse,
-  category: ComparisonQuizRestCountryCategory
+  category: RestCountryCategory
 ) => {
   switch (category) {
     case "country-population":

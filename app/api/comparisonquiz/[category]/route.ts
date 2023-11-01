@@ -23,6 +23,12 @@ export async function GET(request: Request, { params }: { params: { category: st
       // @ts-ignore
       return Response.json(questions)
     }
+    case "club-football-trophies": {
+      const { getClubFootballQuestions } = await import("./data/ClubFootball")
+      const questions = await getClubFootballQuestions(category)
+
+      return Response.json(questions)
+    }
     default: {
       return new Response("Not found", { status: 404 })
     }

@@ -1,6 +1,6 @@
 import { MOVIE_DEFAULT_CATEGORY_IMG, TMDB_API_URL } from "@/core/common/BaseUrls"
 import { shuffleArray } from "@/core/util/Array"
-import { ComparisonQuizMovieCategory } from "@/types/ComparisonQuizTypes"
+import { MovieCategory } from "@/types/ComparisonQuizTypes"
 import type { TMDBResponse, MovieTMDBResult, PeopleTMDBResult } from "@/types/OpenTDBTypes"
 
 type TimeWindow = "day" | "week"
@@ -9,7 +9,7 @@ const BASE_IMG_URL = "https://image.tmdb.org/t/p/w1280"
 
 export const getCompQuizMovieQuestions = async (
   timeWindow: TimeWindow,
-  category: ComparisonQuizMovieCategory
+  category: MovieCategory
 ): Promise<ComparisonQuizItem[]> => {
   const apiKey = process.env.TMDB_API_KEY
   if (!apiKey) throw new Error("Missing TMDB API key")
@@ -67,7 +67,7 @@ export const getCompQuizMovieQuestions = async (
 
 const getMovieQuestionValue = (
   result: MovieTMDBResult,
-  category: ComparisonQuizMovieCategory
+  category: MovieCategory
 ): number => {
   switch (category) {
     case "movie-popularity":
@@ -81,7 +81,7 @@ const getMovieQuestionValue = (
 
 const getActorQuestionValue = (
   result: PeopleTMDBResult,
-  category: ComparisonQuizMovieCategory
+  category: MovieCategory
 ): number => {
   switch (category) {
     case "movie-actor-popularity":
