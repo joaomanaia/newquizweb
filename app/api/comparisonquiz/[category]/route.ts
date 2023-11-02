@@ -23,7 +23,10 @@ export async function GET(request: Request, { params }: { params: { category: st
       // @ts-ignore
       return Response.json(questions)
     }
-    case "club-football-trophies": {
+    case "club-trophies":
+    case "club-foundation-date":
+    case "club-stadium-capacity":
+    case "club-stadium-opened-date": {
       const { getClubFootballQuestions } = await import("./data/ClubFootball")
       const questions = await getClubFootballQuestions(category)
 

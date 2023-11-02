@@ -5,7 +5,11 @@ export type MovieCategory =
 
 export type RestCountryCategory = "country-population" | "country-area"
 
-export type ClubFootballCategory = "club-football-trophies"
+export type ClubFootballCategory = 
+  | "club-trophies"
+  | "club-foundation-date"
+  | "club-stadium-capacity"
+  | "club-stadium-opened-date"
 
 export type ComparisonQuizCategory =
   | MovieCategory
