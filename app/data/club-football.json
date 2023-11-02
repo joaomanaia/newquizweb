@@ -7,7 +7,7 @@
     "country": "England",
     "stadium": {
       "name": "Emirates Stadium",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/2/29/London_Emirates_Stadium_arsenal.jpg",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/London_Emirates_Stadium_arsenal.jpg/480px-London_Emirates_Stadium_arsenal.jpg",
       "capacity": 60704,
       "opened": 1153522800000
     }
@@ -20,7 +20,7 @@
     "country": "England",
     "stadium": {
       "name": "Villa Park",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Birmingham_aston_villa_park_stadium.jpg",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Birmingham_aston_villa_park_stadium.jpg/480px-Birmingham_aston_villa_park_stadium.jpg",
       "capacity": 42640,
       "opened": -2294436195000
     }
@@ -33,7 +33,7 @@
     "country": "England",
     "stadium": {
       "name": "Dean Court",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Deancourt_14092013_vblackpool.jpg",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Deancourt_14092013_vblackpool.jpg/480px-Deancourt_14092013_vblackpool.jpg",
       "capacity": 11307,
       "opened": -1866237795000
     }
@@ -46,7 +46,7 @@
     "country": "England",
     "stadium": {
       "name": "Brentford Community Stadium",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Brentford_Community_Stadium_2020.jpg",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Brentford_Community_Stadium_2020.jpg/480px-Brentford_Community_Stadium_2020.jpg",
       "capacity": 17250,
       "opened": 1598914800000
     }
@@ -59,7 +59,7 @@
     "country": "England",
     "stadium": {
       "name": "Falmer Stadium",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Falmer_Stadium_-_night.jpg",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Falmer_Stadium_-_night.jpg/480px-Falmer_Stadium_-_night.jpg",
       "capacity": 31876,
       "opened": 1310770800000
     }
@@ -72,7 +72,7 @@
     "country": "England",
     "stadium": {
       "name": "Stamford Bridge",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/30/London_stanford_bridge.JPG",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/London_stanford_bridge.JPG/480px-London_stanford_bridge.JPG",
       "capacity": 40343,
       "opened": -2924637795000
     }
@@ -85,7 +85,7 @@
     "country": "England",
     "stadium": {
       "name": "Selhurst Park",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/4/47/London_Selhurst_Park_crystal_palace_stadium_aerialview.JPG",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/London_Selhurst_Park_crystal_palace_stadium_aerialview.JPG/480px-London_Selhurst_Park_crystal_palace_stadium_aerialview.JPG",
       "capacity": 25485,
       "opened": -1115254800000
     }
@@ -98,7 +98,7 @@
     "country": "England",
     "stadium": {
       "name": "Goodison Park",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/8/88/Goodison_Park%2C_October_2021.jpg",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Liverpool_fc_everton_stadium.jpg/480px-Liverpool_fc_everton_stadium.jpg",
       "capacity": 39572,
       "opened": -2441056995000
     }
@@ -111,7 +111,7 @@
     "country": "England",
     "stadium": {
       "name": "Craven Cottage",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/7/75/Craven_Cottage_Football_Ground_-_geograph.org.uk_-_778731.jpg",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Craven_Cottage_Football_Ground_-_geograph.org.uk_-_778731.jpg/480px-Craven_Cottage_Football_Ground_-_geograph.org.uk_-_778731.jpg",
       "capacity": 22384,
       "opened": -2310765795000
     }
