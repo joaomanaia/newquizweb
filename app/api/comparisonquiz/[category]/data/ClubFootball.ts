@@ -1,6 +1,6 @@
 import { shuffleArray } from "@/core/util/Array"
 import { ClubFootballCategory } from "@/types/ComparisonQuizTypes"
-import { promises as fs } from "fs"
+import clubData from "@/app/data/club-football.json"
 
 type ClubFootballData = {
   club: string
@@ -21,9 +21,6 @@ export const getClubFootballQuestions = async (
   category: ClubFootballCategory
 ): Promise<ComparisonQuizItem[]> => {
   // Get the data from the json file
-  const file = await fs.readFile(process.cwd() + "/data/comparison-quiz/club-football.json", "utf-8")
-  const clubData: ClubFootballData[] = JSON.parse(file)
-
   const questions = clubData.map((club) => {
     const value = getValueFromClubFootball(club, category)
 
