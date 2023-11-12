@@ -258,5 +258,265 @@
       "capacity": 31750,
       "opened": -2534973795000
     }
+  },
+  {
+    "club": "Almeria",
+    "icon": "https://upload.wikimedia.org/wikipedia/pt/b/b7/UD_Almeria.png",
+    "trophies": 1,
+    "founded": 617414400000,
+    "country": "Spain",
+    "stadium": {
+      "name": "Power Horse Stadium",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/PXL_20230211_Power_Horse_Stadium_02.jpg/480px-PXL_20230211_Power_Horse_Stadium_02.jpg",
+      "capacity": 15274,
+      "opened": 1091232000000
+    }
+  },
+  {
+    "club": "Athletic Club",
+    "icon": "https://cdn.athletic-club.eus/imagenes/paginas_plantilla/athletic-escudo-1.png",
+    "trophies": 35,
+    "founded": -2253571200000,
+    "country": "Spain",
+    "stadium": {
+      "name": "San Mamés Barria",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bilbao_San_Mam%C3%A9s_Stadium_1.jpg/480px-Bilbao_San_Mam%C3%A9s_Stadium_1.jpg",
+      "capacity": 53331,
+      "opened": 1379289600000
+    }
+  },
+  {
+    "club": "Atletico Madrid",
+    "icon": "https://upload.wikimedia.org/wikipedia/pt/c/c1/Atletico_Madrid_logo.svg",
+    "trophies": 33,
+    "founded": -2104444800000,
+    "country": "Spain",
+    "stadium": {
+      "name": "Cívitas Metropolitano",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Madrid_-_Estadio_Wanda_Metropolitano_30.jpg/480px-Madrid_-_Estadio_Wanda_Metropolitano_30.jpg",
+      "capacity": 67829,
+      "opened": 1505520000000
+    }
+  },
+  {
+    "club": "Barcelona",
+    "icon": "https://upload.wikimedia.org/wikipedia/pt/4/43/FCBarcelona.svg",
+    "trophies": 104,
+    "founded": -2211840000000,
+    "country": "Spain",
+    "stadium": {
+      "name": "Camp Nou",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Barcelona_296.JPG/480px-Barcelona_296.JPG",
+      "capacity": 105000,
+      "opened": -387244800000
+    }
+  },
+  {
+    "club": "Cadiz",
+    "icon": "https://upload.wikimedia.org/wikipedia/pt/e/eb/C%C3%A1diz_Club_de_F%C3%BAtbol_logo.png",
+    "trophies": 2,
+    "founded": -1871683200000,
+    "country": "Spain",
+    "stadium": {
+      "name": "Nuevo Mirandilla",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Vista_a%C3%A9rea_Nuevo_Ram%C3%B3n_de_Carranza.jpg/480px-Vista_a%C3%A9rea_Nuevo_Ram%C3%B3n_de_Carranza.jpg",
+      "capacity": 20724,
+      "opened": -452217600000
+    }
+  },
+  {
+    "club": "Celta Vigo",
+    "icon": "https://upload.wikimedia.org/wikipedia/pt/3/3d/Celta_de_Vigo.png",
+    "trophies": 3,
+    "founded": -1463011200000,
+    "country": "Spain",
+    "stadium": {
+      "name": "Balaídos",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Balaidos_hoy.jpg/480px-Balaidos_hoy.jpg",
+      "capacity": 29000,
+      "opened": -1294012800000
+    }
+  },
+  {
+    "club": "Deportivo Alaves",
+    "icon": "https://upload.wikimedia.org/wikipedia/pt/4/44/Deportivo_Alav%C3%A9s.png",
+    "trophies": 4,
+    "founded": -1544400000000,
+    "country": "Spain",
+    "stadium": {
+      "name": "Mendizorroza",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Mendizorroza.jpg/480px-Mendizorroza.jpg",
+      "capacity": 19840,
+      "opened": -1441584000000
+    }
+  },
+  {
+    "club": "Getafe",
+    "icon": "https://upload.wikimedia.org/wikipedia/pt/7/7f/Getafe_logo.png",
+    "trophies": 0,
+    "founded": 428198400000,
+    "country": "Spain",
+    "stadium": {
+      "name": "Coliseum Alfonso Pérez",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/The_Coliseum_Alfonso_P%C3%A9rez_in_2018.jpg/480px-The_Coliseum_Alfonso_P%C3%A9rez_in_2018.jpg",
+      "capacity": 17393,
+      "opened": 904435200000
+    }
+  },
+  {
+    "club": "Girona",
+    "icon": "https://upload.wikimedia.org/wikipedia/pt/5/5d/Girona_FC.png",
+    "trophies": 0,
+    "founded": -1244764800000,
+    "country": "Spain",
+    "stadium": {
+      "name": "Montilivi",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Montilivi280611.jpg/480px-Montilivi280611.jpg",
+      "capacity": 13450,
+      "opened": 19440000000
+    }
+  },
+  {
+    "club": "Granada",
+    "icon": "https://upload.wikimedia.org/wikipedia/pt/9/9a/Granada_FC_logo.png",
+    "trophies": 4,
+    "founded": -1221868800000,
+    "country": "Spain",
+    "stadium": {
+      "name": "Nuevo Los Cármenes",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Estadio_Nuevo_Los_C%C3%A1rmenes.jpg/480px-Estadio_Nuevo_Los_C%C3%A1rmenes.jpg",
+      "capacity": 22524,
+      "opened": 800582400000
+    }
+  },
+  {
+    "club": "Las Palmas",
+    "icon": "https://upload.wikimedia.org/wikipedia/pt/d/d2/UD_Las_Palmas.png",
+    "trophies": 4,
+    "founded": -642556800000,
+    "country": "Spain",
+    "stadium": {
+      "name": "Gran Canaria",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Estadio_Gran_Canaria.jpg/480px-Estadio_Gran_Canaria.jpg",
+      "capacity": 32392,
+      "opened": 1052352000000
+    }
+  },
+  {
+    "club": "Mallorca",
+    "icon": "https://upload.wikimedia.org/wikipedia/pt/1/1d/RCD_Mallorca.png",
+    "trophies": 4,
+    "founded": -1698624000000,
+    "country": "Spain",
+    "stadium": {
+      "name": "Iberostar Stadium",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Panor_mica_de_Son_Moix_%28569234728%29.jpg/480px-Panor_mica_de_Son_Moix_%28569234728%29.jpg",
+      "capacity": 23142,
+      "opened": 930960000000
+    }
+  },
+  {
+    "club": "Osasuna",
+    "icon": "https://upload.wikimedia.org/wikipedia/pt/3/39/CA_Osasuna.png",
+    "trophies": 4,
+    "founded": -1550188800000,
+    "country": "Spain",
+    "stadium": {
+      "name": "El Sadar",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/ReynodeNavarra.JPG/480px-ReynodeNavarra.JPG",
+      "capacity": 19800,
+      "opened": -73612800000
+    }
+  },
+  {
+    "club": "Rayo Vallecano",
+    "icon": "https://upload.wikimedia.org/wikipedia/pt/b/b2/Rayo_Vallecano_de_Madrid.png",
+    "trophies": 1,
+    "founded": -1438819200000,
+    "country": "Spain",
+    "stadium": {
+      "name": "Vallecas",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Rayo_Vallecano.jpg/480px-Rayo_Vallecano.jpg",
+      "capacity": 14708,
+      "opened": 202867200000
+    }
+  },
+  {
+    "club": "Real Betis",
+    "icon": "https://upload.wikimedia.org/wikipedia/pt/1/17/Real_Betis_Balompi%C3%A9.png",
+    "trophies": 11,
+    "founded": -1966204800000,
+    "country": "Spain",
+    "stadium": {
+      "name": "Benito Villamarín",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Estadio_Benito_Villamar%C3%ADn_2018001.jpg/480px-Estadio_Benito_Villamar%C3%ADn_2018001.jpg",
+      "capacity": 60720,
+      "opened": -1287360000000
+    }
+  },
+  {
+    "club": "Real Madrid",
+    "icon": "https://upload.wikimedia.org/wikipedia/pt/9/98/Real_Madrid.png",
+    "trophies": 97,
+    "founded": -2140387200000,
+    "country": "Spain",
+    "stadium": {
+      "name": "Santiago Bernabéu",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/The_Santiago_Bernabeu_Stadium_-_U-g-g-B-o-y.jpg/480px-The_Santiago_Bernabeu_Stadium_-_U-g-g-B-o-y.jpg",
+      "capacity": 81044,
+      "opened": -695865600000
+    }
+  },
+  {
+    "club": "Real Sociedad",
+    "icon": "https://upload.wikimedia.org/wikipedia/pt/c/c2/Real_Sociedad_de_Futbol.png",
+    "trophies": 12,
+    "founded": -1903478400000,
+    "country": "Spain",
+    "stadium": {
+      "name": "Reale Arena",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Anoeta_estadioa_16%2C_Euskal_Herria.jpg/480px-Anoeta_estadioa_16%2C_Euskal_Herria.jpg",
+      "capacity": 39500,
+      "opened": 743904000000
+    }
+  },
+  {
+    "club": "Sevilla",
+    "icon": "https://upload.wikimedia.org/wikipedia/pt/c/cd/Sevilla_cf.png",
+    "trophies": 19,
+    "founded": -2522448000000,
+    "country": "Spain",
+    "stadium": {
+      "name": "Ramón Sánchez Pizjuán",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Estadio_Ram%C3%B3n_S%C3%A1nchez_Pizjuan.jpg/480px-Estadio_Ram%C3%B3n_S%C3%A1nchez_Pizjuan.jpg",
+      "capacity": 45500,
+      "opened": -357177600000
+    }
+  },
+  {
+    "club": "Valencia",
+    "icon": "https://upload.wikimedia.org/wikipedia/pt/6/66/Valencia_Cf_Logo_original.png",
+    "trophies": 24,
+    "founded": -1602892800000,
+    "country": "Spain",
+    "stadium": {
+      "name": "Mestalla",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/CAMP_DE_MESTALLA_GRADA_DE_LA_MAR_2014.JPG/480px-CAMP_DE_MESTALLA_GRADA_DE_LA_MAR_2014.JPG",
+      "capacity": 48600,
+      "opened": -1471219200000
+    }
+  },
+  {
+    "club": "Villareal",
+    "icon": "https://pt.wikipedia.org/wiki/Villarreal_Club_de_F%C3%BAtbol#/media/Ficheiro:Villarreal_CF_logo.svg",
+    "trophies": 1,
+    "founded": -1477353600000,
+    "country": "Spain",
+    "stadium": {
+      "name": "La Cerámica",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/ESTADIO3.jpg/480px-ESTADIO3.jpg",
+      "capacity": 23500,
+      "opened": -1466208000000
+    }
   }
 ]
