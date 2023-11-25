@@ -3,117 +3,126 @@
     "club": "Arsenal",
     "icon": "https://www.arsenal.com/themes/custom/arsenal_main/logo.svg",
     "trophies": 49,
-    "founded": -2621892195000,
+    "founded": -2621894400000,
     "country": "England",
+    "difficulty": "easy",
     "stadium": {
       "name": "Emirates Stadium",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/London_Emirates_Stadium_arsenal.jpg/480px-London_Emirates_Stadium_arsenal.jpg",
       "capacity": 60704,
-      "opened": 1153522800000
+      "opened": 1153440000000
     }
   },
   {
     "club": "Aston Villa",
     "icon": "https://upload.wikimedia.org/wikipedia/en/9/9f/Aston_Villa_logo.svg",
     "trophies": 21,
-    "founded": -3001447395000,
+    "founded": -3001449600000,
     "country": "England",
+    "difficulty": "easy",
     "stadium": {
       "name": "Villa Park",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Birmingham_aston_villa_park_stadium.jpg/480px-Birmingham_aston_villa_park_stadium.jpg",
       "capacity": 42640,
-      "opened": -2294436195000
+      "opened": -2294438400000
     }
   },
   {
     "club": "Bournemouth",
     "icon": "https://upload.wikimedia.org/wikipedia/en/e/e5/AFC_Bournemouth_%282013%29.svg",
     "trophies": 5,
-    "founded": -2216935395000,
+    "founded": -2216937600000,
     "country": "England",
+    "difficulty": "medium",
     "stadium": {
       "name": "Dean Court",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Deancourt_14092013_vblackpool.jpg/480px-Deancourt_14092013_vblackpool.jpg",
       "capacity": 11307,
-      "opened": -1866237795000
+      "opened": -1866240000000
     }
   },
   {
     "club": "Brentford",
     "icon": "https://upload.wikimedia.org/wikipedia/en/2/2a/Brentford_FC_crest.svg",
     "trophies": 4,
-    "founded": -2531690595000,
+    "founded": -2531692800000,
     "country": "England",
+    "difficulty": "hard",
     "stadium": {
       "name": "Brentford Community Stadium",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Brentford_Community_Stadium_2020.jpg/480px-Brentford_Community_Stadium_2020.jpg",
       "capacity": 17250,
-      "opened": 1598914800000
+      "opened": 1598832000000
     }
   },
   {
     "club": "Brighton & Hove Albion",
     "icon": "https://upload.wikimedia.org/wikipedia/en/f/fd/Brighton_%26_Hove_Albion_logo.svg",
     "trophies": 4,
-    "founded": -2162416995000,
+    "founded": -2162419200000,
     "country": "England",
+    "difficulty": "medium",
     "stadium": {
       "name": "Falmer Stadium",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Falmer_Stadium_-_night.jpg/480px-Falmer_Stadium_-_night.jpg",
       "capacity": 31876,
-      "opened": 1310770800000
+      "opened": 1310688000000
     }
   },
   {
     "club": "Chelsea",
     "icon": "https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg",
     "trophies": 34,
-    "founded": -2045344995000,
+    "founded": -2045347200000,
     "country": "England",
+    "difficulty": "easy",
     "stadium": {
       "name": "Stamford Bridge",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/London_stanford_bridge.JPG/480px-London_stanford_bridge.JPG",
       "capacity": 40343,
-      "opened": -2924637795000
+      "opened": -2924640000000
     }
   },
   {
     "club": "Crystal Palace",
     "icon": "https://upload.wikimedia.org/wikipedia/en/a/a2/Crystal_Palace_FC_logo_%282022%29.svg",
     "trophies": 3,
-    "founded": -2029447395000,
+    "founded": -2029449600000,
     "country": "England",
+    "difficulty": "medium",
     "stadium": {
       "name": "Selhurst Park",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/London_Selhurst_Park_crystal_palace_stadium_aerialview.JPG/480px-London_Selhurst_Park_crystal_palace_stadium_aerialview.JPG",
       "capacity": 25485,
-      "opened": -1115254800000
+      "opened": -1115337600000
     }
   },
   {
     "club": "Everton",
     "icon": "https://upload.wikimedia.org/wikipedia/en/7/7c/Everton_FC_logo.svg",
     "trophies": 25,
-    "founded": -2900272995000,
+    "founded": -2900275200000,
     "country": "England",
+    "difficulty": "medium",
     "stadium": {
       "name": "Goodison Park",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Liverpool_fc_everton_stadium.jpg/480px-Liverpool_fc_everton_stadium.jpg",
       "capacity": 39572,
-      "opened": -2441056995000
+      "opened": -2441059200000
     }
   },
   {
     "club": "Fulham",
     "icon": "https://upload.wikimedia.org/wikipedia/en/e/eb/Fulham_FC_%28shield%29.svg",
     "trophies": 5,
-    "founded": -2865280995000,
+    "founded": -2865283200000,
     "country": "England",
+    "difficulty": "medium",
     "stadium": {
       "name": "Craven Cottage",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Craven_Cottage_Football_Ground_-_geograph.org.uk_-_778731.jpg/480px-Craven_Cottage_Football_Ground_-_geograph.org.uk_-_778731.jpg",
       "capacity": 22384,
-      "opened": -2310765795000
+      "opened": -2310768000000
     }
   },
   {
@@ -122,141 +131,404 @@
     "trophies": 13,
     "founded": -1584489600000,
     "country": "England",
+    "difficulty": "medium",
     "stadium": {
       "name": "Elland Road",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Leeds_elland_road_stadium.jpg/480px-Leeds_elland_road_stadium.jpg",
       "capacity": 37916,
-      "opened": -2281130595000
+      "opened": -2281132800000
     }
   },
   {
     "club": "Leicester City",
     "icon": "https://upload.wikimedia.org/wikipedia/en/2/2d/Leicester_City_crest.svg",
     "trophies": 15,
-    "founded": -2688333795000,
+    "founded": -2688336000000,
     "country": "England",
+    "difficulty": "medium",
     "stadium": {
       "name": "King Power Stadium",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Leicester_city_king_power_stadium.jpg/480px-Leicester_city_king_power_stadium.jpg",
       "capacity": 32262,
-      "opened": 1027378800000
+      "opened": 1027296000000
     }
   },
   {
     "club": "Liverpool",
     "icon": "https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg",
     "trophies": 70,
-    "founded": -2448141795000,
+    "founded": -2448144000000,
     "country": "England",
+    "difficulty": "easy",
     "stadium": {
       "name": "Anfield",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Panorama_of_Anfield_with_new_main_stand_%2829676137824%29.jpg/480px-Panorama_of_Anfield_with_new_main_stand_%2829676137824%29.jpg",
       "capacity": 54074,
-      "opened": -2690493795000
+      "opened": -2690496000000
     }
   },
   {
     "club": "Manchester City",
     "icon": "https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg",
     "trophies": 40,
-    "founded": -2812490595000,
+    "founded": -2812492800000,
     "country": "England",
+    "difficulty": "easy",
     "stadium": {
       "name": "Etihad Stadium",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Manchester_city_etihad_stadium_%28cropped%29.jpg/480px-Manchester_city_etihad_stadium_%28cropped%29.jpg",
       "capacity": 53400,
-      "opened": 1060470000000
+      "opened": 1060387200000
     }
   },
   {
     "club": "Manchester United",
     "icon": "https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg",
     "trophies": 69,
-    "founded": -2136151395000,
+    "founded": -2136153600000,
     "country": "England",
+    "difficulty": "easy",
     "stadium": {
       "name": "Old Trafford",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Manchester_United_Old_Trafford_%28cropped%29.jpg/480px-Manchester_United_Old_Trafford_%28cropped%29.jpg",
       "capacity": 76310,
-      "opened": -1889220195000
+      "opened": -1889222400000
     }
   },
   {
     "club": "Newcastle United",
     "icon": "https://upload.wikimedia.org/wikipedia/en/5/56/Newcastle_United_Logo.svg",
     "trophies": 16,
-    "founded": -2431812195000,
+    "founded": -2431814400000,
     "country": "England",
+    "difficulty": "medium",
     "stadium": {
       "name": "St James' Park",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Newcastle_st-james-park_stadium.jpg/480px-Newcastle_st-james-park_stadium.jpg",
       "capacity": 52305,
-      "opened": -2818711395000
+      "opened": -2818713600000
     }
   },
   {
     "club": "Nottingham Forest",
     "icon": "https://upload.wikimedia.org/wikipedia/en/e/e5/Nottingham_Forest_F.C._logo.svg",
     "trophies": 15,
-    "founded": -3306439395000,
+    "founded": -3306441600000,
     "country": "England",
+    "difficulty": "medium",
     "stadium": {
       "name": "City Ground",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Nottingham_the_city_ground_stadium_forest.jpg/480px-Nottingham_the_city_ground_stadium_forest.jpg",
       "capacity": 30404,
-      "opened": -2250890595000
+      "opened": -2250892800000
     }
   },
   {
     "club": "Southampton",
     "icon": "https://upload.wikimedia.org/wikipedia/en/c/c9/FC_Southampton.svg",
     "trophies": 3,
-    "founded": -2654292195000,
+    "founded": -2654294400000,
     "country": "England",
+    "difficulty": "hard",
     "stadium": {
       "name": "St Mary's Stadium",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/St_Mary%27s_Stadium_%282%29.jpg/480px-St_Mary%27s_Stadium_%282%29.jpg",
       "capacity": 32384,
-      "opened": 996620400000
+      "opened": 996537600000
     }
   },
   {
     "club": "Tottenham Hotspur",
     "icon": "https://upload.wikimedia.org/wikipedia/en/b/b4/Tottenham_Hotspur.svg",
     "trophies": 26,
-    "founded": -2755639395000,
+    "founded": -2755641600000,
     "country": "England",
+    "difficulty": "easy",
     "stadium": {
       "name": "Tottenham Hotspur Stadium",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/London_Tottenham_Hotspur_Stadium.jpg/480px-London_Tottenham_Hotspur_Stadium.jpg",
       "capacity": 62850,
-      "opened": 1554246000000
+      "opened": 1554163200000
     }
   },
   {
     "club": "West Ham United",
     "icon": "https://upload.wikimedia.org/wikipedia/en/c/c2/West_Ham_United_FC_logo.svg",
     "trophies": 8,
-    "founded": -2351287395000,
+    "founded": -2351289600000,
     "country": "England",
+    "difficulty": "medium",
     "stadium": {
       "name": "London Stadium",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/London_Olympic_Stadium_West_Ham.jpg/480px-London_Olympic_Stadium_West_Ham.jpg",
       "capacity": 66000,
-      "opened": 1336172400000
+      "opened": 1336089600000
     }
   },
   {
     "club": "Wolverhampton Wanderers",
     "icon": "https://upload.wikimedia.org/wikipedia/en/f/fc/Wolverhampton_Wanderers.svg",
     "trophies": 20,
-    "founded": -2907184995000,
+    "founded": -2907187200000,
     "country": "England",
+    "difficulty": "medium",
     "stadium": {
       "name": "Molineux Stadium",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/MolineuxStadium2022.jpg/480px-MolineuxStadium2022.jpg",
       "capacity": 31750,
-      "opened": -2534973795000
+      "opened": -2534976000000
+    }
+  },
+  {
+    "club": " Estrela Amadora",
+    "icon": "https://pt.wikipedia.org/wiki/Club_Football_Estrela_da_Amadora#/media/Ficheiro:S%C3%ADmbolo_Estrela_da_Amadora.svg",
+    "trophies": 3,
+    "founded": 1594425600000,
+    "country": "Portugal",
+    "difficulty": "hard",
+    "stadium": {
+      "name": "Estádio José Gomes",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Est%C3%A1dio_Jos%C3%A9_Gomes_(Reboleira).jpg/480px-Est%C3%A1dio_Jos%C3%A9_Gomes_(Reboleira).jpg",
+      "capacity": 9288,
+      "opened": -395366400000
+    }
+  },
+  {
+    "club": "Benfica",
+    "icon": "https://upload.wikimedia.org/wikipedia/pt/d/de/Sport_Lisboa_e_Benfica.svg",
+    "trophies": 82,
+    "founded": -2077833600000,
+    "country": "Portugal",
+    "difficulty": "easy",
+    "stadium": {
+      "name": "Estádio da Luz",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Estadio_Benfica_April_2013-1.jpg/480px-Estadio_Benfica_April_2013-1.jpg",
+      "capacity": 64642,
+      "opened": 1067040000000
+    }
+  },
+  {
+    "club": "Boavista FC",
+    "icon": "https://upload.wikimedia.org/wikipedia/pt/5/5c/Logo_Boavista_FC.png",
+    "trophies": 9,
+    "founded": -2096064000000,
+    "country": "Portugal",
+    "difficulty": "medium",
+    "stadium": {
+      "name": "Estádio do Bessa Século XXI",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Est%C3%A1dio_do_Bessa_panorama.jpg/480px-Est%C3%A1dio_do_Bessa_panorama.jpg",
+      "capacity": 28263,
+      "opened": 1072742400000
+    }
+  },
+  {
+    "club": "Casa Pia AC",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/2/22/CPACHoquei.png",
+    "trophies": 1,
+    "founded": -1562025600000,
+    "country": "Portugal",
+    "difficulty": "hard",
+    "stadium": {
+      "name": "Estádio Pina Manique",
+      "image": "https://www.zerozero.pt/img/estadios/900/809900_med_estadio_pina_manique.png.png",
+      "capacity": 2574,
+      "opened": -484185600000
+    }
+  },
+  {
+    "club": "Estoril Praia",
+    "icon": "https://upload.wikimedia.org/wikipedia/pt/9/9d/Logo_Estoril-Praia.png",
+    "trophies": 3,
+    "founded": -966556800000,
+    "country": "Portugal",
+    "difficulty": "hard",
+    "stadium": {
+      "name": "Estádio António Coimbra da Mota",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/20011019_CD_Estoril_Praia_(2).JPG/480px-20011019_CD_Estoril_Praia_(2).JPG",
+      "capacity": 8000,
+      "opened": -978307200000
+    }
+  },
+  {
+    "club": "FC Arouca",
+    "icon": "https://upload.wikimedia.org/wikipedia/pt/8/84/2310.png",
+    "trophies": 0,
+    "founded": -537062400000,
+    "country": "Portugal",
+    "difficulty": "hard",
+    "stadium": {
+      "name": "Estádio Municipal de Arouca",
+      "image": "https://www.zerozero.pt/img/estadios/496/807496_med_estadio_municipal_de_arouca.jpg.jpg",
+      "capacity": 5600,
+      "opened": 1154476800000
+    }
+  },
+  {
+    "club": "FC Famalicão",
+    "icon": "https://upload.wikimedia.org/wikipedia/pt/6/61/Escudo_Famalic%C3%A3o.png",
+    "trophies": 0,
+    "founded": -1210723200000,
+    "country": "Portugal",
+    "difficulty": "hard",
+    "stadium": {
+      "name": "Estádio Municipal 22 de Junho",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Blick_von_der_Gegentrib%C3%BCne_-_Est%C3%A1dio_Municipal_22_de_Junho.jpg/480px-Blick_von_der_Gegentrib%C3%BCne_-_Est%C3%A1dio_Municipal_22_de_Junho.jpg",
+      "capacity": 5307,
+      "opened": -237600000000
+    }
+  },
+  {
+    "club": "FC Porto",
+    "icon": "https://upload.wikimedia.org/wikipedia/pt/c/c5/F.C._Porto_logo.png",
+    "trophies": 81,
+    "founded": -2406499200000,
+    "country": "Portugal",
+    "difficulty": "easy",
+    "stadium": {
+      "name": "Estádio do Dragão",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Est%C3%A1dio_do_Drag%C3%A3o_Aerial.jpg/480px-Est%C3%A1dio_do_Drag%C3%A3o_Aerial.jpg",
+      "capacity": 50033,
+      "opened": 1068940800000
+    }
+  },
+  {
+    "club": "FC Vizela",
+    "icon": "https://upload.wikimedia.org/wikipedia/pt/b/b9/Futebol_Clube_de_Vizela.png",
+    "trophies": 0,
+    "founded": -978307200000,
+    "country": "Portugal",
+    "difficulty": "hard",
+    "stadium": {
+      "name": "Estádio do FC Vizela",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Est%C3%A1dio_do_Futebol_Clube_de_Vizela.jpg/480px-Est%C3%A1dio_do_Futebol_Clube_de_Vizela.jpg",
+      "capacity": 6000,
+      "opened": 626832000000
+    }
+  },
+  {
+    "club": "GD Chaves",
+    "icon": "https://upload.wikimedia.org/wikipedia/pt/0/05/G_D_Chaves.png",
+    "trophies": 1,
+    "founded": -639446400000,
+    "country": "Portugal",
+    "difficulty": "hard",
+    "stadium": {
+      "name": "Municipal Eng. Manuel Branco Teixeira",
+      "image": "https://www.zerozero.pt/img/estadios/916/648916_ori_estadio_municipal_eng_manuel_branco_teixeira.jpg",
+      "capacity": 8396,
+      "opened": -641692800000
+    }
+  },
+  {
+    "club": "Gil Vicente FC",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Gvfc2021.webp",
+    "trophies": 2,
+    "founded": -1441065600000,
+    "country": "Portugal",
+    "difficulty": "hard",
+    "stadium": {
+      "name": "Estádio Cidade de Barcelos",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Est%C3%A1dio_Cidade_de_Barcelos.jpg/480px-Est%C3%A1dio_Cidade_de_Barcelos.jpg",
+      "capacity": 12046,
+      "opened": 1085875200000
+    }
+  },
+  {
+    "club": "Moreirense FC",
+    "icon": "https://upload.wikimedia.org/wikipedia/pt/8/8c/Logo_Moreirense.svg",
+    "trophies": 4,
+    "founded": -983577600000,
+    "country": "Portugal",
+    "difficulty": "hard",
+    "stadium": {
+      "name": "Comendador Joaquim de Almeida Freitas",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Est%C3%A1dio_do_Moreirense.jpg/480px-Est%C3%A1dio_do_Moreirense.jpg",
+      "capacity": 6153,
+      "opened": 1029974400000
+    }
+  },
+  {
+    "club": "Portimonense",
+    "icon": "https://upload.wikimedia.org/wikipedia/pt/1/1c/Logo_Portimonense.png",
+    "trophies": 1,
+    "founded": -1747785600000,
+    "country": "Portugal",
+    "difficulty": "hard",
+    "stadium": {
+      "name": "Estádio Municipal de Portimão",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Est%C3%A1dio_Municipal_de_Portim%C3%A3o_(2).jpg/480px-Est%C3%A1dio_Municipal_de_Portim%C3%A3o_(2).jpg",
+      "capacity": 6000,
+      "opened": -1020384000000
+    }
+  },
+  {
+    "club": "Rio Ave FC",
+    "icon": "https://upload.wikimedia.org/wikipedia/pt/f/f5/Logo_Rio_Ave.png",
+    "trophies": 3,
+    "founded": -976838400000,
+    "country": "Portugal",
+    "difficulty": "hard",
+    "stadium": {
+      "name": "Estádio dos Arcos",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Estadio_do_Rio_Ave_FC_(Arcos).jpeg/480px-Estadio_do_Rio_Ave_FC_(Arcos).jpeg",
+      "capacity": 5300,
+      "opened": 466473600000
+    }
+  },
+  {
+    "club": "SC Braga",
+    "icon": "https://upload.wikimedia.org/wikipedia/pt/f/f9/150px-Sporting_Clube_Braga.png",
+    "trophies": 5,
+    "founded": -1544745600000,
+    "country": "Portugal",
+    "difficulty": "medium",
+    "stadium": {
+      "name": "Estádio Municipal de Braga ",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Eduardo_Souto_de_Moura_-_Braga_Stadium_02_%286010593292%29.jpg/480px-Eduardo_Souto_de_Moura_-_Braga_Stadium_02_%286010593292%29.jpg",
+      "capacity": 30286,
+      "opened": 1072742400000
+    }
+  },
+  {
+    "club": "SC Farense",
+    "icon": "https://upload.wikimedia.org/wikipedia/pt/d/d1/S.C._Farense.png",
+    "trophies": 1,
+    "founded": -1885680000000,
+    "country": "Portugal",
+    "difficulty": "hard",
+    "stadium": {
+      "name": "Estádio de São Luís",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Est%C3%A1dio_S.Luis.JPG/480px-Est%C3%A1dio_S.Luis.JPG",
+      "capacity": 7000,
+      "opened": -1454371200000
+    }
+  },
+  {
+    "club": "Sporting CP",
+    "icon": "https://upload.wikimedia.org/wikipedia/pt/3/3e/Sporting_Clube_de_Portugal.png",
+    "trophies": 50,
+    "founded": -2004048000000,
+    "country": "Portugal",
+    "difficulty": "easy",
+    "stadium": {
+      "name": "José Alvalade",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Lisboa%2C_Est%C3%A1dio_Alvalade_XXI_%283%29.jpg/480px-Lisboa%2C_Est%C3%A1dio_Alvalade_XXI_%283%29.jpg",
+      "capacity": 50095,
+      "opened": 1060128000000
+    }
+  },
+  {
+    "club": "Vitória SC",
+    "icon": "https://upload.wikimedia.org/wikipedia/pt/b/b3/VitoriaGuimaraes.png",
+    "trophies": 2,
+    "founded": -1491955200000,
+    "country": "Portugal",
+    "difficulty": "medium",
+    "stadium": {
+      "name": "D. Afonso Henriques",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Est%C3%A1dio_do_Vit%C3%B3ria_vista_do_Penha.jpg/480px-Est%C3%A1dio_do_Vit%C3%B3ria_vista_do_Penha.jpg",
+      "capacity": 30029,
+      "opened": 1059091200000
     }
   },
   {
@@ -265,6 +537,7 @@
     "trophies": 1,
     "founded": 617414400000,
     "country": "Spain",
+    "difficulty": "hard",
     "stadium": {
       "name": "Power Horse Stadium",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/PXL_20230211_Power_Horse_Stadium_02.jpg/480px-PXL_20230211_Power_Horse_Stadium_02.jpg",
@@ -278,6 +551,7 @@
     "trophies": 35,
     "founded": -2253571200000,
     "country": "Spain",
+    "difficulty": "easy",
     "stadium": {
       "name": "San Mamés Barria",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bilbao_San_Mam%C3%A9s_Stadium_1.jpg/480px-Bilbao_San_Mam%C3%A9s_Stadium_1.jpg",
@@ -291,6 +565,7 @@
     "trophies": 33,
     "founded": -2104444800000,
     "country": "Spain",
+    "difficulty": "easy",
     "stadium": {
       "name": "Cívitas Metropolitano",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Madrid_-_Estadio_Wanda_Metropolitano_30.jpg/480px-Madrid_-_Estadio_Wanda_Metropolitano_30.jpg",
@@ -304,6 +579,7 @@
     "trophies": 104,
     "founded": -2211840000000,
     "country": "Spain",
+    "difficulty": "easy",
     "stadium": {
       "name": "Camp Nou",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Barcelona_296.JPG/480px-Barcelona_296.JPG",
@@ -317,6 +593,7 @@
     "trophies": 2,
     "founded": -1871683200000,
     "country": "Spain",
+    "difficulty": "hard",
     "stadium": {
       "name": "Nuevo Mirandilla",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Vista_a%C3%A9rea_Nuevo_Ram%C3%B3n_de_Carranza.jpg/480px-Vista_a%C3%A9rea_Nuevo_Ram%C3%B3n_de_Carranza.jpg",
@@ -330,6 +607,7 @@
     "trophies": 3,
     "founded": -1463011200000,
     "country": "Spain",
+    "difficulty": "medium",
     "stadium": {
       "name": "Balaídos",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Balaidos_hoy.jpg/480px-Balaidos_hoy.jpg",
@@ -343,6 +621,7 @@
     "trophies": 4,
     "founded": -1544400000000,
     "country": "Spain",
+    "difficulty": "hard",
     "stadium": {
       "name": "Mendizorroza",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Mendizorroza.jpg/480px-Mendizorroza.jpg",
@@ -356,6 +635,7 @@
     "trophies": 0,
     "founded": 428198400000,
     "country": "Spain",
+    "difficulty": "hard",
     "stadium": {
       "name": "Coliseum Alfonso Pérez",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/The_Coliseum_Alfonso_P%C3%A9rez_in_2018.jpg/480px-The_Coliseum_Alfonso_P%C3%A9rez_in_2018.jpg",
@@ -369,6 +649,7 @@
     "trophies": 0,
     "founded": -1244764800000,
     "country": "Spain",
+    "difficulty": "hard",
     "stadium": {
       "name": "Montilivi",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Montilivi280611.jpg/480px-Montilivi280611.jpg",
@@ -382,6 +663,7 @@
     "trophies": 4,
     "founded": -1221868800000,
     "country": "Spain",
+    "difficulty": "hard",
     "stadium": {
       "name": "Nuevo Los Cármenes",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Estadio_Nuevo_Los_C%C3%A1rmenes.jpg/480px-Estadio_Nuevo_Los_C%C3%A1rmenes.jpg",
@@ -395,6 +677,7 @@
     "trophies": 4,
     "founded": -642556800000,
     "country": "Spain",
+    "difficulty": "hard",
     "stadium": {
       "name": "Gran Canaria",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Estadio_Gran_Canaria.jpg/480px-Estadio_Gran_Canaria.jpg",
@@ -408,6 +691,7 @@
     "trophies": 4,
     "founded": -1698624000000,
     "country": "Spain",
+    "difficulty": "hard",
     "stadium": {
       "name": "Iberostar Stadium",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Panor_mica_de_Son_Moix_%28569234728%29.jpg/480px-Panor_mica_de_Son_Moix_%28569234728%29.jpg",
@@ -421,6 +705,7 @@
     "trophies": 4,
     "founded": -1550188800000,
     "country": "Spain",
+    "difficulty": "hard",
     "stadium": {
       "name": "El Sadar",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/ReynodeNavarra.JPG/480px-ReynodeNavarra.JPG",
@@ -434,6 +719,7 @@
     "trophies": 1,
     "founded": -1438819200000,
     "country": "Spain",
+    "difficulty": "hard",
     "stadium": {
       "name": "Vallecas",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Rayo_Vallecano.jpg/480px-Rayo_Vallecano.jpg",
@@ -447,6 +733,7 @@
     "trophies": 11,
     "founded": -1966204800000,
     "country": "Spain",
+    "difficulty": "medium",
     "stadium": {
       "name": "Benito Villamarín",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Estadio_Benito_Villamar%C3%ADn_2018001.jpg/480px-Estadio_Benito_Villamar%C3%ADn_2018001.jpg",
@@ -460,6 +747,7 @@
     "trophies": 97,
     "founded": -2140387200000,
     "country": "Spain",
+    "difficulty": "easy",
     "stadium": {
       "name": "Santiago Bernabéu",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/The_Santiago_Bernabeu_Stadium_-_U-g-g-B-o-y.jpg/480px-The_Santiago_Bernabeu_Stadium_-_U-g-g-B-o-y.jpg",
@@ -473,6 +761,7 @@
     "trophies": 12,
     "founded": -1903478400000,
     "country": "Spain",
+    "difficulty": "medium",
     "stadium": {
       "name": "Reale Arena",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Anoeta_estadioa_16%2C_Euskal_Herria.jpg/480px-Anoeta_estadioa_16%2C_Euskal_Herria.jpg",
@@ -486,6 +775,7 @@
     "trophies": 19,
     "founded": -2522448000000,
     "country": "Spain",
+    "difficulty": "easy",
     "stadium": {
       "name": "Ramón Sánchez Pizjuán",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Estadio_Ram%C3%B3n_S%C3%A1nchez_Pizjuan.jpg/480px-Estadio_Ram%C3%B3n_S%C3%A1nchez_Pizjuan.jpg",
@@ -499,6 +789,7 @@
     "trophies": 24,
     "founded": -1602892800000,
     "country": "Spain",
+    "difficulty": "easy",
     "stadium": {
       "name": "Mestalla",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/CAMP_DE_MESTALLA_GRADA_DE_LA_MAR_2014.JPG/480px-CAMP_DE_MESTALLA_GRADA_DE_LA_MAR_2014.JPG",
@@ -512,6 +803,7 @@
     "trophies": 1,
     "founded": -1477353600000,
     "country": "Spain",
+    "difficulty": "medium",
     "stadium": {
       "name": "La Cerámica",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/ESTADIO3.jpg/480px-ESTADIO3.jpg",
