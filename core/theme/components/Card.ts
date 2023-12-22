@@ -139,10 +139,10 @@ const getFilledColors = (
   containerColor: string,
   contentColor: string
 ): {
-  props: Partial<CardPropsColorOverrides>
+  props: Partial<CardPropsColorOverrides>;
   style: Interpolation<{
-    theme: Theme
-  }>
+      theme: unknown;
+  }>;
 } => {
   return {
     props: { variant: variant },
