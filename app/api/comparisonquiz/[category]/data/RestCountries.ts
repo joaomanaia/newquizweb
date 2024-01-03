@@ -12,7 +12,13 @@ export const getCompQuizCountryAreaQuestions = async (
     mapRestCountriesResponseToCompQuizItem(country, category)
   )
 
-  return shuffleArray(questions)
+  // filter out items with the same value as the previous item
+  const filteredItems = questions.filter((item, index, arr) => {
+    if (index === 0) return true
+    return item.value !== arr[index - 1].value
+  })
+
+  return shuffleArray(filteredItems)
 }
 
 const mapRestCountriesResponseToCompQuizItem = (
