@@ -280,6 +280,286 @@
     }
   },
   {
+    "club": "AC Milan",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Logo_of_AC_Milan.svg",
+    "trophies": 52,
+    "founded": -2210630400000,
+    "country": "Italy",
+    "difficulty": "easy",
+    "stadium": {
+      "name": "San Siro",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Stadio_Meazza_2021_3.jpg/480px-Stadio_Meazza_2021_3.jpg",
+      "capacity": 80018,
+      "opened": -1365984000000
+    }
+  },
+  {
+    "club": "AC Monza",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/a/a7/AC_Monza_logo_%282021%29.svg",
+    "trophies": 9,
+    "founded": -1809302400000,
+    "country": "Italy",
+    "difficulty": "hard",
+    "stadium": {
+      "name": "Stadio Brianteo",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Stadio_Brianteo_2014.jpg/480px-Stadio_Brianteo_2014.jpg",
+      "capacity": 16917,
+      "opened": 588729600000
+    }
+  },
+  {
+    "club": "AS Roma",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/f/f7/AS_Roma_logo_%282017%29.svg",
+    "trophies": 17,
+    "founded": -1343433600000,
+    "country": "Italy",
+    "difficulty": "medium",
+    "stadium": {
+      "name": "Stadio Olimpico",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Stadio_Olimpico_e_Stadio_dei_Marmi.jpg/480px-Stadio_Olimpico_e_Stadio_dei_Marmi.jpg",
+      "capacity": 70634,
+      "opened": -524707200000
+    }
+  },
+  {
+    "club": "Atalanta",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/6/66/AtalantaBC.svg",
+    "trophies": 7,
+    "founded": -1963180800000,
+    "country": "Italy",
+    "difficulty": "easy",
+    "stadium": {
+      "name": "Gewiss Stadium",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/The_outside_of_the_Gewiss_Stadium_in_2020.jpg/480px-The_outside_of_the_Gewiss_Stadium_in_2020.jpg",
+      "capacity": 21747,
+      "opened": -1294617600000
+    }
+  },
+  {
+    "club": "Bologna",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Bologna_F.C._1909_logo.svg",
+    "trophies": 15,
+    "founded": -1901232000000,
+    "country": "Italy",
+    "difficulty": "medium",
+    "stadium": {
+      "name": "Stadio Renato Dall'Ara",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Stadio_Dall%27Ara_01-02-2020.jpg/480px-Stadio_Dall%27Ara_01-02-2020.jpg",
+      "capacity": 36000,
+      "opened": -1344211200000
+    }
+  },
+  {
+    "club": "Cagliari",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/6/61/Cagliari_Calcio_1920.svg",
+    "trophies": 7,
+    "founded": -1564963200000,
+    "country": "Italy",
+    "difficulty": "hard",
+    "stadium": {
+      "name": "Unipol Domus",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/SardegnaArena.jpeg/480px-SardegnaArena.jpeg",
+      "capacity": 16416,
+      "opened": 1505001600000
+    }
+  },
+  {
+    "club": "Empoli",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/e/e9/Empoli_F.C._logo_%282021%29.png",
+    "trophies": 5,
+    "founded": -1577923200000,
+    "country": "Italy",
+    "difficulty": "hard",
+    "stadium": {
+      "name": "Stadio Carlo Castellani",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Empoli_-_maratona_dello_Stadio_Castellani.jpg/480px-Empoli_-_maratona_dello_Stadio_Castellani.jpg",
+      "capacity": 16284,
+      "opened": -135820800000
+    }
+  },
+  {
+    "club": "Fiorentina",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/f/f2/2022_ACF_Fiorentina_logo.svg",
+    "trophies": 15,
+    "founded": -1367798400000,
+    "country": "Italy",
+    "difficulty": "easy",
+    "stadium": {
+      "name": "Stadio Artemio Franchi",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Soccer_in_Florence%2C_Italy%2C_2007.jpg/480px-Soccer_in_Florence%2C_Italy%2C_2007.jpg",
+      "capacity": 43147,
+      "opened": -1208736000000
+    }
+  },
+  {
+    "club": "Frosinone",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/0/0b/Frosinone_Calcio_logo.svg",
+    "trophies": 3,
+    "founded": -2008972800000,
+    "country": "Italy",
+    "difficulty": "hard",
+    "stadium": {
+      "name": "Stadio Benito Stirpe",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Benito_stirpe_stadium_night_af.jpg/480px-Benito_stirpe_stadium_night_af.jpg",
+      "capacity": 16227,
+      "opened": 1509148800000
+    }
+  },
+  {
+    "club": "Genoa",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/2/25/Genoa_C.F.C._logo.png",
+    "trophies": 17,
+    "founded": -2408313600000,
+    "country": "Italy",
+    "difficulty": "medium",
+    "stadium": {
+      "name": "Luigi Ferraris",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Stadio_Luigi_Ferraris_di_Genova.jpg/480px-Stadio_Luigi_Ferraris_di_Genova.jpg",
+      "capacity": 33205,
+      "opened": -1860105600000
+    }
+  },
+  {
+    "club": "Hellas Verona FC",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/9/92/Hellas_Verona_FC_logo_%282020%29.svg",
+    "trophies": 4,
+    "founded": -2106691200000,
+    "country": "Italy",
+    "difficulty": "hard",
+    "stadium": {
+      "name": "Stadio Marcantonio Bentegodi",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Italy_-_Verona_-_Stadio_Marcantonio_Bentegodi.jpg/480px-Italy_-_Verona_-_Stadio_Marcantonio_Bentegodi.jpg",
+      "capacity": 39211,
+      "opened": -190857600000
+    }
+  },
+  {
+    "club": "Inter Milan",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/0/05/FC_Internazionale_Milano_2021.svg",
+    "trophies": 46,
+    "founded": -1949875200000,
+    "country": "Italy",
+    "difficulty": "easy",
+    "stadium": {
+      "name": "San Siro",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Stadio_Meazza_2021_3.jpg/480px-Stadio_Meazza_2021_3.jpg",
+      "capacity": 80018,
+      "opened": -1365984000000
+    }
+  },
+  {
+    "club": "Juventus",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Juventus_FC_2017_icon_%28black%29.svg",
+    "trophies": 70,
+    "founded": -2277331200000,
+    "country": "Italy",
+    "difficulty": "easy",
+    "stadium": {
+      "name": "Juventus Stadium",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Juventus_v_Real_Madrid%2C_Champions_League%2C_Stadium%2C_Turin%2C_2013.jpg/480px-Juventus_v_Real_Madrid%2C_Champions_League%2C_Stadium%2C_Turin%2C_2013.jpg",
+      "capacity": 41507,
+      "opened": 1315440000000
+    }
+  },
+  {
+    "club": "Lazio",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/c/ce/S.S._Lazio_badge.svg",
+    "trophies": 17,
+    "founded": -2208297600000,
+    "country": "Italy",
+    "difficulty": "easy",
+    "stadium": {
+      "name": "Stadio Olimpico",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Stadio_Olimpico_e_Stadio_dei_Marmi.jpg/480px-Stadio_Olimpico_e_Stadio_dei_Marmi.jpg",
+      "capacity": 70634,
+      "opened": -524707200000
+    }
+  },
+  {
+    "club": "Lecce",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/8/85/Us_lecce.svg",
+    "trophies": 6,
+    "founded": -1950048000000,
+    "country": "Italy",
+    "difficulty": "hard",
+    "stadium": {
+      "name": "Stadio Ettore Giardiniero - Via del mare",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/The_Via_Del_Mare_stadium_in_Lecce_during_a_Serie_A_match_between_Lecce_and_SPAL_Ferrara_in_February_2020.jpg/480px-The_Via_Del_Mare_stadium_in_Lecce_during_a_Serie_A_match_between_Lecce_and_SPAL_Ferrara_in_February_2020.jpg",
+      "capacity": 40670,
+      "opened": -104371200000
+    }
+  },
+  {
+    "club": "Napoli",
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/2/2d/SSC_Neapel.svg",
+    "trophies": 14,
+    "founded": -1368144000000,
+    "country": "Italy",
+    "difficulty": "easy",
+    "stadium": {
+      "name": "Stadio Diego Armando Maradona",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Stadio_Maradona_Serie_A.jpg/480px-Stadio_Maradona_Serie_A.jpg",
+      "capacity": 54726,
+      "opened": -317865600000
+    }
+  },
+  {
+    "club": "Torino FC",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/2/2e/Torino_FC_Logo.svg",
+    "trophies": 16,
+    "founded": -1990656000000,
+    "country": "Italy",
+    "difficulty": "hard",
+    "stadium": {
+      "name": "Stadio Olimpico Grande Torino",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Juventus_v_Chelsea%2C_Champions_League%2C_Stadio_Olimpico%2C_Turin%2C_2009.jpg/480px-Juventus_v_Chelsea%2C_Champions_League%2C_Stadio_Olimpico%2C_Turin%2C_2009.jpg",
+      "capacity": 27958,
+      "opened": -1156118400000
+    }
+  },
+  {
+    "club": "US Salernitana",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/8/85/US_Salernitana_1919_logo.svg",
+    "trophies": 8,
+    "founded": -1594857600000,
+    "country": "Italy",
+    "difficulty": "hard",
+    "stadium": {
+      "name": "Stadio comunale Arechi",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Arechi_6_ottobre.jpg/480px-Arechi_6_ottobre.jpg",
+      "capacity": 37800,
+      "opened": 652838400000
+    }
+  },
+  {
+    "club": "US Sassuolo Calcio",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/1/1c/US_Sassuolo_Calcio_logo.svg",
+    "trophies": 2,
+    "founded": -1560816000000,
+    "country": "Italy",
+    "difficulty": "hard",
+    "stadium": {
+      "name": "Mapei Stadium – Città del Tricolore",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Reggio_Emilia%2C_Stadio_Giglio%2C_2010_%28cropped%29.jpg/480px-Reggio_Emilia%2C_Stadio_Giglio%2C_2010_%28cropped%29.jpg",
+      "capacity": 21525,
+      "opened": 800496000000
+    }
+  },
+  {
+    "club": "Udinese Calcio",
+    "icon": "https://upload.wikimedia.org/wikipedia/en/c/ce/Udinese_Calcio_logo.svg",
+    "trophies": 7,
+    "founded": -2180217600000,
+    "country": "Italy",
+    "difficulty": "hard",
+    "stadium": {
+      "name": "Stadio Friuli",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/DaciArena.jpg/480px-DaciArena.jpg",
+      "capacity": 25144,
+      "opened": 1452988800000
+    }
+  },
+  {
     "club": " Estrela Amadora",
     "icon": "https://pt.wikipedia.org/wiki/Club_Football_Estrela_da_Amadora#/media/Ficheiro:S%C3%ADmbolo_Estrela_da_Amadora.svg",
     "trophies": 3,
