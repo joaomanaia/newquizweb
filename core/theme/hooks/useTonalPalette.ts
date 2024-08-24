@@ -1,3 +1,5 @@
+"use client"
+
 import { argbFromHex, hexFromArgb, themeFromSourceColor } from "@material/material-color-utilities"
 import { useLayoutEffect, useState } from "react"
 import { TonalPalette, TonalPaletteDefault } from "../types/TonalPalette"

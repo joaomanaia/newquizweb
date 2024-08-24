@@ -1,6 +1,7 @@
 "use client"
 
-import ThemeModeProvider from "./providers/ThemeModeProvider"
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter"
+import { ThemeProvider as NextThemeProvider } from "next-themes"
 import ThemeSchemeProvider from "./providers/ThemeSchemeProvider"
 import M3Theme from "./wrapper/M3Theme"
 
@@ -10,12 +11,18 @@ interface M3Props {
 
 const M3 = ({ children }: M3Props) => {
   return (
-    // ThemeModeProvider -> ThemeSchemeProvider
-    <ThemeModeProvider>
-      <ThemeSchemeProvider>
-        <M3Theme>{children}</M3Theme>
-      </ThemeSchemeProvider>
-    </ThemeModeProvider>
+    <AppRouterCacheProvider options={{ enableCssLayer: true }}>
+      <NextThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
+      >
+        <ThemeSchemeProvider>
+          <M3Theme>{children}</M3Theme>
+        </ThemeSchemeProvider>
+      </NextThemeProvider>
+    </AppRouterCacheProvider>
   )
 }
 

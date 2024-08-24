@@ -1,35 +1,49 @@
-import { useContext, useMemo } from "react"
-import { CssBaseline, createTheme, ThemeProvider, responsiveFontSizes } from "@mui/material"
-import { deepmerge } from "@mui/utils"
-import { ThemeModeContext } from "../providers/ThemeModeProvider"
-import { ThemeSchemeContext } from "../providers/ThemeSchemeProvider"
-import { getMUIPalette } from "../utils/getMUIPalette"
-import { getMUIComponents } from "../utils/getMUIComponents"
+import { useContext, useEffect, useMemo, useState } from "react";
+import CssBaseline from "@mui/material/CssBaseline";
+import {
+  createTheme,
+  ThemeProvider,
+  responsiveFontSizes,
+} from "@mui/material/styles";
+import { deepmerge } from "@mui/utils";
+import { ThemeSchemeContext } from "../providers/ThemeSchemeProvider";
+import { getMUIPalette } from "../utils/getMUIPalette";
+import { getMUIComponents } from "../utils/getMUIComponents";
+import { useTheme } from "next-themes";
+import { ThemeMode } from "@/core/theme/types/ThemeMode";
 
 interface M3Props {
-  children?: React.ReactNode
+  children?: React.ReactNode;
 }
 
 const M3Theme = ({ children }: M3Props) => {
-  const { themeMode } = useContext(ThemeModeContext)
-  const { themeScheme } = useContext(ThemeSchemeContext)
+  const { themeScheme } = useContext(ThemeSchemeContext);
+  const { resolvedTheme } = useTheme();
+
+  const [isMounted, setIsMounted] = useState(false);
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const m3Theme = useMemo(() => {
-    const muiPalette = getMUIPalette(themeMode, themeScheme)
+    const themeMode: ThemeMode = resolvedTheme === "dark" ? "dark" : "light";
+    const muiPalette = getMUIPalette(themeMode, themeScheme);
 
-    let theme = createTheme(muiPalette)
-    theme = deepmerge(theme, getMUIComponents(theme))
-    theme = responsiveFontSizes(theme)
+    let theme = createTheme(muiPalette);
+    theme = deepmerge(theme, getMUIComponents(theme));
+    theme = responsiveFontSizes(theme);
 
-    return theme
-  }, [themeMode, themeScheme])
+    return theme;
+  }, [resolvedTheme, themeScheme]);
+
+  if (!isMounted) return null;
 
   return (
     <ThemeProvider theme={m3Theme}>
       <CssBaseline enableColorScheme />
       {children}
     </ThemeProvider>
-  )
-}
+  );
+};
 
-export default M3Theme
+export default M3Theme;
