@@ -1,15 +1,30 @@
-import M3 from "@/core/theme/M3"
-import "../styles/globals.css"
+import { Inter as FontSans } from "next/font/google"
+import { ThemeProvider as NextThemeProvider } from "next-themes"
+import { cn } from "@/lib/utils"
+import "./styles/tokens.css"
+import "./styles/globals.css"
 
 export const metadata = {
   manifest: "/manifest.json",
 }
 
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body id="__next">
-        <M3>{children}</M3>
+      <body className={cn("min-h-screen bg-background font-sans antialiased", fontSans.variable)}>
+        <NextThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </NextThemeProvider>
       </body>
     </html>
   )

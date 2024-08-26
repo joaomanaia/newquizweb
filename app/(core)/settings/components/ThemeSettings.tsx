@@ -8,7 +8,7 @@ import ColorsComponent from "./theme/ColorsComponent"
 import { useTheme } from "next-themes"
 
 const ThemeSettings: React.FC = () => {
-  const { theme, setTheme } = useTheme()
+  const { resolvedTheme, setTheme } = useTheme()
 
   const resetTheme = () => {
     // generateScheme("#6750a4")
@@ -16,7 +16,7 @@ const ThemeSettings: React.FC = () => {
   }
 
   const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark")
+    setTheme(resolvedTheme === "dark" ? "light" : "dark")
   }
 
   return (
@@ -25,12 +25,12 @@ const ThemeSettings: React.FC = () => {
         <ColorsComponent />
       </ListItem>
       <ListItem sx={{ marginTop: "20px !important" }}>
-        <ListItemIcon>{theme === "dark" ? <DarkIcon /> : <LightIcon />}</ListItemIcon>
+        <ListItemIcon>{resolvedTheme === "dark" ? <DarkIcon /> : <LightIcon />}</ListItemIcon>
         <ListItemText id="switch-list-label-theme" primary="Night mode" />
         <Switch
           edge="end"
           onChange={toggleTheme}
-          checked={theme === "dark"}
+          checked={resolvedTheme === "dark"}
           inputProps={{
             "aria-labelledby": "switch-list-label-theme",
           }}

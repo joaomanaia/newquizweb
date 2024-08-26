@@ -15,6 +15,13 @@ const nextConfig = {
     FIREBASE_APP_ID: process.env.FIREBASE_APP_ID,
     FIREBASE_MEASUREMENT_ID: process.env.FIREBASE_MEASUREMENT_ID,
   },
+  redirects: async () => [
+    {
+      source: "/list",
+      destination: "/",
+      permanent: true,
+    },
+  ],
 }
 
 module.exports = nextConfig
