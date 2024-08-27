@@ -1,4 +1,4 @@
-import { decodeBase64String } from "../../core/util/StringUtil"
+import { decodeBase64String } from "@/core/util/StringUtil"
 
 export default interface MultiChoiceQuestion {
   id: string
@@ -18,6 +18,6 @@ export const decodeBase64Question = (question: MultiChoiceQuestion): MultiChoice
     category: decodeBase64String(question.category),
     correctAns: question.correctAns,
     type: decodeBase64String(question.type),
-    difficulty: decodeBase64String(question.difficulty)
+    difficulty: decodeBase64String(question.difficulty),
   }
 }

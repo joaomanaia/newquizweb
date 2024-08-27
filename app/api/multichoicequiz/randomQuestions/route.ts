@@ -2,8 +2,8 @@ import { NextRequest, NextResponse } from "next/server"
 import OpenTDBQuestionResponse, {
   convertOpenTDBResultToQuestion,
 } from "@/model/multichoicequiz/OpenTDBQuestionResponse"
-import QuestionDifficulty from "@/types/QuestionDifficulty"
 import queryString from "query-string"
+import QuestionDifficulty from "@/types/question-difficulty"
 
 const API_URL = "https://opentdb.com/api.php"
 
