@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils"
 import "./styles/tokens.css"
 import "./styles/globals.css"
 import type { Metadata } from "next"
+import { GoogleAnalytics } from "@next/third-parties/google"
 
 export const metadata: Metadata = {
   title: {
@@ -44,6 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </NextThemeProvider>
       </body>
+      <GoogleAnalytics gaId="G-G61J40MJQZ" />
     </html>
   )
 }
