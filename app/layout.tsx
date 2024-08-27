@@ -21,6 +21,9 @@ export const metadata: Metadata = {
     description: "Do you like to challenge your knowledge? So NewQuiz is the ideal game for you.",
   },
   applicationName: "NewQuiz",
+  verification: {
+    google: "vduNWIMxVDPQZoidzqpL-4nO41GAbOB_LOGrfAJAFms",
+  },
 }
 
 const fontSans = FontSans({
