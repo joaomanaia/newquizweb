@@ -1,10 +1,11 @@
-import MainContainer from "@/app/components/m3/MainContainer";
+import { MainContainer } from "@/components/main-container"
 
 export const metadata = {
   title: "Privacy Policy",
   description: "Privacy Policy for NewQuiz",
 }
 
+// TODO: Update this to MDX
 export default function Page() {
   return (
     <MainContainer>

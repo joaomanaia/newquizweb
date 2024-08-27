@@ -1,26 +1,25 @@
 "use client"
 
-import { Button, Typography } from "@mui/material"
-import { useEffect, useState } from "react"
-import { logGameStart } from "../../../../core/logging_analytics/multichoice_analytics"
-import { delay } from "../../../../core/util/DelayUtil"
-import { analytics } from "../../../../firebase"
+import { ProgressWithText } from "@/app/(game)/multichoicequiz/components/ProgressWithText"
+import { QuizResultsContent } from "@/app/(game)/multichoicequiz/components/QuizResultsContent"
+import { QuizStepView } from "@/app/(game)/multichoicequiz/components/QuizStepView"
+import { Button } from "@/components/ui/button"
+import { logGameStart } from "@/core/logging_analytics/multichoice_analytics"
+import { delay } from "@/core/util/DelayUtil"
+import { analytics } from "@/firebase"
+import { cn } from "@/lib/utils"
 import MultiChoiceQuestion, {
   decodeBase64Question,
-} from "../../../../model/multichoicequiz/MultiChoiceQuestion"
+} from "@/model/multichoicequiz/MultiChoiceQuestion"
 import MultiChoiceQuestionStep, {
   Completed,
   NotCurrent,
-} from "../../../../model/multichoicequiz/MultiChoiceQuestionStep"
-import RemainingTime from "../../../../model/multichoicequiz/RemainingTime"
-import SelectedAnswer from "../../../../model/multichoicequiz/SelectedAnswer"
-import AnswerCard from "./AnswerCard"
-import ProgressWithText from "./ProgressWithText"
-import QuizStepView from "./QuizStepView"
-import QuizResultsContent from "./QuizResultsContent"
+} from "@/model/multichoicequiz/MultiChoiceQuestionStep"
+import RemainingTime from "@/model/multichoicequiz/RemainingTime"
+import SelectedAnswer from "@/model/multichoicequiz/SelectedAnswer"
+import { useEffect, useState } from "react"
 
-const MIN_QUIZ_TIME = 0
-const MAX_QUIZ_TIME = RemainingTime.MULTI_CHOICE_QUIZ_COUNTDOWN_IN_MILLIS
+const MAX_QUIZ_TIME = 30_000 // 30 seconds
 
 const generateQuestionSteps = (questions: MultiChoiceQuestion[]): NotCurrent[] => {
   return questions.map(decodeBase64Question).map((question) => new NotCurrent(question))
@@ -30,14 +29,14 @@ interface QuizContentProps {
   questions: MultiChoiceQuestion[]
 }
 
-const QuizContent: React.FC<QuizContentProps> = ({ questions }) => {
+export const QuizContent: React.FC<QuizContentProps> = ({ questions }) => {
   const [questionSteps, setQuestionSteps] = useState<MultiChoiceQuestionStep[]>([])
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(-1)
   const [isQuizEnded, setQuizEnded] = useState(false)
 
   const [selectedAnswer, setSelectedAnswer] = useState(SelectedAnswer.NONE)
-  const [remainingTime, setRemainingTime] = useState(RemainingTime.MAX_VALUE)
+  const [remainingTime, setRemainingTime] = useState(RemainingTime.fromValue(MAX_QUIZ_TIME))
 
   const currentQuestion = questionSteps.at(currentQuestionIndex)?.question
 
@@ -60,6 +59,7 @@ const QuizContent: React.FC<QuizContentProps> = ({ questions }) => {
   }, [remainingTime, isQuizEnded])
 
   // Start
+  // TODO: Add next experimental after
   useEffect(() => {
     setQuestionSteps(generateQuestionSteps(questions))
     setCurrentQuestionIndex(0)
@@ -79,7 +79,7 @@ const QuizContent: React.FC<QuizContentProps> = ({ questions }) => {
     }
 
     setCurrentQuestionIndex((prevIndex) => prevIndex + 1)
-    setRemainingTime(RemainingTime.MAX_VALUE)
+    setRemainingTime(RemainingTime.fromValue(MAX_QUIZ_TIME))
   }
 
   const verifyQuestion = () => {
@@ -103,20 +103,14 @@ const QuizContent: React.FC<QuizContentProps> = ({ questions }) => {
   }
 
   if (isQuizEnded) {
-    return (
-      <QuizResultsContent completedSteps={questionSteps as Completed[]} />
-    )
+    return <QuizResultsContent completedSteps={questionSteps as Completed[]} />
   }
 
   return (
-    <div className="w-screen h-screen flex flex-col items-center justify-evenly">
-      <ProgressWithText
-        remainingTime={remainingTime}
-        minQuizTime={MIN_QUIZ_TIME}
-        maxQuizTime={MAX_QUIZ_TIME}
-      />
+    <div className="container w-screen h-screen flex flex-col items-center justify-center gap-8">
+      <ProgressWithText remainingTime={remainingTime} maxQuizTime={MAX_QUIZ_TIME} />
 
-      <div className="flex space-x-2">
+      <div className="flex gap-x-2 mb-8">
         {questionSteps.map((step, index) => (
           <QuizStepView
             key={step.question.id}
@@ -128,9 +122,9 @@ const QuizContent: React.FC<QuizContentProps> = ({ questions }) => {
         ))}
       </div>
 
-      <Typography align="center" variant="h4" className="mx-8">{currentQuestion?.description}</Typography>
+      <h4 className="lg:mx-8 max-w-xl text-lg text-center">{currentQuestion?.description}</h4>
 
-      <div className="w-96 space-y-4">
+      <div className="flex flex-col w-full md:w-1/2 lg:w-1/3 gap-y-4">
         {currentQuestion?.answers?.map((answer, index) => (
           <AnswerCard
             key={answer}
@@ -142,10 +136,9 @@ const QuizContent: React.FC<QuizContentProps> = ({ questions }) => {
       </div>
 
       <Button
-        variant="filled"
         disabled={selectedAnswer.isNone()}
         onClick={verifyQuestion}
-        className="w-96"
+        className="w-full md:w-1/2 lg:w-1/3"
       >
         Verify
       </Button>
@@ -153,4 +146,21 @@ const QuizContent: React.FC<QuizContentProps> = ({ questions }) => {
   )
 }
 
-export default QuizContent
+interface AnswerCardProps {
+  text: string
+  selected?: boolean
+  onClick: () => void
+}
+
+const AnswerCard: React.FC<AnswerCardProps> = ({ text, selected, onClick }) => {
+  return (
+    <Button
+      variant={selected ? "default" : "outline"}
+      aria-selected={selected}
+      onClick={onClick}
+      className={cn("h-14 text-start justify-start rounded-md", !selected && "text-foreground")}
+    >
+      {text}
+    </Button>
+  )
+}

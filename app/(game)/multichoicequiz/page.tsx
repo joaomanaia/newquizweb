@@ -1,8 +1,8 @@
-import QuizContent from "./components/QuizContent"
-import { getHost } from "../../../core/util/Network"
-import MultiChoiceQuestion from "../../../model/multichoicequiz/MultiChoiceQuestion"
-import QuestionDifficulty from "@/types/QuestionDifficulty"
+import QuestionDifficulty from "@/types/question-difficulty"
 import queryString from "query-string"
+import MultiChoiceQuestion from "@/model/multichoicequiz/MultiChoiceQuestion"
+import { getHost } from "@/core/util/Network"
+import { QuizContent } from "@/app/(game)/multichoicequiz/components/QuizContent"
 
 export const revalidate = 0
 
@@ -31,12 +31,12 @@ export const dynamic = "force-dynamic"
 
 interface MultiChoiceQuizPageProps {
   searchParams: {
-    difficulty?: string
+    difficulty?: QuestionDifficulty
   }
 }
 
 export default async function MultiChoiceQuizPage({ searchParams }: MultiChoiceQuizPageProps) {
-  const questions = await getQuestions(searchParams.difficulty as QuestionDifficulty)
+  const questions = await getQuestions(searchParams.difficulty)
 
   return <QuizContent questions={questions} />
 }

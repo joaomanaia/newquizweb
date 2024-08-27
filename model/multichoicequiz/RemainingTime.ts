@@ -9,19 +9,19 @@ export default class RemainingTime {
 
   static fromValue = (value: number): RemainingTime => new RemainingTime(value)
 
-  static MULTI_CHOICE_QUIZ_COUNTDOWN_IN_MILLIS = 30000
+  isZero(): boolean {
+    return this.value === 0
+  }
 
-  static MAX_VALUE = RemainingTime.fromValue(this.MULTI_CHOICE_QUIZ_COUNTDOWN_IN_MILLIS)
-
-  getRemainingPercent(): number {
-    return this.value / RemainingTime.MULTI_CHOICE_QUIZ_COUNTDOWN_IN_MILLIS
+  getRemainingPercent(maxTime: number): number {
+    return this.value / maxTime
   }
 
   toMinuteSecond(): string {
-    const minutes = (this.value / 1000) / 60
+    const minutes = Math.floor((this.value / 1000) / 60)
     const seconds = (this.value / 1000) % 60
 
-    return minutes.toFixed() === "0" ? seconds.toString() : `${minutes}:${seconds}`
+    return Math.floor(minutes) === 0 ? seconds.toString() : `${minutes}:${seconds}`
   }
 
   decreaseValue(value: number): RemainingTime {

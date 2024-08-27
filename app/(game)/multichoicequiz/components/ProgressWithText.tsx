@@ -1,50 +1,26 @@
-import { Box, CircularProgress, Typography } from "@mui/material"
-import RemainingTime from "../../../../model/multichoicequiz/RemainingTime"
+import { CircleProgress } from "@/components/ui/circle-progress"
+import RemainingTime from "@/model/multichoicequiz/RemainingTime"
 
 interface ProgressWithTextProps {
   remainingTime: RemainingTime
-  minQuizTime: number
   maxQuizTime: number
 }
 
-const normaliseProgressValue = (
-  value: number,
-  minQuizTime: number,
-  maxQuizTime: number
-): number => {
-  return ((value - minQuizTime) * 100) / (maxQuizTime - minQuizTime)
-}
-
-const ProgressWithText: React.FC<ProgressWithTextProps> = ({
+export const ProgressWithText: React.FC<ProgressWithTextProps> = ({
   remainingTime,
-  minQuizTime,
   maxQuizTime,
 }) => {
   return (
-    <Box sx={{ position: "relative", display: "inline-flex" }}>
-      <CircularProgress
-        size={80}
-        thickness={2}
-        variant="determinate"
-        value={normaliseProgressValue(remainingTime.value, minQuizTime, maxQuizTime)}
+    <div className="relative">
+      <CircleProgress
+        width={150}
+        strokeWith={10}
+        value={remainingTime.getRemainingPercent(maxQuizTime)}
       />
 
-      <Box
-        sx={{
-          top: 0,
-          left: 0,
-          bottom: 0,
-          right: 0,
-          position: "absolute",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <Typography variant="subtitle1">{remainingTime.toMinuteSecond()}</Typography>
-      </Box>
-    </Box>
+      <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-foreground text-2xl font-bold">
+        {remainingTime.toMinuteSecond()}
+      </span>
+    </div>
   )
 }
-
-export default ProgressWithText

@@ -1,5 +1,5 @@
-import { CheckRounded, CloseRounded } from "@mui/icons-material"
-import { Card, Typography } from "@mui/material"
+import { cn } from "@/lib/utils"
+import { CheckIcon, XIcon } from "lucide-react"
 
 interface QuizStepViewProps {
   position: number
@@ -8,14 +8,23 @@ interface QuizStepViewProps {
   completed: boolean
 }
 
-const QuizStepView: React.FC<QuizStepViewProps> = ({ position, current, correct, completed }) => {
+export const QuizStepView: React.FC<QuizStepViewProps> = ({
+  position,
+  current,
+  correct,
+  completed,
+}) => {
   return (
-    <Card
-      className="w-8 h-8 flex items-center justify-center rounded-full cursor-default"
-      variant={current ? "tertiary" : "filled"}
+    <div
+      className={cn(
+        "size-8 flex items-center justify-center rounded-full cursor-default",
+        current
+          ? "bg-tertiary text-tertiary-foreground"
+          : "bg-surfaceVariant text-surfaceVariant-foreground"
+      )}
     >
-      {current || !completed ? <Typography>{position}</Typography> : <StepIcon correct={correct} />}
-    </Card>
+      {current || !completed ? <span>{position}</span> : <StepIcon correct={correct} />}
+    </div>
   )
 }
 
@@ -24,7 +33,5 @@ interface StepIconProps {
 }
 
 const StepIcon: React.FC<StepIconProps> = ({ correct }) => {
-  return correct ? <CheckRounded /> : <CloseRounded />
+  return correct ? <CheckIcon className="size-5" /> : <XIcon className="size-5" />
 }
-
-export default QuizStepView
