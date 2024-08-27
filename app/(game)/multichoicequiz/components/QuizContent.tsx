@@ -122,7 +122,7 @@ export const QuizContent: React.FC<QuizContentProps> = ({ questions }) => {
         ))}
       </div>
 
-      <h4 className="lg:mx-8 max-w-xl text-lg text-center">{currentQuestion?.description}</h4>
+      <h2 className="lg:mx-8 max-w-xl text-lg text-center">{currentQuestion?.description}</h2>
 
       <div className="flex flex-col w-full md:w-1/2 lg:w-1/3 gap-y-4">
         {currentQuestion?.answers?.map((answer, index) => (
