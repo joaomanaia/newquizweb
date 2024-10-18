@@ -1,40 +1,46 @@
+import { createRouteHandlersForAction } from "zsa-openapi"
+import { createServerAction } from "zsa"
+import { z } from "zod"
+
 const BASE_URL = "http://numbersapi.com/random/"
+const MIN_NUMBER = 0
+const MAX_NUMBER = 100000
 
-export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url)
+export const getQuestionsAction = createServerAction()
+  .input(
+    z
+      .object({
+        min: z.coerce.number().min(MIN_NUMBER).max(MAX_NUMBER).optional().default(MIN_NUMBER),
+        max: z.coerce.number().min(MIN_NUMBER).max(MAX_NUMBER).optional().default(MAX_NUMBER),
+        size: z.coerce.number().min(1).max(10).optional().default(1),
+      })
+      .refine((input) => input.min <= input.max, {
+        message: "Min number must be less than or equal to max number",
+      })
+  )
+  .handler(async ({ input }) => {
+    const { min, max, size } = input
 
-  const min = reqQueryToNumber(searchParams.get("min"), 0)
-  const max = reqQueryToNumber(searchParams.get("max"), 100000)
-  const size = reqQueryToNumber(searchParams.get("size"), 1)
+    const promises: Promise<Question>[] = Array.from({ length: size }, () =>
+      getRandomNumber(min, max)
+    )
 
-  if (size > 10) {
-    return new Response("Max question size is 10, you requested: " + size, {
-      status: 400,
-    })
-  }
+    try {
+      const numbers = await Promise.all(promises)
+      return { questions: numbers }
+    } catch (error) {
+      throw new Error("Failed to fetch questions")
+    }
+  })
 
-  const promises: Promise<Question>[] = []
-
-  for (let i = 0; i < size; i++) {
-    promises.push(getRandomNumber(min, max))
-  }
-
-  const numbers = await Promise.all(promises)
-  
-  // @ts-ignore
-  return Response.json({ questions: numbers, message: undefined })
-}
-
-const reqQueryToString = (data: string | string[] | null) => {
-  const dataString = Array.isArray(data) ? data[0] : data
-  return dataString ?? null
-}
-
-const reqQueryToNumber = (data: string | string[] | null, defaultNumber: number) => {
-  const dataString = reqQueryToString(data)
-
-  return parseInt(dataString ?? defaultNumber.toString())
-}
+export const { GET } = createRouteHandlersForAction(getQuestionsAction, {
+  shapeError: (error) => {
+    return {
+      message: error.message,
+      code: error.code,
+    }
+  },
+})
 
 type Question = {
   number: number
@@ -45,7 +51,7 @@ const getRandomNumber = (min: number | null, max: number | null): Promise<Questi
   const url =
     min && max ? `${BASE_URL}?min=${min || ""}&max=${max || ""}&json=true` : `${BASE_URL}?json=true`
 
-  return fetch(url, { cache: 'no-store' })
+  return fetch(url, { cache: "no-store" })
     .then((response) => response.json())
     .then((data) => {
       const dataText: string = data.text
