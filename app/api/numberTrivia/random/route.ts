@@ -6,7 +6,7 @@ const BASE_URL = "http://numbersapi.com/random/"
 const MIN_NUMBER = 0
 const MAX_NUMBER = 100000
 
-export const getQuestionsAction = createServerAction()
+const getQuestionsAction = createServerAction()
   .input(
     z
       .object({
