@@ -1,6 +1,6 @@
 import { MOVIE_DEFAULT_CATEGORY_IMG, TMDB_API_URL } from "@/core/common/BaseUrls"
 import { shuffleArray } from "@/core/util/Array"
-import { MovieCategory } from "@/types/ComparisonQuizTypes"
+import type { MovieCategory } from "@/types/ComparisonQuizTypes"
 import type { TMDBResponse, MovieTMDBResult, PeopleTMDBResult } from "@/types/OpenTDBTypes"
 
 type TimeWindow = "day" | "week"

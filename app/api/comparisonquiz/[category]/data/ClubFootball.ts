@@ -1,5 +1,5 @@
 import { shuffleArray } from "@/core/util/Array"
-import { ClubFootballCategory } from "@/types/ComparisonQuizTypes"
+import type { ClubFootballCategory } from "@/types/ComparisonQuizTypes"
 import clubData from "@/app/data/club-football.json"
 
 type ClubFootballData = {

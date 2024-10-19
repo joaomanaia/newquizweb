@@ -1,6 +1,6 @@
 import { RESTCOUNTRIES_API_URL } from "@/core/common/BaseUrls"
 import { shuffleArray } from "@/core/util/Array"
-import { RestCountryCategory } from "@/types/ComparisonQuizTypes"
+import type { RestCountryCategory } from "@/types/ComparisonQuizTypes"
 
 export const getCompQuizCountryAreaQuestions = async (
   category: RestCountryCategory
