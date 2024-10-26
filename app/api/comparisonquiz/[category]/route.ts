@@ -1,53 +1,42 @@
 import { comparisonQuizCategories } from "@/types/ComparisonQuizTypes"
 import { z } from "zod"
-import { createServerAction } from "zsa"
+import { createServerAction, ZSAError } from "zsa"
 import { createRouteHandlersForAction } from "zsa-openapi"
 
 const getQuestionsAction = createServerAction()
   .input(
     z.object({
       category: z.enum(comparisonQuizCategories),
+      size: z.coerce.number().min(2).max(50).optional().default(30),
     })
   )
   .handler(async ({ input }) => {
-    const { category } = input
+    const { category, size } = input
 
-    try {
-      switch (category) {
-        // Country categories
-        case "country-population":
-        case "country-area": {
-          const { getCompQuizCountryAreaQuestions } = await import("./data/RestCountries")
-          const questions = await getCompQuizCountryAreaQuestions("country-population")
-
-          // @ts-ignore
-          return Response.json(questions)
-        }
-        // Movie categories
-        case "movie-popularity":
-        case "movie-release-date":
-        case "movie-actor-popularity": {
-          const { getCompQuizMovieQuestions } = await import("./data/Movie")
-          const questions = await getCompQuizMovieQuestions("week", category)
-
-          // @ts-ignore
-          return Response.json(questions)
-        }
-        case "club-trophies":
-        case "club-foundation-date":
-        case "club-stadium-capacity":
-        case "club-stadium-opened-date": {
-          const { getClubFootballQuestions } = await import("./data/ClubFootball")
-          const questions = await getClubFootballQuestions(category)
-
-          return Response.json(questions)
-        }
-        default: {
-          return new Response("Not found", { status: 404 })
-        }
+    switch (category) {
+      // Country categories
+      case "country-population":
+      case "country-area": {
+        const { getCompQuizCountryQuestions } = await import("./data/RestCountries")
+        return await getCompQuizCountryQuestions(category, size)
       }
-    } catch (error) {
-      throw new Error("Failed to fetch questions")
+      // Movie categories
+      case "movie-popularity":
+      case "movie-release-date":
+      case "movie-actor-popularity": {
+        const { getCompQuizMovieQuestions } = await import("./data/Movie")
+        return await getCompQuizMovieQuestions("week", category, size)
+      }
+      case "club-trophies":
+      case "club-foundation-date":
+      case "club-stadium-capacity":
+      case "club-stadium-opened-date": {
+        const { getClubFootballQuestions } = await import("./data/ClubFootball")
+        return await getClubFootballQuestions(category, size)
+      }
+      default: {
+        throw new ZSAError("NOT_FOUND", "Invalid category")
+      }
     }
   })
 

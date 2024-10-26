@@ -26,6 +26,7 @@ type ClubStadiumData = {
  */
 export const getClubFootballQuestions = async (
   category: ClubFootballCategory,
+  size: number,
   canHaveConsecutiveSameValues: boolean = false
 ): Promise<ComparisonQuizItem[]> => {
   // Get the data from the json file
@@ -55,8 +56,7 @@ export const getClubFootballQuestions = async (
     return previousQuestion.value !== currentQuestion.value
   })
 
-  // Limit the questions to 30
-  return filteredQuestions.slice(0, 30)
+  return filteredQuestions.slice(0, size)
 }
 
 const getQuestionFromClubFootball = (
