@@ -7,7 +7,7 @@ const getQuestionsAction = createServerAction()
   .input(
     z.object({
       category: z.enum(comparisonQuizCategories),
-      size: z.coerce.number().min(2).max(50).optional().default(30),
+      size: z.coerce.number().min(2).max(100).optional().default(30),
     })
   )
   .handler(async ({ input }) => {
