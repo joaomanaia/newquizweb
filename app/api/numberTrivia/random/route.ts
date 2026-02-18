@@ -1,6 +1,6 @@
-import { createRouteHandlersForAction } from "zsa-openapi"
+import * as z from "zod"
 import { createServerAction } from "zsa"
-import { z } from "zod"
+import { createRouteHandlersForAction } from "zsa-openapi"
 
 const BASE_URL = "http://numbersapi.com/random/"
 const MIN_NUMBER = 0
@@ -10,12 +10,12 @@ const getQuestionsAction = createServerAction()
   .input(
     z
       .object({
-        min: z.coerce.number().min(MIN_NUMBER).max(MAX_NUMBER).optional().default(MIN_NUMBER),
-        max: z.coerce.number().min(MIN_NUMBER).max(MAX_NUMBER).optional().default(MAX_NUMBER),
-        size: z.coerce.number().min(1).max(10).optional().default(1),
+        min: z.coerce.number().min(MIN_NUMBER).max(MAX_NUMBER).default(MIN_NUMBER),
+        max: z.coerce.number().min(MIN_NUMBER).max(MAX_NUMBER).default(MAX_NUMBER),
+        size: z.coerce.number().min(1).max(10).default(1),
       })
       .refine((input) => input.min <= input.max, {
-        message: "Min number must be less than or equal to max number",
+        error: "Min number must be less than or equal to max number",
       })
   )
   .handler(async ({ input }) => {

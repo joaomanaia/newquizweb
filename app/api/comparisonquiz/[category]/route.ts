@@ -1,13 +1,13 @@
-import { comparisonQuizCategories } from "@/types/ComparisonQuizTypes"
-import { z } from "zod"
+import * as z from "zod"
 import { createServerAction, ZSAError } from "zsa"
 import { createRouteHandlersForAction } from "zsa-openapi"
+import { comparisonQuizCategories } from "@/types/ComparisonQuizTypes"
 
 const getQuestionsAction = createServerAction()
   .input(
     z.object({
       category: z.enum(comparisonQuizCategories),
-      size: z.coerce.number().min(2).max(100).optional().default(30),
+      size: z.coerce.number().min(2).max(100).default(30),
     })
   )
   .handler(async ({ input }) => {

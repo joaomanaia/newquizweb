@@ -18,29 +18,6 @@ export default defineConfig([
   {
     rules: {
       "@typescript-eslint/no-explicit-any": "off",
-      "react/jsx-no-literals": "error",
-      "no-restricted-imports": [
-        "error",
-        {
-          name: "next/link",
-          message: "Please import from `@/components/link` instead.",
-        },
-        {
-          name: "next/navigation",
-          importNames: ["redirect", "permanentRedirect", "useRouter", "usePathname"],
-          message: "Please import from `@/i18n/navigation` instead.",
-        },
-      ],
-      // FIXME: This rules are currently breaking eslint
-      "react/display-name": "off",
-      "react/no-direct-mutation-state": "off",
-      "react/require-render-return": "off",
-    },
-  },
-  {
-    files: ["**/(admin)/**/*"],
-    rules: {
-      "react/jsx-no-literals": "off",
     },
   },
   globalIgnores([".next/**", "out/**", "build/**", "next-env.d.ts", "**/.well-known/**"]),

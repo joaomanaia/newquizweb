@@ -1,12 +1,12 @@
+import queryString from "query-string"
+import * as z from "zod"
+import { createServerAction } from "zsa"
+import { createRouteHandlersForAction } from "zsa-openapi"
 import OpenTDBQuestionResponse, {
   convertOpenTDBResultToQuestion,
 } from "@/model/multichoicequiz/OpenTDBQuestionResponse"
-import queryString from "query-string"
 import type QuestionDifficulty from "@/types/question-difficulty"
-import { createServerAction } from "zsa"
-import { z } from "zod"
 import { difficulties } from "@/types/question-difficulty"
-import { createRouteHandlersForAction } from "zsa-openapi"
 
 const API_URL = "https://opentdb.com/api.php"
 
@@ -15,7 +15,7 @@ export const revalidate = 0
 const getQuestionsAction = createServerAction()
   .input(
     z.object({
-      size: z.coerce.number().min(1).max(50).optional().default(5),
+      size: z.coerce.number().min(1).max(50).default(5),
       difficulty: z.enum(difficulties).optional(),
     })
   )
