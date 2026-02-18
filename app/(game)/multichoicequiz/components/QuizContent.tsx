@@ -1,9 +1,10 @@
 "use client"
 
+import { useEffect, useState } from "react"
+import { Button } from "@/components/ui/button"
 import { ProgressWithText } from "@/app/(game)/multichoicequiz/components/ProgressWithText"
 import { QuizResultsContent } from "@/app/(game)/multichoicequiz/components/QuizResultsContent"
 import { QuizStepView } from "@/app/(game)/multichoicequiz/components/QuizStepView"
-import { Button } from "@/components/ui/button"
 import { logGameStart } from "@/core/logging_analytics/multichoice_analytics"
 import { delay } from "@/core/util/DelayUtil"
 import { analytics } from "@/firebase"
@@ -17,7 +18,6 @@ import MultiChoiceQuestionStep, {
 } from "@/model/multichoicequiz/MultiChoiceQuestionStep"
 import RemainingTime from "@/model/multichoicequiz/RemainingTime"
 import SelectedAnswer from "@/model/multichoicequiz/SelectedAnswer"
-import { useEffect, useState } from "react"
 
 const MAX_QUIZ_TIME = 30_000 // 30 seconds
 
@@ -107,10 +107,10 @@ export const QuizContent: React.FC<QuizContentProps> = ({ questions }) => {
   }
 
   return (
-    <div className="container w-screen h-screen flex flex-col items-center justify-center gap-8">
+    <div className="container flex h-screen w-screen flex-col items-center justify-center gap-8">
       <ProgressWithText remainingTime={remainingTime} maxQuizTime={MAX_QUIZ_TIME} />
 
-      <div className="flex gap-x-2 mb-8">
+      <div className="mb-8 flex gap-x-2">
         {questionSteps.map((step, index) => (
           <QuizStepView
             key={step.question.id}
@@ -122,9 +122,9 @@ export const QuizContent: React.FC<QuizContentProps> = ({ questions }) => {
         ))}
       </div>
 
-      <h2 className="lg:mx-8 max-w-xl text-lg text-center">{currentQuestion?.description}</h2>
+      <h2 className="max-w-xl text-center text-lg lg:mx-8">{currentQuestion?.description}</h2>
 
-      <div className="flex flex-col w-full md:w-1/2 lg:w-1/3 gap-y-4">
+      <div className="flex w-full flex-col gap-y-4 md:w-1/2 lg:w-1/3">
         {currentQuestion?.answers?.map((answer, index) => (
           <AnswerCard
             key={answer}
@@ -155,10 +155,10 @@ interface AnswerCardProps {
 const AnswerCard: React.FC<AnswerCardProps> = ({ text, selected, onClick }) => {
   return (
     <Button
-      variant={selected ? "default" : "outline-solid"}
+      variant={selected ? "default" : "outline"}
       aria-selected={selected}
       onClick={onClick}
-      className={cn("h-14 text-start justify-start rounded-md", !selected && "text-foreground")}
+      className={cn("h-14 justify-start rounded-md text-start", !selected && "text-foreground")}
     >
       {text}
     </Button>

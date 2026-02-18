@@ -1,7 +1,7 @@
-import { cn } from "@/lib/utils"
+import Link from "next/link"
 import type { LucideIcon } from "lucide-react"
 import type { Route } from "next"
-import Link from "next/link"
+import { cn } from "@/lib/utils"
 
 interface TitleProps {
   children: React.ReactNode
@@ -28,12 +28,12 @@ export const LargeButton: React.FC<LargeButtonProps> = ({
     <Link
       href={route}
       className={cn(
-        "flex bg-surfaceVariant/60 hover:bg-surfaceVariant/70 flex-col items-start w-full max-w-96 p-4 rounded-2xl transition",
+        "bg-surface-variant/60 hover:bg-surface-variant/70 flex w-full max-w-96 flex-col items-start rounded-2xl p-4 transition",
         className
       )}
     >
       <h3 className="text-lg">{title}</h3>
-      <Icon className="size-20 md:size-24 mt-2 self-end text-surfaceVariant-foreground/50" />
+      <Icon className="text-surface-variant-foreground/50 mt-2 size-20 self-end md:size-24" />
     </Link>
   )
 }
@@ -44,9 +44,12 @@ interface PlayRandomQuizProps {
 
 export const PlayRandomQuiz: React.FC<PlayRandomQuizProps> = ({ route }) => {
   return (
-    <Link href={route} className="flex flex-col items-start gap-6 w-full max-w-96 p-6 rounded-2xl bg-primary/90 hover:bg-primary text-surface transition">
+    <Link
+      href={route}
+      className="bg-primary/90 hover:bg-primary text-surface flex w-full max-w-96 flex-col items-start gap-6 rounded-2xl p-6 transition"
+    >
       <h3 className="text-lg font-medium">Quiz with random categories</h3>
-      <div className="py-2 px-5 text-sm bg-surface text-surface-foreground rounded-full">
+      <div className="bg-surface text-surface-foreground rounded-full px-5 py-2 text-sm">
         Random Quiz
       </div>
     </Link>

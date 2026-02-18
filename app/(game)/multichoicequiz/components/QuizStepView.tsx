@@ -1,5 +1,5 @@
-import { cn } from "@/lib/utils"
 import { CheckIcon, XIcon } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 interface QuizStepViewProps {
   position: number
@@ -17,10 +17,10 @@ export const QuizStepView: React.FC<QuizStepViewProps> = ({
   return (
     <div
       className={cn(
-        "size-8 flex items-center justify-center rounded-full cursor-default",
+        "flex size-8 cursor-default items-center justify-center rounded-full",
         current
           ? "bg-tertiary text-tertiary-foreground"
-          : "bg-surfaceVariant text-surfaceVariant-foreground"
+          : "bg-surface-variant text-surface-variant-foreground"
       )}
     >
       {current || !completed ? <span>{position}</span> : <StepIcon correct={correct} />}

@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -8,46 +9,60 @@
     var(--font-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol", "Noto Color Emoji";
 
-  --color-border: hsl(var(--outline));
+  --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
 
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
   --color-primary: hsl(var(--primary));
-  --color-primary-foreground: hsl(var(--on-primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
   --color-primary-inverse: hsl(var(--inverse-primary));
 
-  --color-primaryContainer: hsl(var(--primary-container));
-  --color-primaryContainer-foreground: hsl(var(--on-primary-container));
+  --color-primary-container: hsl(var(--primary-container));
+  --color-primary-container-foreground: hsl(var(--on-primary-container));
 
   --color-secondary: hsl(var(--secondary));
-  --color-secondary-foreground: hsl(var(--on-secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
 
-  --color-secondaryContainer: hsl(var(--secondary-container));
-  --color-secondaryContainer-foreground: hsl(var(--on-secondary-container));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-secondary-container: hsl(var(--secondary-container));
+  --color-secondary-container-foreground: hsl(var(--on-secondary-container));
 
   --color-tertiary: hsl(var(--tertiary));
   --color-tertiary-foreground: hsl(var(--on-tertiary));
 
-  --color-tertiaryContainer: hsl(var(--tertiary-container));
-  --color-tertiaryContainer-foreground: hsl(var(--on-tertiary-container));
+  --color-tertiary-container: hsl(var(--tertiary-container));
+  --color-tertiary-container-foreground: hsl(var(--on-tertiary-container));
 
   --color-error: hsl(var(--error));
   --color-error-foreground: hsl(var(--on-error));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
 
-  --color-errorContainer: hsl(var(--error-container));
-  --color-errorContainer-foreground: hsl(var(--on-error-container));
-
-  --color-background: hsl(var(--background));
-  --color-foreground: hsl(var(--on-background));
+  --color-error-container: hsl(var(--error-container));
+  --color-error-container-foreground: hsl(var(--on-error-container));
 
   --color-surface: hsl(var(--surface));
   --color-surface-foreground: hsl(var(--on-surface));
   --color-surface-inverse: hsl(var(--inverse-surface));
-  --color-surface-inverseForeground: hsl(var(--inverse-on-surface));
+  --color-surface-inverse-foreground: hsl(var(--inverse-on-surface));
   --color-surface-tint: hsl(var(--surface-tint));
 
-  --color-surfaceVariant: hsl(var(--surface-variant));
-  --color-surfaceVariant-foreground: hsl(var(--on-surface-variant));
+  --color-surface-variant: hsl(var(--surface-variant));
+  --color-surface-variant-foreground: hsl(var(--on-surface-variant));
 
   --color-outline: hsl(var(--outline));
   --color-outline-variant: hsl(var(--outline-variant));
@@ -58,24 +73,43 @@
   --color-easy: rgb(var(--extended-color-easy-color));
   --color-easy-foreground: rgb(var(--extended-color-easy-on-color));
 
-  --color-easyContainer: rgb(var(--extended-color-easy-color-container));
-  --color-easyContainer-foreground: rgb(var(--extended-color-easy-on-color-container));
+  --color-easy-container: rgb(var(--extended-color-easy-color-container));
+  --color-easy-container-foreground: rgb(var(--extended-color-easy-on-color-container));
 
   --color-medium: rgb(var(--extended-color-medium-color));
   --color-medium-foreground: rgb(var(--extended-color-medium-on-color));
 
-  --color-mediumContainer: rgb(var(--extended-color-medium-color-container));
-  --color-mediumContainer-foreground: rgb(var(--extended-color-medium-on-color-container));
+  --color-medium-container: rgb(var(--extended-color-medium-color-container));
+  --color-medium-container-foreground: rgb(var(--extended-color-medium-on-color-container));
 
   --color-hard: rgb(var(--extended-color-hard-color));
   --color-hard-foreground: rgb(var(--extended-color-hard-on-color));
 
-  --color-hardContainer: rgb(var(--extended-color-hard-color-container));
-  --color-hardContainer-foreground: rgb(var(--extended-color-hard-on-color-container));
+  --color-hard-container: rgb(var(--extended-color-hard-color-container));
+  --color-hard-container-foreground: rgb(var(--extended-color-hard-on-color-container));
+
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  --color-sidebar: hsl(var(--sidebar));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
 
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
 
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
@@ -132,6 +166,12 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentcolor);
   }
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
 @utility next-link {
@@ -142,6 +182,37 @@
 
 @layer base {
   :root {
+    /* Shadcn tokens mapped to Material 3 tokens. */
+    --foreground: var(--md-sys-color-on-background-light);
+    --card: var(--md-sys-color-surface-light);
+    --card-foreground: var(--md-sys-color-on-surface-light);
+    --popover: var(--md-sys-color-surface-light);
+    --popover-foreground: var(--md-sys-color-on-surface-light);
+    --primary-foreground: var(--md-sys-color-on-primary-light);
+    --secondary-foreground: var(--md-sys-color-on-secondary-light);
+    --muted: var(--md-sys-color-surface-variant-light);
+    --muted-foreground: var(--md-sys-color-on-surface-variant-light);
+    --accent: var(--surface-variant);
+    --accent-foreground: var(--on-surface-variant);
+    --destructive: var(--md-sys-color-error-light);
+    --destructive-foreground: var(--md-sys-color-on-error-light);
+    --border: var(--md-sys-color-outline-variant-light);
+    --input: var(--md-sys-color-outline-variant-light);
+    --ring: var(--md-sys-color-primary-light);
+    --chart-1: var(--md-sys-color-primary-light);
+    --chart-2: var(--md-sys-color-secondary-light);
+    --chart-3: var(--md-sys-color-tertiary-light);
+    --chart-4: var(--md-sys-color-primary-container-light);
+    --chart-5: var(--md-sys-color-tertiary-container-light);
+    --sidebar: var(--md-sys-color-surface-light);
+    --sidebar-foreground: var(--md-sys-color-on-surface-light);
+    --sidebar-primary: var(--md-sys-color-primary-light);
+    --sidebar-primary-foreground: var(--md-sys-color-on-primary-light);
+    --sidebar-accent: var(--md-sys-color-secondary-container-light);
+    --sidebar-accent-foreground: var(--md-sys-color-on-secondary-container-light);
+    --sidebar-border: var(--md-sys-color-outline-variant-light);
+    --sidebar-ring: var(--md-sys-color-primary-light);
+
     --primary: var(--md-sys-color-primary-light);
     --on-primary: var(--md-sys-color-on-primary-light);
     --primary-container: var(--md-sys-color-primary-container-light);
@@ -190,6 +261,37 @@
   }
 
   .dark {
+    /* Shadcn tokens mapped to Material 3 tokens. */
+    --foreground: var(--md-sys-color-on-background-dark);
+    --card: var(--md-sys-color-surface-dark);
+    --card-foreground: var(--md-sys-color-on-surface-dark);
+    --popover: var(--md-sys-color-surface-dark);
+    --popover-foreground: var(--md-sys-color-on-surface-dark);
+    --primary-foreground: var(--md-sys-color-on-primary-dark);
+    --secondary-foreground: var(--md-sys-color-on-secondary-dark);
+    --muted: var(--md-sys-color-surface-variant-dark);
+    --muted-foreground: var(--md-sys-color-on-surface-variant-dark);
+    --accent: var(--surface-variant);
+    --accent-foreground: var(--on-surface-variant);
+    --destructive: var(--md-sys-color-error-dark);
+    --destructive-foreground: var(--md-sys-color-on-error-dark);
+    --border: var(--md-sys-color-outline-variant-dark);
+    --input: var(--md-sys-color-outline-variant-dark);
+    --ring: var(--md-sys-color-primary-dark);
+    --chart-1: var(--md-sys-color-primary-dark);
+    --chart-2: var(--md-sys-color-secondary-dark);
+    --chart-3: var(--md-sys-color-tertiary-dark);
+    --chart-4: var(--md-sys-color-primary-container-dark);
+    --chart-5: var(--md-sys-color-tertiary-container-dark);
+    --sidebar: var(--md-sys-color-surface-dark);
+    --sidebar-foreground: var(--md-sys-color-on-surface-dark);
+    --sidebar-primary: var(--md-sys-color-primary-dark);
+    --sidebar-primary-foreground: var(--md-sys-color-on-primary-dark);
+    --sidebar-accent: var(--md-sys-color-secondary-container-dark);
+    --sidebar-accent-foreground: var(--md-sys-color-on-secondary-container-dark);
+    --sidebar-border: var(--md-sys-color-outline-variant-dark);
+    --sidebar-ring: var(--md-sys-color-primary-dark);
+
     --primary: var(--md-sys-color-primary-dark);
     --on-primary: var(--md-sys-color-on-primary-dark);
     --primary-container: var(--md-sys-color-primary-container-dark);
@@ -233,16 +335,5 @@
     --extended-color-hard-on-color: 87 30 27; /* rgb(87 30 27) */
     --extended-color-hard-color-container: 115 51 48; /* rgb(115 51 48) */
     --extended-color-hard-on-color-container: 255 218 215; /* rgb(255 218 215) */
-
-    --ring: 224.3 76.3% 48%;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
   }
 }

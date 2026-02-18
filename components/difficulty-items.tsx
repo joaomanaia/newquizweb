@@ -1,12 +1,12 @@
 "use client"
 
-import { cn } from "@/lib/utils"
-import type QuestionDifficulty from "@/types/question-difficulty"
+import { useMemo } from "react"
+import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import { cva, type VariantProps } from "class-variance-authority"
 import { SignalHighIcon } from "lucide-react"
 import { type Route } from "next"
-import { usePathname, useRouter, useSearchParams } from "next/navigation"
-import { useMemo } from "react"
+import { cn } from "@/lib/utils"
+import type QuestionDifficulty from "@/types/question-difficulty"
 
 interface DifficultyRowItemsProps {}
 
@@ -34,7 +34,7 @@ export const DifficultyRowItems: React.FC<DifficultyRowItemsProps> = () => {
   }
 
   return (
-    <div className="w-full flex items-center md:justify-center gap-x-4 overflow-x-auto">
+    <div className="flex w-full items-center gap-x-4 overflow-x-auto md:justify-center">
       <DifficultyItem
         difficulty="random"
         selected={selectedDifficulty === "random"}
@@ -65,7 +65,7 @@ const difficultyItemVariants = cva(
     variants: {
       difficulty: {
         random:
-          "border-primary text-primary aria-selected:border-primaryContainer aria-selected:text-primaryContainer-foreground aria-selected:bg-primaryContainer hover:bg-primary/10",
+          "border-primary text-primary aria-selected:border-primary-container aria-selected:text-primary-container-foreground aria-selected:bg-primary-container hover:bg-primary/10",
         easy: "border-easy text-easy aria-selected:bg-easy aria-selected:text-easy-foreground hover:bg-easy/10",
         medium:
           "border-medium text-medium aria-selected:bg-medium aria-selected:text-medium-foreground hover:bg-medium/10",

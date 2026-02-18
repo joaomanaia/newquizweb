@@ -1,4 +1,3 @@
-import { CircleProgress } from "@/components/ui/circle-progress"
 import RemainingTime from "@/model/multichoicequiz/RemainingTime"
 
 interface ProgressWithTextProps {
@@ -6,19 +5,20 @@ interface ProgressWithTextProps {
   maxQuizTime: number
 }
 
+// TODO: Add progress circle back in
 export const ProgressWithText: React.FC<ProgressWithTextProps> = ({
   remainingTime,
   maxQuizTime,
 }) => {
   return (
     <div className="relative">
-      <CircleProgress
+      {/* <ProgressCircle
         width={150}
         strokeWith={10}
         value={remainingTime.getRemainingPercent(maxQuizTime)}
-      />
+      /> */}
 
-      <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-foreground text-2xl font-bold">
+      <span className="text-foreground absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform text-2xl font-bold">
         {remainingTime.toMinuteSecond()}
       </span>
     </div>

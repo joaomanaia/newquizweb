@@ -1,8 +1,8 @@
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
-import { SheetClose } from "@/components/ui/sheet"
 import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { SheetClose } from "@/components/ui/sheet"
 import { NavDrawerItemType } from "@/components/drawer/types"
+import { cn } from "@/lib/utils"
 
 interface DrawerItemProps {
   item: NavDrawerItemType
@@ -51,8 +51,8 @@ const DrawerButton: React.FC<DrawerButtonProps> = ({ item, selected, usingSheet,
         disabled={item.disabled}
         aria-selected={selected}
         className={cn(
-          "gap-2 py-6 w-full text-foreground font-normal text-[16px] justify-start",
-          selected && "font-bold bg-primary/25 hover:bg-primary/30 text-primary",
+          "text-foreground w-full justify-start gap-2 py-6 text-[16px] font-normal",
+          selected && "bg-primary/25 hover:bg-primary/30 text-primary font-bold",
           className
         )}
       >
@@ -69,5 +69,5 @@ interface DrawerButtonContainerProps {
 }
 
 const DrawerButtonContainer: React.FC<DrawerButtonContainerProps> = ({ usingSheet, children }) => {
-  return usingSheet ? <SheetClose asChild>{children}</SheetClose> : <>{children}</>
+  return usingSheet ? <SheetClose render={<>{children}</>} /> : <>{children}</>
 }
