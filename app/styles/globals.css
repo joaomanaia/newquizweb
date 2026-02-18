@@ -1,6 +1,142 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans:
+    var(--font-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+
+  --color-border: hsl(var(--outline));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--on-primary));
+  --color-primary-inverse: hsl(var(--inverse-primary));
+
+  --color-primaryContainer: hsl(var(--primary-container));
+  --color-primaryContainer-foreground: hsl(var(--on-primary-container));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--on-secondary));
+
+  --color-secondaryContainer: hsl(var(--secondary-container));
+  --color-secondaryContainer-foreground: hsl(var(--on-secondary-container));
+
+  --color-tertiary: hsl(var(--tertiary));
+  --color-tertiary-foreground: hsl(var(--on-tertiary));
+
+  --color-tertiaryContainer: hsl(var(--tertiary-container));
+  --color-tertiaryContainer-foreground: hsl(var(--on-tertiary-container));
+
+  --color-error: hsl(var(--error));
+  --color-error-foreground: hsl(var(--on-error));
+
+  --color-errorContainer: hsl(var(--error-container));
+  --color-errorContainer-foreground: hsl(var(--on-error-container));
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--on-background));
+
+  --color-surface: hsl(var(--surface));
+  --color-surface-foreground: hsl(var(--on-surface));
+  --color-surface-inverse: hsl(var(--inverse-surface));
+  --color-surface-inverseForeground: hsl(var(--inverse-on-surface));
+  --color-surface-tint: hsl(var(--surface-tint));
+
+  --color-surfaceVariant: hsl(var(--surface-variant));
+  --color-surfaceVariant-foreground: hsl(var(--on-surface-variant));
+
+  --color-outline: hsl(var(--outline));
+  --color-outline-variant: hsl(var(--outline-variant));
+
+  --color-shadow: hsl(var(--shadow));
+  --color-scrim: hsl(var(--scrim));
+
+  --color-easy: rgb(var(--extended-color-easy-color));
+  --color-easy-foreground: rgb(var(--extended-color-easy-on-color));
+
+  --color-easyContainer: rgb(var(--extended-color-easy-color-container));
+  --color-easyContainer-foreground: rgb(var(--extended-color-easy-on-color-container));
+
+  --color-medium: rgb(var(--extended-color-medium-color));
+  --color-medium-foreground: rgb(var(--extended-color-medium-on-color));
+
+  --color-mediumContainer: rgb(var(--extended-color-medium-color-container));
+  --color-mediumContainer-foreground: rgb(var(--extended-color-medium-on-color-container));
+
+  --color-hard: rgb(var(--extended-color-hard-color));
+  --color-hard-foreground: rgb(var(--extended-color-hard-on-color));
+
+  --color-hardContainer: rgb(var(--extended-color-hard-color-container));
+  --color-hardContainer-foreground: rgb(var(--extended-color-hard-on-color-container));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-collapsible-down: collapsible-down 0.2s ease-out;
+  --animate-collapsible-up: collapsible-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+  @keyframes collapsible-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-collapsible-content-height);
+    }
+  }
+  @keyframes collapsible-up {
+    from {
+      height: var(--radix-collapsible-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility next-link {
+  @apply bg-inherit text-inherit decoration-transparent;
+}
 
 /* Default theme color: #0066ff */
 
@@ -108,11 +244,5 @@
   }
   body {
     @apply bg-background text-foreground;
-  }
-}
-
-@layer components {
-  .next-link {
-    @apply text-inherit bg-inherit decoration-transparent;
   }
 }

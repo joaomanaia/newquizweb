@@ -155,7 +155,7 @@ interface AnswerCardProps {
 const AnswerCard: React.FC<AnswerCardProps> = ({ text, selected, onClick }) => {
   return (
     <Button
-      variant={selected ? "default" : "outline"}
+      variant={selected ? "default" : "outline-solid"}
       aria-selected={selected}
       onClick={onClick}
       className={cn("h-14 text-start justify-start rounded-md", !selected && "text-foreground")}
