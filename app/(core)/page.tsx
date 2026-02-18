@@ -1,6 +1,5 @@
 import { ListIcon, SmartphoneIcon } from "lucide-react"
 import { LargeButton, Title } from "@/components/home-list-components"
-import { MainContainer } from "@/components/main-container"
 import { ANDROID_APP_LINK } from "@/lib/constants"
 
 export const metadata = {
@@ -9,7 +8,7 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <MainContainer className="flex h-full flex-col items-center justify-center gap-8 max-sm:rounded-b-none md:mb-3">
+    <main className="flex h-full flex-col items-center justify-center gap-8">
       <h1 className="hidden">Home</h1>
       <LargeButton
         route={ANDROID_APP_LINK}
@@ -19,6 +18,6 @@ export default function Page() {
       />
       <Title>Multi-Choice Quiz</Title>
       <LargeButton route="/multichoicequiz" title="Play Multi-Choice Quiz" icon={ListIcon} />
-    </MainContainer>
+    </main>
   )
 }

@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -206,8 +207,8 @@
     --chart-5: var(--md-sys-color-tertiary-container-light);
     --sidebar: var(--md-sys-color-surface-light);
     --sidebar-foreground: var(--md-sys-color-on-surface-light);
-    --sidebar-primary: var(--md-sys-color-primary-light);
-    --sidebar-primary-foreground: var(--md-sys-color-on-primary-light);
+    --sidebar: var(--background);
+    --sidebar-foreground: var(--on-background);
     --sidebar-accent: var(--md-sys-color-secondary-container-light);
     --sidebar-accent-foreground: var(--md-sys-color-on-secondary-container-light);
     --sidebar-border: var(--md-sys-color-outline-variant-light);
@@ -283,8 +284,8 @@
     --chart-3: var(--md-sys-color-tertiary-dark);
     --chart-4: var(--md-sys-color-primary-container-dark);
     --chart-5: var(--md-sys-color-tertiary-container-dark);
-    --sidebar: var(--md-sys-color-surface-dark);
-    --sidebar-foreground: var(--md-sys-color-on-surface-dark);
+    --sidebar: var(--background);
+    --sidebar-foreground: var(--on-background);
     --sidebar-primary: var(--md-sys-color-primary-dark);
     --sidebar-primary-foreground: var(--md-sys-color-on-primary-dark);
     --sidebar-accent: var(--md-sys-color-secondary-container-dark);

@@ -3,8 +3,9 @@ import { ThemeProvider as NextThemeProvider } from "next-themes"
 import { cn } from "@/lib/utils"
 import "./styles/tokens.css"
 import "./styles/globals.css"
-import type { Metadata } from "next"
 import { GoogleAnalytics } from "@next/third-parties/google"
+import type { Metadata } from "next"
+import { TooltipProvider } from "@/components/ui/tooltip"
 
 export const metadata: Metadata = {
   title: {
@@ -35,14 +36,14 @@ const fontSans = FontSans({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn("min-h-screen bg-background font-sans antialiased", fontSans.variable)}>
+      <body className={cn("bg-background min-h-screen font-sans antialiased", fontSans.variable)}>
         <NextThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <TooltipProvider>{children}</TooltipProvider>
         </NextThemeProvider>
       </body>
       <GoogleAnalytics gaId="G-G61J40MJQZ" />
