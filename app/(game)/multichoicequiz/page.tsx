@@ -31,9 +31,9 @@ async function getQuestions(difficulty?: QuestionDifficulty): Promise<MultiChoic
 export const dynamic = "force-dynamic"
 
 interface MultiChoiceQuizPageProps {
-  searchParams: {
+  searchParams: Promise<{
     difficulty?: QuestionDifficulty
-  }
+  }>
 }
 
 export const metadata: Metadata = {
@@ -41,7 +41,8 @@ export const metadata: Metadata = {
   robots: "noindex, nofollow",
 }
 
-export default async function MultiChoiceQuizPage({ searchParams }: MultiChoiceQuizPageProps) {
+export default async function MultiChoiceQuizPage(props: MultiChoiceQuizPageProps) {
+  const searchParams = await props.searchParams
   const questions = await getQuestions(searchParams.difficulty)
 
   return <QuizContent questions={questions} />

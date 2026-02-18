@@ -9,12 +9,13 @@ export const metadata = {
 }
 
 interface PageProps {
-  searchParams: {
+  searchParams: Promise<{
     difficulty?: QuestionDifficulty
-  }
+  }>
 }
 
-export default function Page({ searchParams }: PageProps) {
+export default async function Page(props: PageProps) {
+  const searchParams = await props.searchParams
   const multiChoiceQuizRoute = `/multichoicequiz${
     searchParams.difficulty ? `?difficulty=${searchParams.difficulty}` : ""
   }` as Route
