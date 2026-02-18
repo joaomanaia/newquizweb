@@ -1,7 +1,7 @@
 import { MOVIE_DEFAULT_CATEGORY_IMG, TMDB_API_URL } from "@/core/common/BaseUrls"
 import { shuffleArray } from "@/core/util/Array"
 import type { MovieCategory } from "@/types/ComparisonQuizTypes"
-import type { TMDBResponse, MovieTMDBResult, PeopleTMDBResult } from "@/types/OpenTDBTypes"
+import type { MovieTMDBResult, PeopleTMDBResult, TMDBResponse } from "@/types/OpenTDBTypes"
 
 type TimeWindow = "day" | "week"
 
@@ -42,7 +42,7 @@ const fetchTMDBQuestionData = async (
 
   const usedPages = new Set<number>()
 
-  const fetchPromises: Promise<TMDBResponse>[] = [];
+  const fetchPromises: Promise<TMDBResponse>[] = []
   for (let i = 0; i < pagesNeeded; i++) {
     let page: number
 

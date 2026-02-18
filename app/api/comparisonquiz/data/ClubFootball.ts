@@ -1,6 +1,6 @@
+import clubData from "@/app/data/club-football.json"
 import { shuffleArray } from "@/core/util/Array"
 import type { ClubFootballCategory } from "@/types/ComparisonQuizTypes"
-import clubData from "@/app/data/club-football.json"
 
 type ClubFootballData = {
   club: string
