@@ -1,66 +1,40 @@
 "use client"
 
-import { useMemo } from "react"
-import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import { cva, type VariantProps } from "class-variance-authority"
 import { SignalHighIcon } from "lucide-react"
-import { type Route } from "next"
+import { parseAsStringLiteral, useQueryState } from "nuqs"
+import { Skeleton } from "@/components/ui/skeleton"
 import { cn } from "@/lib/utils"
 import type QuestionDifficulty from "@/types/question-difficulty"
+import { difficulties } from "@/types/question-difficulty"
 
-interface DifficultyRowItemsProps {}
-
-export const DifficultyRowItems: React.FC<DifficultyRowItemsProps> = () => {
-  const router = useRouter()
-  const pathname = usePathname()
-  const searchParams = useSearchParams()
-
-  const selectedDifficulty: QuestionDifficulty | "random" = useMemo(() => {
-    const difficulty = searchParams.get("difficulty")
-    return difficulty === null ? "random" : (difficulty as QuestionDifficulty)
-  }, [searchParams])
-
-  const setDifficulty = (difficulty: QuestionDifficulty | "random") => {
-    const params = new URLSearchParams(searchParams.toString())
-
-    if (difficulty === "random") {
-      params.delete("difficulty")
-    } else {
-      params.set("difficulty", difficulty)
-    }
-
-    const url = pathname + "?" + params.toString()
-    router.push(url as Route)
-  }
+export function DifficultyRowItems() {
+  const [selectedDifficulty, setSelectedDifficulty] = useQueryState(
+    "difficulty",
+    parseAsStringLiteral(difficulties)
+  )
 
   return (
     <div className="flex w-full items-center gap-x-4 overflow-x-auto md:justify-center">
       <DifficultyItem
         difficulty="random"
-        selected={selectedDifficulty === "random"}
-        onClick={() => setDifficulty("random")}
+        selected={selectedDifficulty === null}
+        onClick={() => setSelectedDifficulty(null)}
       />
-      <DifficultyItem
-        difficulty="easy"
-        selected={selectedDifficulty === "easy"}
-        onClick={() => setDifficulty("easy")}
-      />
-      <DifficultyItem
-        difficulty="medium"
-        selected={selectedDifficulty === "medium"}
-        onClick={() => setDifficulty("medium")}
-      />
-      <DifficultyItem
-        difficulty="hard"
-        selected={selectedDifficulty === "hard"}
-        onClick={() => setDifficulty("hard")}
-      />
+      {difficulties.map((difficulty) => (
+        <DifficultyItem
+          key={difficulty}
+          difficulty={difficulty}
+          selected={selectedDifficulty === difficulty}
+          onClick={() => setSelectedDifficulty(difficulty)}
+        />
+      ))}
     </div>
   )
 }
 
 const difficultyItemVariants = cva(
-  "flex flex-col min-w-32 gap-3 items-start py-3 px-4 rounded-2xl bg-transparent text-inherit border-2 transition",
+  "flex flex-col min-w-32 gap-3 items-start py-3 px-4 rounded-2xl bg-transparent text-inherit border-2 transition cursor-pointer",
   {
     variants: {
       difficulty: {
@@ -91,6 +65,7 @@ const DifficultyItem: React.FC<DifficultyItemProps> = ({ difficulty, selected, o
     <button
       onClick={onClick}
       aria-selected={selected}
+      role="option"
       className={cn(difficultyItemVariants({ difficulty }))}
     >
       {getDifficultyName(difficulty)}
@@ -110,4 +85,15 @@ const getDifficultyName = (difficulty: QuestionDifficulty | "random") => {
     default:
       return "Random"
   }
+}
+
+export function DifficultyRowItemsSkeleton() {
+  return (
+    <div className="flex w-full items-center gap-x-4 overflow-x-auto md:justify-center">
+      <Skeleton className="h-25 w-32 rounded-2xl" />
+      <Skeleton className="h-25 w-32 rounded-2xl" />
+      <Skeleton className="h-25 w-32 rounded-2xl" />
+      <Skeleton className="h-25 w-32 rounded-2xl" />
+    </div>
+  )
 }

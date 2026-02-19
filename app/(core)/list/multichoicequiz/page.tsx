@@ -1,30 +1,26 @@
-import type { Route } from "next"
-import { DifficultyRowItems } from "@/components/difficulty-items"
-import { PlayRandomQuiz, Title } from "@/components/home-list-components"
-import type QuestionDifficulty from "@/types/question-difficulty"
+import { Suspense } from "react"
+import {
+  PlayRandomQuiz,
+  PlayRandomQuizSkeleton,
+} from "@/app/(core)/list/multichoicequiz/_components/random-quiz-button"
+import { DifficultyRowItems, DifficultyRowItemsSkeleton } from "@/components/difficulty-items"
+import { Title } from "@/components/home-list-components"
 
 export const metadata = {
   title: "Multi Choice Quiz",
 }
 
-interface PageProps {
-  searchParams: Promise<{
-    difficulty?: QuestionDifficulty
-  }>
-}
-
-export default async function Page(props: PageProps) {
-  const searchParams = await props.searchParams
-  const multiChoiceQuizRoute = `/multichoicequiz${
-    searchParams.difficulty ? `?difficulty=${searchParams.difficulty}` : ""
-  }` as Route
-
+export default function Page() {
   return (
     <main className="flex h-full flex-col items-center justify-center gap-8">
       <h1 className="hidden">Multi Choice Quiz</h1>
-      <PlayRandomQuiz route={multiChoiceQuizRoute} />
+      <Suspense fallback={<PlayRandomQuizSkeleton />}>
+        <PlayRandomQuiz />
+      </Suspense>
       <Title>Difficulty</Title>
-      <DifficultyRowItems />
+      <Suspense fallback={<DifficultyRowItemsSkeleton />}>
+        <DifficultyRowItems />
+      </Suspense>
     </main>
   )
 }

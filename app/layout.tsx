@@ -5,6 +5,7 @@ import "./styles/tokens.css"
 import "./styles/globals.css"
 import { GoogleAnalytics } from "@next/third-parties/google"
 import type { Metadata } from "next"
+import { NuqsAdapter } from "nuqs/adapters/next/app"
 import { TooltipProvider } from "@/components/ui/tooltip"
 
 export const metadata: Metadata = {
@@ -43,7 +44,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           enableSystem
           disableTransitionOnChange
         >
-          <TooltipProvider>{children}</TooltipProvider>
+          <TooltipProvider>
+            <NuqsAdapter>{children}</NuqsAdapter>
+          </TooltipProvider>
         </NextThemeProvider>
       </body>
       <GoogleAnalytics gaId="G-G61J40MJQZ" />
