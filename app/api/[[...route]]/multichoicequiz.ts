@@ -2,6 +2,7 @@ import { zValidator } from "@hono/zod-validator"
 import { Hono } from "hono"
 import queryString from "query-string"
 import * as z from "zod"
+import { emptyStringToUndefined } from "@/lib/zod"
 import type OpenTDBQuestionResponse from "@/model/multichoicequiz/OpenTDBQuestionResponse"
 import { convertOpenTDBResultToQuestion } from "@/model/multichoicequiz/OpenTDBQuestionResponse"
 import type QuestionDifficulty from "@/types/question-difficulty"
@@ -15,7 +16,7 @@ const app = new Hono().get(
     "query",
     z.object({
       size: z.coerce.number().min(1).max(50).default(5),
-      difficulty: z.enum(difficulties).optional(),
+      difficulty: emptyStringToUndefined(z.enum(difficulties).optional()),
     })
   ),
   async (c) => {

@@ -1,6 +1,6 @@
-import { FirebaseOptions, getApps, initializeApp } from "firebase/app"
 import { Analytics, getAnalytics } from "firebase/analytics"
-import { RemoteConfig, fetchAndActivate, getRemoteConfig } from "firebase/remote-config"
+import { FirebaseOptions, getApps, initializeApp } from "firebase/app"
+import { fetchAndActivate, getRemoteConfig, RemoteConfig } from "firebase/remote-config"
 
 const firebaseConfig: FirebaseOptions = {
   apiKey: process.env.FIREBASE_API_KEY,
@@ -20,13 +20,14 @@ let analytics: Analytics
 let remoteConfig: RemoteConfig
 
 if (firebaseApp.name && typeof window !== "undefined") {
-  analytics = getAnalytics(firebaseApp)
+  // TODO: Add this back
+  /* analytics = getAnalytics(firebaseApp)
 
   // Get the Remote Config service for the default app
   remoteConfig = getRemoteConfig(firebaseApp)
   const remoteConfigDefaults = require("./remote_config_defaults.json")
   remoteConfig.defaultConfig = remoteConfigDefaults
-  fetchAndActivate(remoteConfig)
+  fetchAndActivate(remoteConfig) */
 }
 
 export { analytics, remoteConfig }

@@ -1,8 +1,8 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { AnimatedCircularProgressBar } from "@/components/ui/animated-circular-progress-bar"
 import { Button } from "@/components/ui/button"
-import { ProgressWithText } from "@/app/(game)/multichoicequiz/components/ProgressWithText"
 import { QuizResultsContent } from "@/app/(game)/multichoicequiz/components/QuizResultsContent"
 import { QuizStepView } from "@/app/(game)/multichoicequiz/components/QuizStepView"
 import { logGameStart } from "@/core/logging_analytics/multichoice_analytics"
@@ -64,7 +64,7 @@ export const QuizContent: React.FC<QuizContentProps> = ({ questions }) => {
     setQuestionSteps(generateQuestionSteps(questions))
     setCurrentQuestionIndex(0)
 
-    logGameStart(analytics, questions.length)
+    // logGameStart(analytics, questions.length)
   }, [])
 
   const nextQuestion = async () => {
@@ -107,8 +107,20 @@ export const QuizContent: React.FC<QuizContentProps> = ({ questions }) => {
   }
 
   return (
-    <div className="container flex h-screen w-screen flex-col items-center justify-center gap-8">
-      <ProgressWithText remainingTime={remainingTime} maxQuizTime={MAX_QUIZ_TIME} />
+    <div className="container mx-auto flex h-screen w-screen flex-col items-center justify-center gap-8 p-4">
+      <AnimatedCircularProgressBar
+        value={remainingTime.value}
+        min={0}
+        max={MAX_QUIZ_TIME}
+        gaugePrimaryColor={
+          remainingTime.getRemainingPercent(MAX_QUIZ_TIME) > 0.3
+            ? "var(--color-primary)"
+            : "var(--color-destructive)"
+        }
+        gaugeSecondaryColor="var(--color-surface-variant)"
+        formatText={() => remainingTime.toMinuteSecond()}
+        className="size-20 text-lg lg:size-24 lg:text-2xl"
+      />
 
       <div className="mb-8 flex gap-x-2">
         {questionSteps.map((step, index) => (
