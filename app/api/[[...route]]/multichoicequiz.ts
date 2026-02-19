@@ -28,7 +28,7 @@ const app = new Hono().get(
       const openTDBResponse = questions.results
       const results = openTDBResponse.map(convertOpenTDBResultToQuestion)
 
-      return c.json({ questions: results })
+      return c.json({ questions: results }, 200)
     } catch {
       return c.json({ message: "Failed to fetch questions" }, 500)
     }
