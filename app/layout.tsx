@@ -48,8 +48,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <NuqsAdapter>{children}</NuqsAdapter>
           </TooltipProvider>
         </NextThemeProvider>
+        <GoogleAnalytics gaId="G-G61J40MJQZ" />
       </body>
-      <GoogleAnalytics gaId="G-G61J40MJQZ" />
     </html>
   )
 }

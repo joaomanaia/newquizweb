@@ -23,10 +23,8 @@ const app = new Hono().get(
     const { size, difficulty } = c.req.valid("query")
 
     try {
-      const questions = await getOpenTDBQuestions(size, difficulty)
-
-      const openTDBResponse = questions.results
-      const results = openTDBResponse.map(convertOpenTDBResultToQuestion)
+      const questions = await getOpenTDBQuestions(size, difficulty ?? null)
+      const results = questions.results.map(convertOpenTDBResultToQuestion)
 
       return c.json({ questions: results }, 200)
     } catch {
@@ -43,16 +41,20 @@ const getOpenTDBQuestions = async (
     url: API_URL,
     query: {
       encode: "base64",
-      amount: amount,
-      difficulty: difficulty,
+      amount,
+      difficulty,
     },
   })
 
-  const res = await fetch(requestUrl, {
+  const response = await fetch(requestUrl, {
     cache: "no-store",
   })
-  const textRes = await res.text()
-  return JSON.parse(textRes)
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch questions")
+  }
+
+  return (await response.json()) as OpenTDBQuestionResponse
 }
 
 export default app

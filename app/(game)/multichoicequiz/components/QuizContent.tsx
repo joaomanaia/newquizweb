@@ -1,13 +1,10 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import dynamic from "next/dynamic"
 import { AnimatedCircularProgressBar } from "@/components/ui/animated-circular-progress-bar"
 import { Button } from "@/components/ui/button"
-import { QuizResultsContent } from "@/app/(game)/multichoicequiz/components/QuizResultsContent"
 import { QuizStepView } from "@/app/(game)/multichoicequiz/components/QuizStepView"
-import { logGameStart } from "@/core/logging_analytics/multichoice_analytics"
-import { delay } from "@/core/util/DelayUtil"
-import { analytics } from "@/firebase"
 import { cn } from "@/lib/utils"
 import MultiChoiceQuestion, {
   decodeBase64Question,
@@ -21,6 +18,12 @@ import SelectedAnswer from "@/model/multichoicequiz/SelectedAnswer"
 
 const MAX_QUIZ_TIME = 30_000 // 30 seconds
 
+const QuizResultsContent = dynamic(() =>
+  import("@/app/(game)/multichoicequiz/components/QuizResultsContent").then(
+    (module) => module.QuizResultsContent
+  )
+)
+
 const generateQuestionSteps = (questions: MultiChoiceQuestion[]): NotCurrent[] => {
   return questions.map(decodeBase64Question).map((question) => new NotCurrent(question))
 }
@@ -30,9 +33,10 @@ interface QuizContentProps {
 }
 
 export const QuizContent: React.FC<QuizContentProps> = ({ questions }) => {
-  const [questionSteps, setQuestionSteps] = useState<MultiChoiceQuestionStep[]>([])
-
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(-1)
+  const [questionSteps, setQuestionSteps] = useState<MultiChoiceQuestionStep[]>(() =>
+    generateQuestionSteps(questions)
+  )
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const [isQuizEnded, setQuizEnded] = useState(false)
 
   const [selectedAnswer, setSelectedAnswer] = useState(SelectedAnswer.NONE)
@@ -46,35 +50,28 @@ export const QuizContent: React.FC<QuizContentProps> = ({ questions }) => {
 
     if (remainingTime.isEnded()) {
       verifyQuestion()
-    } else {
-      const timer = setInterval(() => {
-        setRemainingTime((prevRemainingTime) =>
-          prevRemainingTime.isEnded() ? RemainingTime.ZERO : prevRemainingTime.decreaseValue(1000)
-        )
-      }, 1000)
-
-      return () => clearInterval(timer)
+      return
     }
+
+    const timer = setTimeout(() => {
+      setRemainingTime((prevRemainingTime) =>
+        prevRemainingTime.isEnded() ? RemainingTime.ZERO : prevRemainingTime.decreaseValue(1000)
+      )
+    }, 1000)
+
+    return () => clearTimeout(timer)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [remainingTime, isQuizEnded])
 
-  // Start
-  // TODO: Add next experimental after
-  useEffect(() => {
-    setQuestionSteps(generateQuestionSteps(questions))
-    setCurrentQuestionIndex(0)
-
-    // logGameStart(analytics, questions.length)
-  }, [])
-
-  const nextQuestion = async () => {
+  const nextQuestion = () => {
     setSelectedAnswer(SelectedAnswer.NONE)
 
     // Check if quiz is ended
     if (currentQuestionIndex + 1 >= questionSteps.length) {
       setCurrentQuestionIndex(-1)
-      await delay(1500)
-      setQuizEnded(true)
+      setTimeout(() => {
+        setQuizEnded(true)
+      }, 1500)
       return
     }
 
@@ -88,18 +85,23 @@ export const QuizContent: React.FC<QuizContentProps> = ({ questions }) => {
   }
 
   const updateSteps = (prevSteps: MultiChoiceQuestionStep[]): MultiChoiceQuestionStep[] => {
-    const currentStep = prevSteps[currentQuestionIndex].asCurrent()
+    if (currentQuestionIndex < 0) {
+      return prevSteps
+    }
+
+    const nextSteps = [...prevSteps]
+    const currentStep = nextSteps[currentQuestionIndex].asCurrent()
 
     const answerCorrect = currentStep.question.correctAns === selectedAnswer.index
-    prevSteps[currentQuestionIndex] = currentStep.changeToCompleted(answerCorrect, selectedAnswer)
+    nextSteps[currentQuestionIndex] = currentStep.changeToCompleted(answerCorrect, selectedAnswer)
 
     const nextIndex = currentQuestionIndex + 1
 
-    if (nextIndex < prevSteps.length) {
-      prevSteps[nextIndex] = prevSteps[nextIndex].asCurrent()
+    if (nextIndex < nextSteps.length) {
+      nextSteps[nextIndex] = nextSteps[nextIndex].asCurrent()
     }
 
-    return prevSteps
+    return nextSteps
   }
 
   if (isQuizEnded) {
