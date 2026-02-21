@@ -1,8 +1,7 @@
-import { zValidator } from "@hono/zod-validator"
 import { Hono } from "hono"
 import * as z from "zod"
 import { getOpenTDBQuestions } from "@/app/api/_data/opentdb"
-import { emptyStringToUndefined } from "@/lib/zod"
+import { emptyStringToUndefined, zValidator } from "@/lib/zod"
 import { convertOpenTDBResultToQuestion } from "@/model/multichoicequiz/OpenTDBQuestionResponse"
 import { difficulties } from "@/types/question-difficulty"
 

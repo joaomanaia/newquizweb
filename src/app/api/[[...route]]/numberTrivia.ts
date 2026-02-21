@@ -1,7 +1,7 @@
-import { zValidator } from "@hono/zod-validator"
 import { Hono } from "hono"
 import * as z from "zod"
 import { getRandomNumberTrivia } from "@/app/api/_data/number-trivia"
+import { zValidator } from "@/lib/zod"
 
 const MIN_NUMBER = 0
 const MAX_NUMBER = 100000
