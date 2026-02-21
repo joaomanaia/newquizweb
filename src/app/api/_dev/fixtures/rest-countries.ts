@@ -1,0 +1,186 @@
+/**
+ * REST Countries API fixture data.
+ * Subset of real country data matching the RestCountriesResponse shape.
+ */
+export const REST_COUNTRIES_FIXTURES: RestCountriesResponse[] = [
+  {
+    name: { common: "Brazil" },
+    population: 212559417,
+    area: 8515767,
+    flags: { svg: "https://flagcdn.com/br.svg" },
+  },
+  {
+    name: { common: "Japan" },
+    population: 125836021,
+    area: 377975,
+    flags: { svg: "https://flagcdn.com/jp.svg" },
+  },
+  {
+    name: { common: "Germany" },
+    population: 83783942,
+    area: 357114,
+    flags: { svg: "https://flagcdn.com/de.svg" },
+  },
+  {
+    name: { common: "Australia" },
+    population: 25499884,
+    area: 7692024,
+    flags: { svg: "https://flagcdn.com/au.svg" },
+  },
+  {
+    name: { common: "Nigeria" },
+    population: 206139589,
+    area: 923768,
+    flags: { svg: "https://flagcdn.com/ng.svg" },
+  },
+  {
+    name: { common: "Canada" },
+    population: 37742154,
+    area: 9984670,
+    flags: { svg: "https://flagcdn.com/ca.svg" },
+  },
+  {
+    name: { common: "India" },
+    population: 1380004385,
+    area: 3287263,
+    flags: { svg: "https://flagcdn.com/in.svg" },
+  },
+  {
+    name: { common: "France" },
+    population: 67390000,
+    area: 640679,
+    flags: { svg: "https://flagcdn.com/fr.svg" },
+  },
+  {
+    name: { common: "South Korea" },
+    population: 51269185,
+    area: 100210,
+    flags: { svg: "https://flagcdn.com/kr.svg" },
+  },
+  {
+    name: { common: "Mexico" },
+    population: 128932753,
+    area: 1964375,
+    flags: { svg: "https://flagcdn.com/mx.svg" },
+  },
+  {
+    name: { common: "Egypt" },
+    population: 102334404,
+    area: 1002450,
+    flags: { svg: "https://flagcdn.com/eg.svg" },
+  },
+  {
+    name: { common: "United Kingdom" },
+    population: 67886011,
+    area: 242900,
+    flags: { svg: "https://flagcdn.com/gb.svg" },
+  },
+  {
+    name: { common: "Argentina" },
+    population: 45195774,
+    area: 2780400,
+    flags: { svg: "https://flagcdn.com/ar.svg" },
+  },
+  {
+    name: { common: "Italy" },
+    population: 60461826,
+    area: 301340,
+    flags: { svg: "https://flagcdn.com/it.svg" },
+  },
+  {
+    name: { common: "Spain" },
+    population: 46754778,
+    area: 505992,
+    flags: { svg: "https://flagcdn.com/es.svg" },
+  },
+  {
+    name: { common: "China" },
+    population: 1402112000,
+    area: 9706961,
+    flags: { svg: "https://flagcdn.com/cn.svg" },
+  },
+  {
+    name: { common: "Indonesia" },
+    population: 273523615,
+    area: 1904569,
+    flags: { svg: "https://flagcdn.com/id.svg" },
+  },
+  {
+    name: { common: "Russia" },
+    population: 144104080,
+    area: 17098242,
+    flags: { svg: "https://flagcdn.com/ru.svg" },
+  },
+  {
+    name: { common: "Thailand" },
+    population: 69799978,
+    area: 513120,
+    flags: { svg: "https://flagcdn.com/th.svg" },
+  },
+  {
+    name: { common: "Colombia" },
+    population: 50882891,
+    area: 1141748,
+    flags: { svg: "https://flagcdn.com/co.svg" },
+  },
+  {
+    name: { common: "Poland" },
+    population: 37846611,
+    area: 312679,
+    flags: { svg: "https://flagcdn.com/pl.svg" },
+  },
+  {
+    name: { common: "South Africa" },
+    population: 59308690,
+    area: 1221037,
+    flags: { svg: "https://flagcdn.com/za.svg" },
+  },
+  {
+    name: { common: "Portugal" },
+    population: 10196709,
+    area: 92090,
+    flags: { svg: "https://flagcdn.com/pt.svg" },
+  },
+  {
+    name: { common: "Sweden" },
+    population: 10099265,
+    area: 450295,
+    flags: { svg: "https://flagcdn.com/se.svg" },
+  },
+  {
+    name: { common: "Norway" },
+    population: 5421241,
+    area: 323802,
+    flags: { svg: "https://flagcdn.com/no.svg" },
+  },
+  {
+    name: { common: "Switzerland" },
+    population: 8654622,
+    area: 41284,
+    flags: { svg: "https://flagcdn.com/ch.svg" },
+  },
+  {
+    name: { common: "United States" },
+    population: 331002651,
+    area: 9833520,
+    flags: { svg: "https://flagcdn.com/us.svg" },
+  },
+  {
+    name: { common: "Turkey" },
+    population: 84339067,
+    area: 783562,
+    flags: { svg: "https://flagcdn.com/tr.svg" },
+  },
+  {
+    name: { common: "Vietnam" },
+    population: 97338579,
+    area: 331212,
+    flags: { svg: "https://flagcdn.com/vn.svg" },
+  },
+  {
+    name: { common: "New Zealand" },
+    population: 4822233,
+    area: 270467,
+    flags: { svg: "https://flagcdn.com/nz.svg" },
+  },
+]

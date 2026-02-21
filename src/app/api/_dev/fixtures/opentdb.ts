@@ -1,0 +1,188 @@
+import type { OpenTDBResult } from "@/model/multichoicequiz/OpenTDBQuestionResponse"
+
+const toBase64 = (str: string) => Buffer.from(str).toString("base64")
+
+/**
+ * Realistic quiz questions covering different categories and difficulties.
+ * Stored as plain text for readability, encoded to base64 at module load
+ * to match the real OpenTDB API format (encode=base64).
+ */
+const questions = [
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "What does CPU stand for?",
+    correct_answer: "Central Processing Unit",
+    incorrect_answers: [
+      "Central Program Utility",
+      "Computer Personal Unit",
+      "Central Processor Unifier",
+    ],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "medium",
+    question: "What does the '__(double underscore)' prefix on a Python variable indicate?",
+    correct_answer: "Name mangling",
+    incorrect_answers: ["It is a constant", "It is private", "It is a global variable"],
+  },
+  {
+    category: "General Knowledge",
+    type: "multiple",
+    difficulty: "easy",
+    question: "What is the largest planet in our solar system?",
+    correct_answer: "Jupiter",
+    incorrect_answers: ["Saturn", "Neptune", "Mars"],
+  },
+  {
+    category: "General Knowledge",
+    type: "multiple",
+    difficulty: "medium",
+    question: "What is the capital of Australia?",
+    correct_answer: "Canberra",
+    incorrect_answers: ["Sydney", "Melbourne", "Brisbane"],
+  },
+  {
+    category: "Science & Nature",
+    type: "multiple",
+    difficulty: "hard",
+    question: "What is the chemical symbol for Tungsten?",
+    correct_answer: "W",
+    incorrect_answers: ["Tu", "Tg", "Tn"],
+  },
+  {
+    category: "History",
+    type: "multiple",
+    difficulty: "medium",
+    question: "In what year did the Berlin Wall fall?",
+    correct_answer: "1989",
+    incorrect_answers: ["1987", "1991", "1985"],
+  },
+  {
+    category: "Geography",
+    type: "multiple",
+    difficulty: "easy",
+    question: "What is the smallest country in the world?",
+    correct_answer: "Vatican City",
+    incorrect_answers: ["Monaco", "San Marino", "Liechtenstein"],
+  },
+  {
+    category: "Entertainment: Music",
+    type: "multiple",
+    difficulty: "easy",
+    question: "Which band released the album 'Abbey Road'?",
+    correct_answer: "The Beatles",
+    incorrect_answers: ["The Rolling Stones", "Led Zeppelin", "Pink Floyd"],
+  },
+  {
+    category: "Science: Mathematics",
+    type: "multiple",
+    difficulty: "hard",
+    question: "What is the derivative of cos(x)?",
+    correct_answer: "-sin(x)",
+    incorrect_answers: ["sin(x)", "cos(x)", "-cos(x)"],
+  },
+  {
+    category: "Entertainment: Film",
+    type: "multiple",
+    difficulty: "medium",
+    question: "Who directed the 1994 film 'Pulp Fiction'?",
+    correct_answer: "Quentin Tarantino",
+    incorrect_answers: ["Martin Scorsese", "Steven Spielberg", "Francis Ford Coppola"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "hard",
+    question: "Which sorting algorithm has the best average-case time complexity?",
+    correct_answer: "Merge Sort",
+    incorrect_answers: ["Bubble Sort", "Selection Sort", "Insertion Sort"],
+  },
+  {
+    category: "General Knowledge",
+    type: "boolean",
+    difficulty: "easy",
+    question: "The Great Wall of China is visible from space with the naked eye.",
+    correct_answer: "False",
+    incorrect_answers: ["True"],
+  },
+  {
+    category: "Sports",
+    type: "multiple",
+    difficulty: "easy",
+    question: "How many players are on a standard soccer team on the field at once?",
+    correct_answer: "11",
+    incorrect_answers: ["9", "10", "12"],
+  },
+  {
+    category: "History",
+    type: "multiple",
+    difficulty: "hard",
+    question: "The Thirty Years' War was primarily fought in which modern-day country?",
+    correct_answer: "Germany",
+    incorrect_answers: ["France", "Spain", "Austria"],
+  },
+  {
+    category: "Entertainment: Video Games",
+    type: "multiple",
+    difficulty: "medium",
+    question: "In what year was the first 'The Legend of Zelda' game released?",
+    correct_answer: "1986",
+    incorrect_answers: ["1984", "1988", "1990"],
+  },
+  {
+    category: "Science & Nature",
+    type: "multiple",
+    difficulty: "medium",
+    question: "What gas makes up approximately 78% of Earth's atmosphere?",
+    correct_answer: "Nitrogen",
+    incorrect_answers: ["Oxygen", "Carbon Dioxide", "Argon"],
+  },
+  {
+    category: "Geography",
+    type: "multiple",
+    difficulty: "hard",
+    question: "What is the longest river in Africa?",
+    correct_answer: "Nile",
+    incorrect_answers: ["Congo", "Niger", "Zambezi"],
+  },
+  {
+    category: "Entertainment: Books",
+    type: "multiple",
+    difficulty: "medium",
+    question: "Who wrote '1984'?",
+    correct_answer: "George Orwell",
+    incorrect_answers: ["Aldous Huxley", "Ray Bradbury", "H.G. Wells"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "What does HTML stand for?",
+    correct_answer: "HyperText Markup Language",
+    incorrect_answers: [
+      "Hyperlinks and Text Markup Language",
+      "Home Tool Markup Language",
+      "Hyper Transfer Markup Language",
+    ],
+  },
+  {
+    category: "Art",
+    type: "multiple",
+    difficulty: "medium",
+    question: "Who painted 'The Starry Night'?",
+    correct_answer: "Vincent van Gogh",
+    incorrect_answers: ["Claude Monet", "Pablo Picasso", "Salvador Dalí"],
+  },
+] as const
+
+export const OPENTDB_FIXTURES: OpenTDBResult[] = questions.map((q) => ({
+  category: toBase64(q.category),
+  type: toBase64(q.type),
+  difficulty: toBase64(q.difficulty),
+  question: toBase64(q.question),
+  correct_answer: toBase64(q.correct_answer),
+  incorrect_answers: q.incorrect_answers.map(toBase64),
+}))

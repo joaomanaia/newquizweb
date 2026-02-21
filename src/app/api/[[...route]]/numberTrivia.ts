@@ -1,9 +1,8 @@
 import { zValidator } from "@hono/zod-validator"
 import { Hono } from "hono"
-import queryString from "query-string"
 import * as z from "zod"
+import { getRandomNumberTrivia } from "@/app/api/_data/number-trivia"
 
-const BASE_URL = "http://number-trivia.com/random/"
 const MIN_NUMBER = 0
 const MAX_NUMBER = 100000
 
@@ -24,9 +23,7 @@ const app = new Hono().get(
   async (c) => {
     const { min, max, size } = c.req.valid("query")
 
-    const promises: Promise<Question>[] = Array.from({ length: size }, () =>
-      getRandomNumber(min, max)
-    )
+    const promises = Array.from({ length: size }, () => getRandomNumberTrivia(min, max))
 
     try {
       const numbers = await Promise.all(promises)
@@ -36,28 +33,5 @@ const app = new Hono().get(
     }
   }
 )
-
-type Question = {
-  number: number
-  question: string
-}
-
-const getRandomNumber = async (min: number | null, max: number | null): Promise<Question> => {
-  const url = queryString.stringifyUrl({
-    url: BASE_URL,
-    query: {
-      min: min || undefined,
-      max: max || undefined,
-      json: true,
-    },
-  })
-
-  const response = await fetch(url, { cache: "no-store" })
-  const data = await response.json()
-  const dataText: string = data.text
-  // Remove the data number from the beginning of the string
-  const question = dataText.substring(dataText.indexOf(" ") + 1)
-  return { number: data.number, question: question }
-}
 
 export default app

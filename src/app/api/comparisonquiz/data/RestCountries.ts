@@ -1,4 +1,4 @@
-import { RESTCOUNTRIES_API_URL } from "@/core/common/BaseUrls"
+import { fetchAllCountries } from "@/app/api/_data/rest-countries"
 import { shuffleArray } from "@/core/util/Array"
 import type { RestCountryCategory } from "@/types/ComparisonQuizTypes"
 
@@ -6,9 +6,7 @@ export const getCompQuizCountryQuestions = async (
   category: RestCountryCategory,
   size: number
 ): Promise<ComparisonQuizItem[]> => {
-  const res = await fetch(`${RESTCOUNTRIES_API_URL}/all`)
-
-  const countries: RestCountriesResponse[] = await res.json()
+  const countries = await fetchAllCountries()
   const questions = countries.map((country) =>
     mapRestCountriesResponseToCompQuizItem(country, category)
   )

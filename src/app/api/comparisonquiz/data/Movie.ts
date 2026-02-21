@@ -1,4 +1,5 @@
-import { MOVIE_DEFAULT_CATEGORY_IMG, TMDB_API_URL } from "@/core/common/BaseUrls"
+import { fetchTMDBPage } from "@/app/api/_data/tmdb"
+import { MOVIE_DEFAULT_CATEGORY_IMG } from "@/core/common/BaseUrls"
 import { shuffleArray } from "@/core/util/Array"
 import type { MovieCategory } from "@/types/ComparisonQuizTypes"
 import type { MovieTMDBResult, PeopleTMDBResult, TMDBResponse } from "@/types/OpenTDBTypes"
@@ -33,7 +34,6 @@ const fetchTMDBQuestionData = async (
   size: number
 ): Promise<ComparisonQuizItem[]> => {
   const apiKey = process.env.TMDB_API_KEY
-  if (!apiKey) throw new Error("Missing TMDB API key")
 
   const pagesNeeded = Math.ceil(size / TMDB_RESULTS_PER_PAGE)
   if (pagesNeeded > TMDB_MAX_PAGES) {
@@ -59,24 +59,6 @@ const fetchTMDBQuestionData = async (
 
   const responses = await Promise.all(fetchPromises)
   return responses.flatMap((response) => getFormatedResponseData(response, category))
-}
-
-const fetchTMDBPage = async (
-  mediaType: string,
-  timeWindow: TimeWindow,
-  page: number,
-  apiKey: string
-): Promise<TMDBResponse> => {
-  const url = new URL(`${TMDB_API_URL}/trending/${mediaType}/${timeWindow}`)
-  url.searchParams.append("api_key", apiKey)
-  url.searchParams.append("page", page.toString())
-  url.searchParams.append("include_adult", "false")
-
-  const response = await fetch(url)
-  if (!response.ok) {
-    throw new Error(`Failed to fetch data from TMDB: ${response.statusText}`)
-  }
-  return response.json()
 }
 
 const getFormatedResponseData = (
