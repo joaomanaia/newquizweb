@@ -1,6 +1,5 @@
-import MultiChoiceQuestion, {
-  decodeBase64Question,
-} from "../../../src/model/multichoicequiz/MultiChoiceQuestion"
+import { expect, test } from "@jest/globals"
+import { decodeBase64Question } from "@/model/multichoicequiz/MultiChoiceQuestion"
 
 test("decode base64 question", () => {
   const testQuestion = {
