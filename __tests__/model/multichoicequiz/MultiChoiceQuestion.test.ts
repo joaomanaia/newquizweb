@@ -1,4 +1,4 @@
-import { expect, test } from "@jest/globals"
+import { expect, test } from "bun:test"
 import { decodeBase64Question } from "@/model/multichoicequiz/MultiChoiceQuestion"
 
 test("decode base64 question", () => {

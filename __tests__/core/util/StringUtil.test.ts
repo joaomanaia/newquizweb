@@ -1,4 +1,4 @@
-import { expect, test } from "@jest/globals"
+import { expect, test } from "bun:test"
 import { decodeBase64String } from "@/core/util/StringUtil"
 
 test("decode base64 string", () => {
