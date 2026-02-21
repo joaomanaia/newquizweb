@@ -1,4 +1,6 @@
-import MultiChoiceQuestion, { decodeBase64Question } from "../../../model/multichoicequiz/MultiChoiceQuestion"
+import MultiChoiceQuestion, {
+  decodeBase64Question,
+} from "../../../src/model/multichoicequiz/MultiChoiceQuestion"
 
 test("decode base64 question", () => {
   const testQuestion = {

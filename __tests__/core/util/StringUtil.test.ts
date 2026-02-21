@@ -1,4 +1,4 @@
-import { decodeBase64String } from "../../../core/util/StringUtil"
+import { decodeBase64String } from "../../../src/core/util/StringUtil"
 
 test("decode base64 string", () => {
   const base64EncodedString = "SGVsbG8gV29ybGQh"
