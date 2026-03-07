@@ -3,17 +3,20 @@ import { multichoicequizSearchParams } from "@/app/(game)/multichoicequiz/_lib/s
 import { QuizContent } from "@/app/(game)/multichoicequiz/components/QuizContent"
 import { client } from "@/lib/hono"
 import type MultiChoiceQuestion from "@/model/multichoicequiz/MultiChoiceQuestion"
+import type { MultiChoiceCategoryId } from "@/model/multichoicequiz/MultiChoiceQuestion"
 import type QuestionDifficulty from "@/types/question-difficulty"
 
 export const revalidate = 0
 export const dynamic = "force-dynamic"
 
 async function getQuestions(
-  difficulty: QuestionDifficulty | null
+  difficulty: QuestionDifficulty | null,
+  categoryId: MultiChoiceCategoryId | null
 ): Promise<MultiChoiceQuestion[] | Error> {
   const res = await client.api.multichoicequiz.randomQuestions.$get({
     query: {
       difficulty: difficulty ?? [],
+      categoryId: categoryId ?? [],
     },
   })
 
@@ -33,8 +36,8 @@ export const metadata: Metadata = {
 }
 
 export default async function MultiChoiceQuizPage(props: PageProps<"/multichoicequiz">) {
-  const { difficulty } = await multichoicequizSearchParams(props.searchParams)
-  const questions = await getQuestions(difficulty)
+  const { difficulty, categoryId } = await multichoicequizSearchParams(props.searchParams)
+  const questions = await getQuestions(difficulty, categoryId)
 
   if (questions instanceof Error) {
     return (

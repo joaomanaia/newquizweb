@@ -1,4 +1,6 @@
 import { Suspense } from "react"
+import type { Metadata } from "next"
+import { CategoryListComponent } from "@/app/(core)/list/multichoicequiz/_components/category-component"
 import {
   PlayRandomQuiz,
   PlayRandomQuizSkeleton,
@@ -6,7 +8,7 @@ import {
 import { DifficultyRowItems, DifficultyRowItemsSkeleton } from "@/components/difficulty-items"
 import { Title } from "@/components/home-list-components"
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Multi Choice Quiz",
 }
 
@@ -21,6 +23,8 @@ export default function Page() {
       <Suspense fallback={<DifficultyRowItemsSkeleton />}>
         <DifficultyRowItems />
       </Suspense>
+      <Title>Categories</Title>
+      <CategoryListComponent />
     </main>
   )
 }

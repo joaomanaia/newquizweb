@@ -1,21 +1,27 @@
 import queryString from "query-string"
 import { OPENTDB_FIXTURES } from "@/app/api/_dev/fixtures/opentdb"
 import { shouldMockExternalApis } from "@/app/api/_dev/mock-apis"
+import type { MultiChoiceCategoryId } from "@/model/multichoicequiz/MultiChoiceQuestion"
 import type OpenTDBQuestionResponse from "@/model/multichoicequiz/OpenTDBQuestionResponse"
 import type QuestionDifficulty from "@/types/question-difficulty"
 
 const API_URL = "https://opentdb.com/api.php"
 
-export const getOpenTDBQuestions = async (
-  amount: number = 5,
-  difficulty: QuestionDifficulty | null = null
-): Promise<OpenTDBQuestionResponse> => {
+export const getOpenTDBQuestions = async ({
+  amount = 5,
+  difficulty = null,
+  categoryId = null,
+}: {
+  amount?: number
+  difficulty?: QuestionDifficulty | null
+  categoryId?: MultiChoiceCategoryId | null
+}): Promise<OpenTDBQuestionResponse> => {
   if (shouldMockExternalApis()) {
     console.warn("Using fixture data for OpenTDB API")
     return getFixtureQuestions(amount, difficulty)
   }
 
-  return fetchFromOpenTDB(amount, difficulty)
+  return fetchFromOpenTDB({ amount, difficulty, categoryId })
 }
 
 const getFixtureQuestions = (
@@ -33,16 +39,27 @@ const getFixtureQuestions = (
   return { responde_code: 0, results: results.slice(0, amount) }
 }
 
-const fetchFromOpenTDB = async (
-  amount: number,
-  difficulty: QuestionDifficulty | null
-): Promise<OpenTDBQuestionResponse> => {
+const fetchFromOpenTDB = async ({
+  amount = 5,
+  difficulty = null,
+  categoryId = null,
+}: {
+  amount?: number
+  difficulty?: QuestionDifficulty | null
+  categoryId?: MultiChoiceCategoryId | null
+}): Promise<OpenTDBQuestionResponse> => {
+  console.log("Fetching questions from OpenTDB API with params:", {
+    amount,
+    difficulty,
+    categoryId,
+  })
   const requestUrl = queryString.stringifyUrl({
     url: API_URL,
     query: {
       encode: "base64",
       amount,
       difficulty,
+      category: categoryId,
     },
   })
 

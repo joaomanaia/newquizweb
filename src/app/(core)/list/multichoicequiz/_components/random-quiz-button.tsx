@@ -2,23 +2,17 @@
 
 import { useMemo } from "react"
 import Link from "next/link"
-import type { Route } from "next"
 import { parseAsStringLiteral, useQueryState } from "nuqs"
-import queryString from "query-string"
 import { Skeleton } from "@/components/ui/skeleton"
+import { getQuizRoute } from "@/app/(core)/list/multichoicequiz/_lib/utils"
 import { difficulties } from "@/types/question-difficulty"
 
 export function PlayRandomQuiz() {
   const [selectedDifficulty] = useQueryState("difficulty", parseAsStringLiteral(difficulties))
-
-  const multiChoiceQuizRoute = useMemo(() => {
-    return queryString.stringifyUrl({
-      url: "/multichoicequiz" as Route,
-      query: {
-        difficulty: selectedDifficulty || undefined,
-      },
-    }) as Route
-  }, [selectedDifficulty])
+  const multiChoiceQuizRoute = useMemo(
+    () => getQuizRoute({ difficulty: selectedDifficulty }),
+    [selectedDifficulty]
+  )
 
   return (
     <Link
