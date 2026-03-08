@@ -1,6 +1,9 @@
 import { Suspense } from "react"
 import type { Metadata } from "next"
-import { CategoryListComponent } from "@/app/(core)/list/multichoicequiz/_components/category-component"
+import {
+  CategoryListComponent,
+  CategoryListSkeleton,
+} from "@/app/(core)/list/multichoicequiz/_components/category-component"
 import {
   PlayRandomQuiz,
   PlayRandomQuizSkeleton,
@@ -24,7 +27,9 @@ export default function Page() {
         <DifficultyRowItems />
       </Suspense>
       <Title>Categories</Title>
-      <CategoryListComponent />
+      <Suspense fallback={<CategoryListSkeleton />}>
+        <CategoryListComponent />
+      </Suspense>
     </main>
   )
 }
